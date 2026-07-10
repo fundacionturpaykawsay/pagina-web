@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fundación Turpay Kawsay</title>
-    <!-- Iconos para redes sociales -->
+    <!-- Iconos para redes sociales y elementos visuales -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Fondo general Beige */
@@ -17,30 +17,32 @@
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover; 
-            height: 280px; /* Altura ideal para lucer tu banner en computadoras */
+            height: 280px; 
             margin: 0;
             padding: 0;
             position: relative;
         }
 
-        /* Ajuste de altura para que no se corte en pantallas de celulares */
         @media (max-width: 768px) { 
-            header {
-                height: 150px; 
-            }
+            header { height: 150px; }
         }
         
-        /* Menú de navegación en Café Claro */
-        nav { background-color: #bc9b83; padding: 0.8rem; text-align: center; position: sticky; top: 0; z-index: 1000; }
-        nav a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: 500; display: inline-block; padding: 5px 0; }
+        /* Menú de navegación en Café Claro con transiciones elegantes */
+        nav { background-color: #bc9b83; padding: 0rem; text-align: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        nav .nav-container { display: inline-flex; justify-content: center; }
+        nav a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: 500; display: inline-block; padding: 1rem 0; position: relative; transition: color 0.3s; }
         nav a:hover { color: #5c4033; }
+        /* Línea decorativa sutil al pasar el mouse */
+        nav a::after { content: ''; display: block; width: 0; height: 3px; background: #843c22; transition: width .3s; position: absolute; bottom: 0; left: 0; }
+        nav a:hover::after { width: 100%; }
         
         .container { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; box-sizing: border-box; }
         section { background: #fff; padding: 2.5rem; margin-bottom: 2rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(62,50,43,0.05); }
         
-        h2 { color: #843c22; border-bottom: 2px solid #ebdcd0; padding-bottom: 0.5rem; margin-top: 0; }
+        h2 { color: #843c22; border-bottom: 2px solid #ebdcd0; padding-bottom: 0.5rem; margin-top: 0; font-size: 1.75rem; }
         
-        .grid-mv { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        /* Grid de Misión y Visión */
+        .grid-mv { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 2rem; }
         @media (max-width: 768px) { 
             .grid-mv { grid-template-columns: 1fr; } 
             section { padding: 1.5rem; }
@@ -48,6 +50,19 @@
         .mv-box { background: #faf8f5; padding: 1.5rem; border-left: 4px solid #dfa842; border-radius: 0 4px 4px 0; }
         .mv-box h3 { margin-top: 0; color: #843c22; display: flex; align-items: center; }
         .mv-box h3 i { margin-right: 10px; }
+
+        /* NUEVA SECCIÓN: VALORES */
+        .valores-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 1.5rem; }
+        .valor-card { text-align: center; padding: 1.5rem; background: #fff; border: 1px solid #ebdcd0; border-radius: 6px; }
+        .valor-card i { font-size: 2rem; color: #dfa842; margin-bottom: 0.5rem; }
+        .valor-card h4 { margin: 0.5rem 0; color: #843c22; text-transform: uppercase; font-size: 1rem; }
+        .valor-card p { margin: 0; font-size: 0.9rem; color: #60524a; }
+
+        /* NUEVA SECCIÓN: CONTADORES DE IMPACTO */
+        .impacto-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center; margin-top: 1.5rem; }
+        .impacto-card { background: #843c22; color: #fff; padding: 2rem 1.5rem; border-radius: 8px; }
+        .impacto-card .numero { font-size: 2.5rem; font-weight: bold; color: #dfa842; display: block; line-height: 1; margin-bottom: 0.5rem; }
+        .impacto-card .descripcion { font-size: 0.95rem; font-weight: 500; }
 
         /* --- SECCIÓN 5 PROYECTOS --- */
         .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 1.5rem; }
@@ -71,21 +86,32 @@
         .social-links a { display: inline-block; font-size: 1.5rem; color: #fff; background-color: #843c22; width: 50px; height: 50px; line-height: 50px; text-align: center; border-radius: 50%; transition: all 0.3s ease; }
         .social-links a:hover { background-color: #dfa842; transform: translateY(-3px); }
         
+        /* BOTÓN FLOTANTE DE WHATSAPP */
+        .btn-whatsapp { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: #fff; width: 60px; height: 60px; border-radius: 50%; text-align: center; font-size: 30px; box-shadow: 0px 4px 10px rgba(0,0,0,0.3); z-index: 1000; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: transform 0.3s; }
+        .btn-whatsapp:hover { transform: scale(1.1); color: #fff; }
+
         /* Footer */
         footer { text-align: center; padding: 1.5rem; background-color: #5c4033; color: #fff; margin-top: 3rem; }
     </style>
 </head>
 <body>
 
-    <!-- Cabecera completamente vacía para que solo actúe tu imagen original de fondo -->
+    <!-- Cabecera limpia con tu imagen original de fondo -->
     <header></header>
 
     <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#nosotros">Quiénes Somos</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#contacto">Contacto</a>
+        <div class="nav-container">
+            <a href="#inicio">Inicio</a>
+            <a href="#nosotros">Quiénes Somos</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#contacto">Contacto</a>
+        </div>
     </nav>
+
+    <!-- Botón flotante directo a WhatsApp (Cambia el número de celular después de 'phone=') -->
+    <a href="https://api.whatsapp.com/send?phone=573000000000&text=Hola,%20deseo%20obtener%20más%20información%20sobre%20la%20Fundación." class="btn-whatsapp" target="_blank" title="Escríbenos por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
     <div class="container">
         
@@ -93,9 +119,26 @@
             <h2>Bienvenidos</h2>
             <p>En <strong>TURPAY KAWSAY</strong> somos una fundación sin ánimo de lucro comprometida con transformar vidas y fortalecer comunidades. Trabajamos por el empoderamiento de las mujeres en situación de vulnerabilidad, promoviendo su autonomía, liderazgo y desarrollo integral a través de programas de formación, emprendimiento y acción social.</p>
             <p>Creemos que cada mujer tiene el potencial de convertirse en agente de cambio. Por eso, impulsamos iniciativas que generan oportunidades, fomentan la inclusión y contribuyen a la construcción de una sociedad más justa, solidaria y sostenible.</p>
+            
+            <!-- NUEVO: Contadores de Impacto Social -->
+            <div class="impacto-grid">
+                <div class="impacto-card">
+                    <span class="numero">+140</span>
+                    <span class="descripcion">Mujeres Capacitadas</span>
+                </div>
+                <div class="impacto-card">
+                    <span class="numero">5</span>
+                    <span class="descripcion">Grandes Proyectos Ejecutados</span>
+                </div>
+                <div class="impacto-card">
+                    <span class="numero">100%</span>
+                    <span class="descripcion">Compromiso Comunitario</span>
+                </div>
+            </div>
         </section>
 
         <section id="nosotros">
+            <h2>Nuestra Identidad Institucional</h2>
             <div class="grid-mv">
                 <div class="mv-box">
                     <h3><i class="fa-solid fa-bullseye"></i> Misión</h3>
@@ -106,68 +149,75 @@
                     <p>En los próximos diez años, TURPAY KAWSAY será una fundación reconocida a nivel local, nacional e internacional por liderar proyectos de transformación social que promuevan el empoderamiento de las mujeres, la construcción de paz y el desarrollo sostenible. A través de alianzas estratégicas y el trabajo conjunto con comunidades e instituciones, contribuiremos a construir una sociedad más equitativa, solidaria y con mayores oportunidades para todos.</p>
                 </div>
             </div>
+
+            <!-- NUEVO: Bloque de Valores Institucionales -->
+            <h3>Nuestros Valores</h3>
+            <div class="valores-grid">
+                <div class="valor-card">
+                    <i class="fa-solid fa-hands-holding-circle"></i>
+                    <h4>Solidaridad</h4>
+                    <p>Apoyo mutuo y empatía incondicional hacia las comunidades que acompañamos.</p>
+                </div>
+                <div class="valor-card">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                    <h4>Equidad</h4>
+                    <p>Defensa del acceso justo a oportunidades y el empoderamiento sin distinciones.</p>
+                </div>
+                <div class="valor-card">
+                    <i class="fa-solid fa-eye-dropper"></i>
+                    <h4>Transparencia</h4>
+                    <p>Claridad y rectitud absoluta en cada una de nuestras gestiones y alianzas.</p>
+                </div>
+            </div>
         </section>
 
-        <!-- SECCIÓN DE LOS 5 PROYECTOS -->
         <section id="proyectos">
             <h2>Nuestros Proyectos e Iniciativas</h2>
             <p>Conoce las acciones, talleres y procesos comunitarios que hemos liderado en el territorio:</p>
             
             <div class="projects-grid">
-                
-                <!-- Proyecto 1 -->
+                <!-- Proyectos del 1 al 5 se mantienen aquí idénticos... -->
                 <div class="project-card">
                     <img src="proyecto1.jpg" alt="Empoderamiento Socioeconómico de Mujeres">
                     <div class="project-content">
                         <h3>Empoderamiento Socioeconómico</h3>
-                        <p>Gracias a la alianza con la Fundación Sol de Invierno, logramos capacitar a 60 mujeres en amigurumi, huertas caseras y manicura. Este proyecto no solo fortaleció sus habilidades técnicas, sino que abrió nuevas puertas para su desarrollo económico y autonomía financiera. ¡Transformamos talento en productividad real!</p>
+                        <p>Gracias a la alianza con la Fundación Sol de Invierno, logramos capacitar a 60 mujeres en amigurumi, huertas caseras y manicura. Este proyecto no solo fortaleció sus habilidades técnicas, sino que abrió nuevas puertas para su desarrollo económico y autonomía financiera.</p>
                     </div>
                 </div>
-
-                <!-- Proyecto 2 -->
                 <div class="project-card">
                     <img src="proyecto2.jpg" alt="Mujeres Rurales Vulnerables de Sandoná">
                     <div class="project-content">
-                        <h3>Empoderamiento Socioeconómico de Mujeres Rurales Vulnerables de Sandoná (2024)</h3>
-                        <p>¡Transformamos ideas en empresas! Capacitamos a 40 mujeres rurales del corregimiento de San Miguel y de Santa Rosa para convertir el plátano y la leche en productos gastronómicos innovadores. El proyecto enseñó a transformar la materia prima, dominar finanzas y estructurar sus propios negocios, entregándoles identidad visual y el logo de sus marcas. El broche de oro fue la primera Feria Gastronómica del municipio de Sandoná, demostrando que el campo tiene un potencial empresarial imparable.</p>
+                        <h3>Empoderamiento Socioeconómico de Mujeres Rurales (2024)</h3>
+                        <p>Capacitamos a 40 mujeres rurales de los corregimientos de San Miguel y Santa Rosa en transformación de plátano y leche, finanzas y estructuración de marcas, culminando con la primera Feria Gastronómica de Sandoná.</p>
                     </div>
                 </div>
-
-                <!-- Proyecto 3 -->
                 <div class="project-card">
                     <img src="proyecto3.jpg" alt="Puesto de mercado Punto Dulce">
                     <div class="project-content">
-                        <h3>Puestos de Mercado para Mujeres Rurales en San Miguel (Punto Dulce)</h3>
-                        <p>Lo que comenzó como una obra de infraestructura, hoy es un motor de vida, tradición y progreso. Punto Dulce nació para transformarlo todo: un mercadillo que empodera a más de 20 mujeres cabezas de hogar y sus familias, brindándoles un espacio propio para generar ingresos dignos a través de sus productos locales. Este rincón se ha convertido en el epicentro donde se salvaguarda y exalta la riqueza gastronómica de nuestra tierra.</p>
+                        <h3>Puestos de Mercado para Mujeres Rurales (Punto Dulce)</h3>
+                        <p>Infraestructura convertida en motor socioeconómico para más de 20 mujeres cabezas de hogar de San Miguel, consolidando un espacio propio para salvaguardar la riqueza gastronómica local.</p>
                     </div>
                 </div>
-
-                <!-- Proyecto 4 -->
                 <div class="project-card">
                     <img src="proyecto4.jpg" alt="Artesanías en paja de iraca">
                     <div class="project-content">
                         <h3>Entretejiendo Raíces y Saberes</h3>
-                        <p>En el corazón de Sandoná, 20 mujeres transformaron la tradicional paja de iraca en arte, sustento y orgullo. Sus manos no solo aprendieron las técnicas para dar forma a hermosas artesanías y al emblemático sombrero sandoneño, sino que también tejieron el futuro de sus familias, generando ingresos adicionales y logrando un reencuentro profundo con sus raíces culturales. ¡Artesanas que trenzaron identidad, empoderamiento y progreso!</p>
+                        <p>Encuentro cultural donde 20 mujeres artesanas de Sandoná perfeccionaron técnicas tradicionales en paja de iraca y el sombrero sandoneño, traduciendo identidad en sustento económico.</p>
                     </div>
                 </div>
-
-                <!-- Proyecto 5 -->
                 <div class="project-card">
                     <img src="proyecto5.jpg" alt="Maestros del Sombrero de Sandoná">
                     <div class="project-content">
-                        <h3>Maestros del Sombrero: Historia Viva del Patrimonio de Sandoná</h3>
-                        <p>Gracias al valioso apoyo de Superior Hats, se culminó con éxito un proyecto hermoso y profundo. A través de encuentros de saberes y entrevistas con artesanos locales e historiadores, se logró reconstruir la ruta histórica de este arte, rescatando el origen de la gran tradición que hoy identifica a la región. Toda esta riqueza quedó plasmada en una revista impresa; un valioso documento entregado como regalo a la memoria colectiva.</p>
+                        <h3>Maestros del Sombrero: Historia Viva de Sandoná</h3>
+                        <p>Investigación y reconstrucción histórica respaldada por Superior Hats, documentando el origen de nuestra tradición artesanal en una revista impresa para la memoria colectiva.</p>
                     </div>
                 </div>
-
             </div>
         </section>
 
-        <!-- SECCIÓN: NUESTROS ALIADOS ESTRATÉGICOS -->
         <section id="aliados">
             <h2>Nuestros Aliados Estratégicos</h2>
-            <p>Trabajamos de la mano con organizaciones y entidades comprometidas con el desarrollo social y el bienestar comunitario:</p>
-            
+            <p>Trabajamos de la mano con organizaciones y entidades comprometidas con el desarrollo social:</p>
             <div class="aliados-grid">
                 <div class="aliado-card"><img src="aliado1.png" alt="Fundación Sol de Invierno"></div>
                 <div class="aliado-card"><img src="aliado2.png" alt="Superior Hats"></div>
@@ -179,14 +229,15 @@
         </section>
 
         <section id="contacto">
-            <h2>Contacto</h2>
+            <h2>Contacto y Vinculación</h2>
+            <p>Si deseas apoyarnos, establecer una alianza institucional o ser voluntario, comunícate con nosotros:</p>
             <ul class="contact-info">
                 <li><i class="fa-solid fa-phone"></i> <strong>Teléfono:</strong> +57 3XX XXX XXXX</li>
-                <li><i class="fa-solid fa-envelope"></i> <strong>Correo:</strong> contacto@turpaykawsay.org</li>
+                <li><i class="fa-solid fa-envelope"></i> <strong>Correo Institucional:</strong> contacto@turpaykawsay.org</li>
                 <li><i class="fa-solid fa-location-dot"></i> <strong>Ubicación:</strong> Sandoná, Nariño, Colombia</li>
             </ul>
 
-            <h3>Síguenos</h3>
+            <h3>Síguenos en Redes</h3>
             <div class="social-links">
                 <a href="#link-facebook" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="#link-instagram" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>

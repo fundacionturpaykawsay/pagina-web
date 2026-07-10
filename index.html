@@ -10,41 +10,42 @@
         /* Fondo general cambiado a Beige */
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; padding: 0; color: #3e322b; background-color: #f5f0e6; }
         
-        /* Encabezado Terracota con el Logo de Fondo como Marca de Agua sutil */
+        /* Encabezado con una Imagen de Fondo Completa (Banner) */
         header { 
             position: relative;
+            /* Se deja el color naranja de respaldo por si la imagen tarda en cargar */
             background-color: #843c22; 
+            background-image: url("banner.jpg"); /* <-- AQUÍ PON EL NOMBRE DE TU IMAGEN DE FONDO */
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover; /* Esto hace que la imagen cubra TODO el espacio naranja */
             color: #fff; 
             padding: 4rem 2rem; 
             text-align: center; 
             overflow: hidden;
         }
 
-        /* Capa para la marca de agua del logo en el fondo */
+        /* Una capa oscura muy sutil para que las letras blancas se sigan leyendo bien sobre la foto */
         header::before {
             content: "";
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background-image: url("logo (2).png");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: contain;
-            opacity: 0.08;
+            background-color: rgba(132, 60, 34, 0.4); /* Filtro terracota semi-transparente */
             z-index: 1;
         }
 
-        /* Asegura que el contenido del encabezado quede por encima de la marca de agua */
+        /* Asegura que el logo y el texto queden por encima de la foto de fondo */
         .header-content {
             position: relative;
             z-index: 2;
         }
         
-        /* Estilos para el Logo Principal */
+        /* Estilos para el Logo Principal Centrado */
         .logo-container { margin-bottom: 1.5rem; }
         .logo-container img { max-width: 160px; height: auto; border-radius: 50%; background: transparent; padding: 0; }
         
-        header h1 { margin: 0; font-size: 2.8rem; letter-spacing: 1px; text-shadow: 0 2px 4px rgba(0,0,0,0.15); }
-        header p { margin: 0.8rem 0 0 0; font-size: 1.3rem; opacity: 0.95; font-style: italic; text-shadow: 0 1px 3px rgba(0,0,0,0.15); }
+        header h1 { margin: 0; font-size: 2.8rem; letter-spacing: 1px; text-shadow: 0 2px 6px rgba(0,0,0,0.6); }
+        header p { margin: 0.8rem 0 0 0; font-size: 1.3rem; opacity: 0.95; font-style: italic; text-shadow: 0 2px 4px rgba(0,0,0,0.6); }
         
         /* Menú de navegación cambiado a Café Claro */
         nav { background-color: #bc9b83; padding: 0.8rem; text-align: center; position: sticky; top: 0; z-index: 1000; }
@@ -92,6 +93,7 @@
     <header>
         <div class="header-content">
             <div class="logo-container">
+                <!-- Mantiene tu logo circular e intacto en el centro -->
                 <img src="logo (2).png" alt="Logo Fundación Turpay Kawsay">
             </div>
             <h1>Fundación Turpay Kawsay</h1>
@@ -148,7 +150,7 @@
                     <img src="proyecto2.jpg" alt="Empoderamiento Socioeconómico de Mujeres Rurales">
                     <div class="project-content">
                         <h3>Empoderamiento Socioeconómico de Mujeres Rurales Vulnerables de Sandoná (2024)</h3>
-                        <p>¡Transformamos ideas en empresas! Capacitamos a 40 mujeres rurales del corregimiento de San Miguel y de Santa Rosa para convertir el plátano y la leche en productos gastronómicos innovadores. El proyecto enseñó a transformar la materia prima, dominar finanzas y estructurar sus propios negocios, entregándoles identidad visual y el logo de sus marcas. El broche de oro fue la primera Feria Gastronómica del municipio de Sandoná, demostrando que el campo tiene un potencial empresarial imparable.</p>
+                        <p>¡Transformamos ideas en empresas! Capacitamos a 40 mujeres rurales del corregimiento de San Miguel y de Santa Rosa para convertir el plátano y la leche en productos gastronomómicos innovadores. El proyecto enseñó a transformar la materia prima, dominar finanzas y estructurar sus propios negocios, entregándoles identidad visual y el logo de sus marcas. El broche de oro fue la primera Feria Gastronómica del municipio de Sandoná, demostrando que el campo tiene un potencial empresarial imparable.</p>
                     </div>
                 </div>
 
@@ -157,7 +159,7 @@
                     <img src="proyecto3.jpg" alt="Punto Dulce">
                     <div class="project-content">
                         <h3>Puestos de Mercado para Mujeres Rurales en San Miguel (Punto Dulce)</h3>
-                        <p>Lo que comenzó como una obra de infraestructura, hoy es un motor de vida, tradición y progreso. Punto Dulce nació para transformarlo todo: un mercadillo que empodera a más de 20 mujeres cabezas de hogar y sus familias, brindándoles un espacio propio para generar ingresos dignos a través de sus productos locales. Este rincón se ha convertido en el epicentro donde se salvaguarda y exalta la riqueza gastronómica de nuestra tierra.</p>
+                        <p>Lo que comenzó como una obra de infraestructura, hoy es un motor de vida, tradición y progreso. Punto Dulce nació para transformarlo todo: un mercadillo que empodera a más de 20 mujeres cabezas de hogar y sus familias, brindándoles un espacio propio para generar ingresos dignos a través de sus productos locales. Este rincón se ha convertido en el epicentro donde se salvaguarda y exalta la riqueza gastronomómica de nuestra tierra.</p>
                     </div>
                 </div>
 

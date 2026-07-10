@@ -10,15 +10,41 @@
         /* Fondo general cambiado a Beige */
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; padding: 0; color: #3e322b; background-color: #f5f0e6; }
         
-        /* Encabezado Terracota */
-        header { background-color: #843c22; color: #fff; padding: 3rem 2rem; text-align: center; }
+        /* Encabezado Terracota con el Logo de Fondo como Marca de Agua sutil */
+        header { 
+            position: relative;
+            background-color: #843c22; 
+            color: #fff; 
+            padding: 4rem 2rem; 
+            text-align: center; 
+            overflow: hidden;
+        }
+
+        /* Capa para la marca de agua del logo en el fondo */
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url('logo.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            opacity: 0.08; /* Ajusta la sutileza del logo de fondo (0.08 es 8% de visibilidad) */
+            z-index: 1;
+        }
+
+        /* Asegura que el contenido del encabezado quede por encima de la marca de agua */
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
         
-        /* Estilos para el Logo - Ahora transparente y sin bordes blancos */
-        .logo-container { margin-bottom: 1rem; }
+        /* Estilos para el Logo Principal */
+        .logo-container { margin-bottom: 1.5rem; }
         .logo-container img { max-width: 160px; height: auto; border-radius: 50%; background: transparent; padding: 0; }
         
-        header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 1px; }
-        header p { margin: 0.5rem 0 0 0; font-size: 1.2rem; opacity: 0.9; font-style: italic; }
+        header h1 { margin: 0; font-size: 2.8rem; letter-spacing: 1px; text-shadow: 0 2px 4px rgba(0,0,0,0.15); }
+        header p { margin: 0.8rem 0 0 0; font-size: 1.3rem; opacity: 0.95; font-style: italic; text-shadow: 0 1px 3px rgba(0,0,0,0.15); }
         
         /* Menú de navegación cambiado a Café Claro */
         nav { background-color: #bc9b83; padding: 0.8rem; text-align: center; position: sticky; top: 0; z-index: 1000; }
@@ -64,11 +90,13 @@
 <body>
 
     <header>
-        <div class="logo-container">
-            <img src="logo.png" alt="Logo Fundación Turpay Kawsay">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="logo.png" alt="Logo Fundación Turpay Kawsay">
+            </div>
+            <h1>Fundación Turpay Kawsay</h1>
+            <p>Transformando vidas, fortaleciendo comunidades.</p>
         </div>
-        <h1>Fundación Turpay Kawsay</h1>
-        <p>Transformando vidas, fortaleciendo comunidades.</p>
     </header>
 
     <nav>
@@ -120,7 +148,7 @@
                     <img src="proyecto2.jpg" alt="Empoderamiento Socioeconómico de Mujeres Rurales">
                     <div class="project-content">
                         <h3>Empoderamiento Socioeconómico de Mujeres Rurales Vulnerables de Sandoná (2024)</h3>
-                        <p>¡Transformamos ideas en empresas! Capacitamos a 40 mujeres rurales del corregimiento de San Miguel y de Santa Rosa para convertir el plátano y la leche en productos gastronómicos innovadores. El proyecto enseñó a transformar la materia prima, dominar finanzas y estructurar sus propios negocios, entregándoles identidad visual y el logo de sus marcas. El broche de oro fue la primera Feria Gastronómica del municipio de Sandoná, demostrando que el campo tiene un potencial empresarial imparable.</p>
+                        <p>¡Transformamos ideas en empresas! Capacitamos a 40 mujeres rurales del corregimiento de San Miguel y de Santa Rosa para convertir el plátano y la leche en productos gastronomónicos innovadores. El proyecto enseñó a transformar la materia prima, dominar finanzas y estructurar sus propios negocios, entregándoles identidad visual y el logo de sus marcas. El broche de oro fue la primera Feria Gastronómica del municipio de Sandoná, demostrando que el campo tiene un potencial empresarial imparable.</p>
                     </div>
                 </div>
 
@@ -194,4 +222,4 @@
     </footer>
 
 </body>
-</html
+</html>

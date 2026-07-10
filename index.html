@@ -32,7 +32,6 @@
         nav .nav-container { display: inline-flex; justify-content: center; }
         nav a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: 500; display: inline-block; padding: 1rem 0; position: relative; transition: color 0.3s; }
         nav a:hover { color: #5c4033; }
-        /* Línea decorativa sutil al pasar el mouse */
         nav a::after { content: ''; display: block; width: 0; height: 3px; background: #843c22; transition: width .3s; position: absolute; bottom: 0; left: 0; }
         nav a:hover::after { width: 100%; }
         
@@ -51,27 +50,45 @@
         .mv-box h3 { margin-top: 0; color: #843c22; display: flex; align-items: center; }
         .mv-box h3 i { margin-right: 10px; }
 
-        /* NUEVA SECCIÓN: VALORES */
+        /* Sección de Valores */
         .valores-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 1.5rem; }
         .valor-card { text-align: center; padding: 1.5rem; background: #fff; border: 1px solid #ebdcd0; border-radius: 6px; }
         .valor-card i { font-size: 2rem; color: #dfa842; margin-bottom: 0.5rem; }
         .valor-card h4 { margin: 0.5rem 0; color: #843c22; text-transform: uppercase; font-size: 1rem; }
         .valor-card p { margin: 0; font-size: 0.9rem; color: #60524a; }
 
-        /* NUEVA SECCIÓN: CONTADORES DE IMPACTO */
+        /* Contadores de Impacto */
         .impacto-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center; margin-top: 1.5rem; }
         .impacto-card { background: #843c22; color: #fff; padding: 2rem 1.5rem; border-radius: 8px; }
         .impacto-card .numero { font-size: 2.5rem; font-weight: bold; color: #dfa842; display: block; line-height: 1; margin-bottom: 0.5rem; }
         .impacto-card .descripcion { font-size: 0.95rem; font-weight: 500; }
 
-        /* --- SECCIÓN 5 PROYECTOS --- */
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 1.5rem; }
+        /* --- SECCIÓN MEJORADA DE PROYECTOS --- */
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 2rem; }
         @media (max-width: 360px) { .projects-grid { grid-template-columns: 1fr; } }
-        .project-card { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 3px 6px rgba(0,0,0,0.08); border: 1px solid #ebdcd0; display: flex; flex-direction: column; }
-        .project-card img { width: 100%; height: 210px; object-fit: cover; }
-        .project-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
-        .project-content h3 { margin-top: 0; color: #843c22; font-size: 1.15rem; text-transform: uppercase; margin-bottom: 0.8rem; line-height: 1.4; }
-        .project-content p { font-size: 0.95rem; color: #60524a; margin-bottom: 0; text-align: justify; }
+        
+        .project-card { 
+            background: #fff; 
+            border-radius: 12px; 
+            overflow: hidden; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+            border: 1px solid #ebdcd0; 
+            display: flex; 
+            flex-direction: column; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        /* Efecto profesional al pasar el mouse por encima */
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 20px rgba(132, 60, 34, 0.12);
+            border-color: #dfa842;
+        }
+        
+        .project-card img { width: 100%; height: 220px; object-fit: cover; }
+        .project-content { padding: 1.8rem; flex-grow: 1; display: flex; flex-direction: column; }
+        .project-content h3 { margin-top: 0; color: #843c22; font-size: 1.2rem; text-transform: uppercase; margin-bottom: 1rem; line-height: 1.4; border-bottom: 1px dashed #ebdcd0; padding-bottom: 0.5rem; }
+        .project-content p { font-size: 0.98rem; color: #4e4037; margin-bottom: 1rem; text-align: justify; line-height: 1.6; }
+        .project-content p:last-child { margin-bottom: 0; }
 
         /* --- SECCIÓN ALIADOS --- */
         .aliados-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 20px; margin-top: 1.5rem; align-items: center; justify-items: center; }
@@ -86,7 +103,7 @@
         .social-links a { display: inline-block; font-size: 1.5rem; color: #fff; background-color: #843c22; width: 50px; height: 50px; line-height: 50px; text-align: center; border-radius: 50%; transition: all 0.3s ease; }
         .social-links a:hover { background-color: #dfa842; transform: translateY(-3px); }
         
-        /* BOTÓN FLOTANTE DE WHATSAPP */
+        /* Botón flotante de WhatsApp */
         .btn-whatsapp { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: #fff; width: 60px; height: 60px; border-radius: 50%; text-align: center; font-size: 30px; box-shadow: 0px 4px 10px rgba(0,0,0,0.3); z-index: 1000; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: transform 0.3s; }
         .btn-whatsapp:hover { transform: scale(1.1); color: #fff; }
 
@@ -96,7 +113,6 @@
 </head>
 <body>
 
-    <!-- Cabecera limpia con tu imagen original de fondo -->
     <header></header>
 
     <nav>
@@ -108,8 +124,8 @@
         </div>
     </nav>
 
-    <!-- Botón flotante directo a WhatsApp (Cambia el número de celular después de 'phone=') -->
-    <a href="https://api.whatsapp.com/send?phone=3163800428&text=Hola,%20deseo%20obtener%20más%20información%20sobre%20la%20Fundación." class="btn-whatsapp" target="_blank" title="Escríbenos por WhatsApp">
+    <!-- Botón flotante directo a WhatsApp -->
+    <a href="https://api.whatsapp.com/send?phone=573000000000&text=Hola,%20deseo%20obtener%20más%20información%20sobre%20la%20Fundación." class="btn-whatsapp" target="_blank" title="Escríbenos por WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
@@ -120,7 +136,6 @@
             <p>En <strong>TURPAY KAWSAY</strong> somos una fundación sin ánimo de lucro comprometida con transformar vidas y fortalecer comunidades. Trabajamos por el empoderamiento de las mujeres en situación de vulnerabilidad, promoviendo su autonomía, liderazgo y desarrollo integral a través de programas de formación, emprendimiento y acción social.</p>
             <p>Creemos que cada mujer tiene el potencial de convertirse en agente de cambio. Por eso, impulsamos iniciativas que generan oportunidades, fomentan la inclusión y contribuyen a la construcción de una sociedad más justa, solidaria y sostenible.</p>
             
-            <!-- NUEVO: Contadores de Impacto Social -->
             <div class="impacto-grid">
                 <div class="impacto-card">
                     <span class="numero">+140</span>
@@ -150,7 +165,6 @@
                 </div>
             </div>
 
-            <!-- NUEVO: Bloque de Valores Institucionales -->
             <h3>Nuestros Valores</h3>
             <div class="valores-grid">
                 <div class="valor-card">
@@ -171,53 +185,69 @@
             </div>
         </section>
 
+        <!-- SECCIÓN DE PROYECTOS REFORMADA CON LOS TEXTOS COMPLETOS -->
         <section id="proyectos">
             <h2>Nuestros Proyectos e Iniciativas</h2>
             <p>Conoce las acciones, talleres y procesos comunitarios que hemos liderado en el territorio:</p>
             
             <div class="projects-grid">
-                <!-- Proyectos del 1 al 5 se mantienen aquí idénticos... -->
+                
+                <!-- Proyecto 1 -->
                 <div class="project-card">
                     <img src="proyecto1.jpg" alt="Empoderamiento Socioeconómico de Mujeres">
                     <div class="project-content">
                         <h3>Empoderamiento Socioeconómico</h3>
-                        <p>Gracias a la alianza con la Fundación Sol de Invierno, logramos capacitar a 60 mujeres en amigurumi, huertas caseras y manicura. Este proyecto no solo fortaleció sus habilidades técnicas, sino que abrió nuevas puertas para su desarrollo económico y autonomía financiera.</p>
+                        <p>Gracias a la alianza con la Fundación Sol de Invierno, logramos capacitar a 60 mujeres en amigurumi, huertas caseras y manicura. Este proyecto no solo fortaleció sus habilidades técnicas, sino que abrió nuevas puertas para su desarrollo económico y autonomía financiera. ¡Transformamos talento en productividad real!</p>
                     </div>
                 </div>
+
+                <!-- Proyecto 2 -->
                 <div class="project-card">
                     <img src="proyecto2.jpg" alt="Mujeres Rurales Vulnerables de Sandoná">
                     <div class="project-content">
-                        <h3>Empoderamiento Socioeconómico de Mujeres Rurales (2024)</h3>
-                        <p>Capacitamos a 40 mujeres rurales de los corregimientos de San Miguel y Santa Rosa en transformación de plátano y leche, finanzas y estructuración de marcas, culminando con la primera Feria Gastronómica de Sandoná.</p>
+                        <h3>Empoderamiento Socioeconómico de Mujeres Rurales Vulnerables del Municipio de Sandoná-Nariño (2024)</h3>
+                        <p>¡Transformamos ideas en empresas! Capacitamos a 40 mujeres rurales del corregimiento de San Miguel y del de Santa Rosa del Municipio de Sandoná para convertir el plátano y la leche en productos gastronómicos innovadores. El proyecto no solo les enseñó a transformar la materia prima, sino también a dominar sus finanzas y a estructurar sus propios negocios, entregándoles incluso la identidad visual y el logo de sus marcas.</p>
+                        <p>El gran broche de oro fue la primera Feria Gastronómica del municipio de Sandoná, el escenario donde estas mujeres demostraron que el campo tiene un potencial empresarial imparable.</p>
                     </div>
                 </div>
+
+                <!-- Proyecto 3 -->
                 <div class="project-card">
                     <img src="proyecto3.jpg" alt="Puesto de mercado Punto Dulce">
                     <div class="project-content">
-                        <h3>Puestos de Mercado para Mujeres Rurales (Punto Dulce)</h3>
-                        <p>Infraestructura convertida en motor socioeconómico para más de 20 mujeres cabezas de hogar de San Miguel, consolidando un espacio propio para salvaguardar la riqueza gastronómica local.</p>
+                        <h3>Construcción de Puestos de Mercado para Mujeres Rurales Vulnerables en San Miguel - Sandoná (Punto Dulce)</h3>
+                        <p>Lo que comenzó como una obra de infraestructura en Sandoná, hoy es un motor de vida, tradición y progreso. Punto Dulce nació para transformarlo todo: un mercadillo que hoy empodera a más de 20 mujeres cabezas de hogar y sus familias, brindándoles un espacio propio para generar ingresos dignos a través de sus productos locales.</p>
+                        <p>Este rincón no solo activa la economía de la región, sino que se ha convertido en el epicentro donde se salvaguarda y exalta la riqueza gastronómica de nuestra tierra. Cada visita es un encuentro con el sabor, el esfuerzo y el talento de mujeres que tejen el sustento de sus hogares.</p>
+                        <p><strong>¡Punto Dulce está más vivo que nunca!</strong> Es el reflejo de que cuando se apoya a nuestras mujeres, se transforma a toda una comunidad.</p>
                     </div>
                 </div>
+
+                <!-- Proyecto 4 -->
                 <div class="project-card">
                     <img src="proyecto4.jpg" alt="Artesanías en paja de iraca">
                     <div class="project-content">
                         <h3>Entretejiendo Raíces y Saberes</h3>
-                        <p>Encuentro cultural donde 20 mujeres artesanas de Sandoná perfeccionaron técnicas tradicionales en paja de iraca y el sombrero sandoneño, traduciendo identidad en sustento económico.</p>
+                        <p>En el corazón de Sandoná, 20 mujeres transformaron la tradicional paja de iraca en arte, sustento y orgullo. A través de este proyecto, sus manos no solo aprendieron las técnicas para dar forma a hermosas artesanías y al emblemático sombrero sandoneño, sino que también tejieron el futuro de sus familias.</p>
+                        <p>Esta iniciativa logró reactivar la economía de sus hogares, generando ingresos adicionales que mejoraron su calidad de vida. Más allá del beneficio económico, el proyecto significó un reencuentro profundo con sus raíces culturales, asegurando que el legado de sus ancestros siga vivo. <strong>¡Artesanas que trenzaron identidad, empoderamiento y progreso!</strong></p>
                     </div>
                 </div>
+
+                <!-- Proyecto 5 -->
                 <div class="project-card">
                     <img src="proyecto5.jpg" alt="Maestros del Sombrero de Sandoná">
                     <div class="project-content">
-                        <h3>Maestros del Sombrero: Historia Viva de Sandoná</h3>
-                        <p>Investigación y reconstrucción histórica respaldada por Superior Hats, documentando el origen de nuestra tradición artesanal en una revista impresa para la memoria colectiva.</p>
+                        <h3>Maestros del Sombrero: Historia Viva del Patrimonio Artesanal de Sandoná</h3>
+                        <p>Gracias al valioso apoyo de Superior Hats, se culminó con éxito un proyecto hermoso y profundo en el municipio de Sandoná. A través de enriquecedores encuentros de saberes y entrevistas con los artesanos locales e historiadores, se logró reconstruir la ruta histórica de este arte, rescatando el cuándo, el cómo y el dónde nació la gran tradición que hoy identifica a la región.</p>
+                        <p>Toda esta riqueza cultural quedó plasmada en una hermosa revista impresa; un valioso documento histórico que hoy se entrega como regalo a Sandoná y a su memoria colectiva. Con esta iniciativa, no solo se salvaguardaron las raíces, sino que se dejó una huella imborrable para las futuras generaciones de tejedores. <strong>¡Que el orgullo por la iraca siga recorriendo el mundo!</strong></p>
                     </div>
                 </div>
+
             </div>
         </section>
 
+        <!-- SECCIÓN: NUESTROS ALIADOS ESTRATÉGICOS -->
         <section id="aliados">
             <h2>Nuestros Aliados Estratégicos</h2>
-            <p>Trabajamos de la mano con organizaciones y entidades comprometidas con el desarrollo social:</p>
             <div class="aliados-grid">
                 <div class="aliado-card"><img src="aliado1.png" alt="Fundación Sol de Invierno"></div>
                 <div class="aliado-card"><img src="aliado2.png" alt="Superior Hats"></div>
@@ -230,20 +260,19 @@
 
         <section id="contacto">
             <h2>Contacto y Vinculación</h2>
-            <p>Si deseas apoyarnos, establecer una alianza institucional o ser voluntario, comunícate con nosotros:</p>
             <ul class="contact-info">
-                <li><i class="fa-solid fa-phone"></i> <strong>Teléfono:</strong> +57 3163800428</li>
-                <li><i class="fa-solid fa-envelope"></i> <strong>Correo Institucional:</strong> turpaykawsay@gmail.com</li>
+                <li><i class="fa-solid fa-phone"></i> <strong>Teléfono:</strong> +57 3XX XXX XXXX</li>
+                <li><i class="fa-solid fa-envelope"></i> <strong>Correo Institucional:</strong> contacto@turpaykawsay.org</li>
                 <li><i class="fa-solid fa-location-dot"></i> <strong>Ubicación:</strong> Sandoná, Nariño, Colombia</li>
             </ul>
 
             <h3>Síguenos en Redes</h3>
             <div class="social-links">
-                <a href="https://www.facebook.com/fundacionturpaykawsay" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/fundacionturpaykawsay" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#https://www.tiktok.com/@fundacionturpaykawsay" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-                <a href="https://www.youtube.com/@TurpayKawsay" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                
+                <a href="#link-facebook" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#link-instagram" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#link-tiktok" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#link-youtube" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#link-threads" target="_blank" title="Threads"><i class="fa-brands fa-threads"></i></a>
             </div>
         </section>
 

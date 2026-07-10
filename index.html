@@ -14,33 +14,33 @@
         header { 
             position: relative;
             background-color: #f5f0e6; 
-            /* RECUERDA: El archivo de la foto debe llamarse exactamente banner.jpg y estar en la misma carpeta en GitHub */
-            background-image: url("banner.jpg"); 
+            /* CORREGIDO: Ahora busca exactamente tu archivo banner.png */
+            background-image: url("banner.png"); 
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover; 
-            padding: 5rem 2rem; 
+            padding: 6rem 2rem; 
             text-align: center; 
             overflow: hidden;
         }
 
-        /* Capa clara semi-transparente para que el fondo se vea iluminado y el texto sea legible */
+        /* Filtro blanco semi-transparente para aclarar tu imagen y que el texto sea legible */
         header::before {
             content: "";
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background-color: rgba(245, 240, 230, 0.75); /* Filtro beige claro */
+            background-color: rgba(255, 255, 255, 0.75); /* Aclara tu foto un 75% */
             z-index: 1;
         }
 
-        /* Asegura que el texto quede flotando por encima de la foto de fondo y del filtro */
+        /* Asegura que el texto quede flotando por encima de tu foto y del filtro */
         .header-content {
             position: relative;
             z-index: 2;
         }
         
-        header h1 { margin: 0; font-size: 2.8rem; letter-spacing: 1px; color: #3e322b; text-shadow: 1px 1px 2px rgba(255,255,255,0.8); }
-        header p { margin: 0.8rem 0 0 0; font-size: 1.3rem; font-style: italic; color: #60524a; text-shadow: 1px 1px 2px rgba(255,255,255,0.8); }
+        header h1 { margin: 0; font-size: 3rem; letter-spacing: 1px; color: #3e322b; text-shadow: 1px 1px 1px rgba(255,255,255,0.9); }
+        header p { margin: 0.8rem 0 0 0; font-size: 1.4rem; font-style: italic; color: #5c4033; text-shadow: 1px 1px 1px rgba(255,255,255,0.9); }
         
         /* Menú de navegación cambiado a Café Claro */
         nav { background-color: #bc9b83; padding: 0.8rem; text-align: center; position: sticky; top: 0; z-index: 1000; }
@@ -55,8 +55,8 @@
         .grid-mv { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         @media (max-width: 768px) { 
             .grid-mv { grid-template-columns: 1fr; } 
-            header h1 { font-size: 2rem; }
-            header p { font-size: 1.1rem; }
+            header h1 { font-size: 2.2rem; }
+            header p { font-size: 1.2rem; }
             section { padding: 1.5rem; }
         }
         .mv-box { background: #faf8f5; padding: 1.5rem; border-left: 4px solid #dfa842; border-radius: 0 4px 4px 0; }
@@ -222,5 +222,3 @@
 
 </body>
 </html>
-
-

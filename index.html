@@ -10,28 +10,37 @@
         /* Fondo general cambiado a Beige */
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; padding: 0; color: #3e322b; background-color: #f5f0e6; }
         
-        /* Encabezado con Fondo Claro (Sin naranja) */
+        /* Encabezado con Imagen de Fondo Clara */
         header { 
             position: relative;
             background-color: #f5f0e6; 
-            background-image: url("banner.jpg"); /* <-- Aquí puedes mantener tu imagen de fondo si lo deseas */
+            /* RECUERDA: El archivo de la foto debe llamarse exactamente banner.jpg y estar en la misma carpeta en GitHub */
+            background-image: url("banner.jpg"); 
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover; 
-            color: #3e322b; /* Texto oscuro para fondo claro */
-            padding: 4rem 2rem; 
+            padding: 5rem 2rem; 
             text-align: center; 
             overflow: hidden;
         }
 
-        /* Asegura que el texto quede bien posicionado */
+        /* Capa clara semi-transparente para que el fondo se vea iluminado y el texto sea legible */
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: rgba(245, 240, 230, 0.75); /* Filtro beige claro */
+            z-index: 1;
+        }
+
+        /* Asegura que el texto quede flotando por encima de la foto de fondo y del filtro */
         .header-content {
             position: relative;
             z-index: 2;
         }
         
-        header h1 { margin: 0; font-size: 2.8rem; letter-spacing: 1px; color: #3e322b; }
-        header p { margin: 0.8rem 0 0 0; font-size: 1.3rem; opacity: 0.95; font-style: italic; color: #60524a; }
+        header h1 { margin: 0; font-size: 2.8rem; letter-spacing: 1px; color: #3e322b; text-shadow: 1px 1px 2px rgba(255,255,255,0.8); }
+        header p { margin: 0.8rem 0 0 0; font-size: 1.3rem; font-style: italic; color: #60524a; text-shadow: 1px 1px 2px rgba(255,255,255,0.8); }
         
         /* Menú de navegación cambiado a Café Claro */
         nav { background-color: #bc9b83; padding: 0.8rem; text-align: center; position: sticky; top: 0; z-index: 1000; }

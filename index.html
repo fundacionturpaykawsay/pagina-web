@@ -10,61 +10,53 @@
         /* Fondo general cambiado a Beige */
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; padding: 0; color: #3e322b; background-color: #f5f0e6; }
         
-        /* Encabezado con una Imagen de Fondo Completa (Banner) */
+        /* Encabezado con Fondo Claro (Sin naranja) */
         header { 
             position: relative;
-            /* Se deja el color naranja de respaldo por si la imagen tarda en cargar */
-            background-color: #843c22; 
-            background-image: url("banner.jpg"); /* <-- AQUÍ PON EL NOMBRE DE TU IMAGEN DE FONDO */
+            background-color: #f5f0e6; 
+            background-image: url("banner.jpg"); /* <-- Aquí puedes mantener tu imagen de fondo si lo deseas */
             background-repeat: no-repeat;
             background-position: center;
-            background-size: cover; /* Esto hace que la imagen cubra TODO el espacio naranja */
-            color: #fff; 
+            background-size: cover; 
+            color: #3e322b; /* Texto oscuro para fondo claro */
             padding: 4rem 2rem; 
             text-align: center; 
             overflow: hidden;
         }
 
-        /* Una capa oscura muy sutil para que las letras blancas se sigan leyendo bien sobre la foto */
-        header::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-color: rgba(132, 60, 34, 0.4); /* Filtro terracota semi-transparente */
-            z-index: 1;
-        }
-
-        /* Asegura que el logo y el texto queden por encima de la foto de fondo */
+        /* Asegura que el texto quede bien posicionado */
         .header-content {
             position: relative;
             z-index: 2;
         }
         
-        /* Estilos para el Logo Principal Centrado */
-        .logo-container { margin-bottom: 1.5rem; }
-        .logo-container img { max-width: 160px; height: auto; border-radius: 50%; background: transparent; padding: 0; }
-        
-        header h1 { margin: 0; font-size: 2.8rem; letter-spacing: 1px; text-shadow: 0 2px 6px rgba(0,0,0,0.6); }
-        header p { margin: 0.8rem 0 0 0; font-size: 1.3rem; opacity: 0.95; font-style: italic; text-shadow: 0 2px 4px rgba(0,0,0,0.6); }
+        header h1 { margin: 0; font-size: 2.8rem; letter-spacing: 1px; color: #3e322b; }
+        header p { margin: 0.8rem 0 0 0; font-size: 1.3rem; opacity: 0.95; font-style: italic; color: #60524a; }
         
         /* Menú de navegación cambiado a Café Claro */
         nav { background-color: #bc9b83; padding: 0.8rem; text-align: center; position: sticky; top: 0; z-index: 1000; }
-        nav a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: 500; }
+        nav a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: 500; display: inline-block; padding: 5px 0; }
         nav a:hover { color: #5c4033; }
         
-        .container { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; }
+        .container { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; box-sizing: border-box; }
         section { background: #fff; padding: 2.5rem; margin-bottom: 2rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(62,50,43,0.05); }
         
-        h2 { color: #843c22; border-bottom: 2px solid #ebdcd0; padding-bottom: 0.5rem; }
+        h2 { color: #843c22; border-bottom: 2px solid #ebdcd0; padding-bottom: 0.5rem; margin-top: 0; }
         
         .grid-mv { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        @media (max-width: 768px) { .grid-mv { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { 
+            .grid-mv { grid-template-columns: 1fr; } 
+            header h1 { font-size: 2rem; }
+            header p { font-size: 1.1rem; }
+            section { padding: 1.5rem; }
+        }
         .mv-box { background: #faf8f5; padding: 1.5rem; border-left: 4px solid #dfa842; border-radius: 0 4px 4px 0; }
         .mv-box h3 { margin-top: 0; color: #843c22; display: flex; align-items: center; }
         .mv-box h3 i { margin-right: 10px; }
 
         /* --- SECCIÓN 5 PROYECTOS --- */
         .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 1.5rem; }
+        @media (max-width: 360px) { .projects-grid { grid-template-columns: 1fr; } }
         .project-card { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 3px 6px rgba(0,0,0,0.08); border: 1px solid #ebdcd0; display: flex; flex-direction: column; }
         .project-card img { width: 100%; height: 210px; object-fit: cover; }
         .project-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
@@ -84,7 +76,7 @@
         .social-links a { display: inline-block; font-size: 1.5rem; color: #fff; background-color: #843c22; width: 50px; height: 50px; line-height: 50px; text-align: center; border-radius: 50%; transition: all 0.3s ease; }
         .social-links a:hover { background-color: #dfa842; transform: translateY(-3px); }
         
-        /* Footer cambiado a juego con la navegación */
+        /* Footer */
         footer { text-align: center; padding: 1.5rem; background-color: #5c4033; color: #fff; margin-top: 3rem; }
     </style>
 </head>
@@ -92,10 +84,6 @@
 
     <header>
         <div class="header-content">
-            <div class="logo-container">
-                <!-- Mantiene tu logo circular e intacto en el centro -->
-                <img src="logo (2).png" alt="Logo Fundación Turpay Kawsay">
-            </div>
             <h1>Fundación Turpay Kawsay</h1>
             <p>Transformando vidas, fortaleciendo comunidades.</p>
         </div>
@@ -138,7 +126,7 @@
                 
                 <!-- Proyecto 1 -->
                 <div class="project-card">
-                    <img src="proyecto1.jpg" alt="Empoderamiento Socioeconómico">
+                    <img src="proyecto1.jpg" alt="Empoderamiento Socioeconómico de Mujeres">
                     <div class="project-content">
                         <h3>Empoderamiento Socioeconómico</h3>
                         <p>Gracias a la alianza con la Fundación Sol de Invierno, logramos capacitar a 60 mujeres en amigurumi, huertas caseras y manicura. Este proyecto no solo fortaleció sus habilidades técnicas, sino que abrió nuevas puertas para su desarrollo económico y autonomía financiera. ¡Transformamos talento en productividad real!</p>
@@ -147,7 +135,7 @@
 
                 <!-- Proyecto 2 -->
                 <div class="project-card">
-                    <img src="proyecto2.jpg" alt="Empoderamiento Socioeconómico de Mujeres Rurales">
+                    <img src="proyecto2.jpg" alt="Mujeres Rurales Vulnerables de Sandoná">
                     <div class="project-content">
                         <h3>Empoderamiento Socioeconómico de Mujeres Rurales Vulnerables de Sandoná (2024)</h3>
                         <p>¡Transformamos ideas en empresas! Capacitamos a 40 mujeres rurales del corregimiento de San Miguel y de Santa Rosa para convertir el plátano y la leche en productos gastronomómicos innovadores. El proyecto enseñó a transformar la materia prima, dominar finanzas y estructurar sus propios negocios, entregándoles identidad visual y el logo de sus marcas. El broche de oro fue la primera Feria Gastronómica del municipio de Sandoná, demostrando que el campo tiene un potencial empresarial imparable.</p>
@@ -156,7 +144,7 @@
 
                 <!-- Proyecto 3 -->
                 <div class="project-card">
-                    <img src="proyecto3.jpg" alt="Punto Dulce">
+                    <img src="proyecto3.jpg" alt="Puesto de mercado Punto Dulce">
                     <div class="project-content">
                         <h3>Puestos de Mercado para Mujeres Rurales en San Miguel (Punto Dulce)</h3>
                         <p>Lo que comenzó como una obra de infraestructura, hoy es un motor de vida, tradición y progreso. Punto Dulce nació para transformarlo todo: un mercadillo que empodera a más de 20 mujeres cabezas de hogar y sus familias, brindándoles un espacio propio para generar ingresos dignos a través de sus productos locales. Este rincón se ha convertido en el epicentro donde se salvaguarda y exalta la riqueza gastronomómica de nuestra tierra.</p>
@@ -165,7 +153,7 @@
 
                 <!-- Proyecto 4 -->
                 <div class="project-card">
-                    <img src="proyecto4.jpg" alt="Entretejiendo Raíces y Saberes">
+                    <img src="proyecto4.jpg" alt="Artesanías en paja de iraca">
                     <div class="project-content">
                         <h3>Entretejiendo Raíces y Saberes</h3>
                         <p>En el corazón de Sandoná, 20 mujeres transformaron la tradicional paja de iraca en arte, sustento y orgullo. Sus manos no solo aprendieron las técnicas para dar forma a hermosas artesanías y al emblemático sombrero sandoneño, sino que también tejieron el futuro de sus familias, generando ingresos adicionales y logrando un reencuentro profundo con sus raíces culturales. ¡Artesanas que trenzaron identidad, empoderamiento y progreso!</p>
@@ -174,7 +162,7 @@
 
                 <!-- Proyecto 5 -->
                 <div class="project-card">
-                    <img src="proyecto5.jpg" alt="Maestros del Sombrero">
+                    <img src="proyecto5.jpg" alt="Maestros del Sombrero de Sandoná">
                     <div class="project-content">
                         <h3>Maestros del Sombrero: Historia Viva del Patrimonio de Sandoná</h3>
                         <p>Gracias al valioso apoyo de Superior Hats, se culminó con éxito un proyecto hermoso y profundo. A través de encuentros de saberes y entrevistas con artesanos locales e historiadores, se logró reconstruir la ruta histórica de este arte, rescatando el origen de la gran tradición que hoy identifica a la región. Toda esta riqueza quedó plasmada en una revista impresa; un valioso documento entregado como regalo a la memoria colectiva.</p>
@@ -190,8 +178,8 @@
             <p>Trabajamos de la mano con organizaciones y entidades comprometidas con el desarrollo social y el bienestar comunitario:</p>
             
             <div class="aliados-grid">
-                <div class="aliado-card"><img src="aliado1.png" alt="Aliado 1"></div>
-                <div class="aliado-card"><img src="aliado2.png" alt="Aliado 2"></div>
+                <div class="aliado-card"><img src="aliado1.png" alt="Fundación Sol de Invierno"></div>
+                <div class="aliado-card"><img src="aliado2.png" alt="Superior Hats"></div>
                 <div class="aliado-card"><img src="aliado3.png" alt="Aliado 3"></div>
                 <div class="aliado-card"><img src="aliado4.png" alt="Aliado 4"></div>
                 <div class="aliado-card"><img src="aliado5.png" alt="Aliado 5"></div>
@@ -202,18 +190,18 @@
         <section id="contacto">
             <h2>Contacto</h2>
             <ul class="contact-info">
-                <li><i class="fa-solid fa-phone"></i> <strong>Teléfono:</strong> [Ingresa tu número aquí]</li>
-                <li><i class="fa-solid fa-envelope"></i> <strong>Correo:</strong> [Ingresa tu correo aquí]</li>
-                <li><i class="fa-solid fa-location-dot"></i> <strong>Ubicación:</strong> [Ingresa tu ubicación aquí]</li>
+                <li><i class="fa-solid fa-phone"></i> <strong>Teléfono:</strong> +57 3XX XXX XXXX</li>
+                <li><i class="fa-solid fa-envelope"></i> <strong>Correo:</strong> contacto@turpaykawsay.org</li>
+                <li><i class="fa-solid fa-location-dot"></i> <strong>Ubicación:</strong> Sandoná, Nariño, Colombia</li>
             </ul>
 
             <h3>Síguenos</h3>
             <div class="social-links">
-                <a href="URL_FACEBOOK" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="URL_INSTAGRAM" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="URL_TIKTOK" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-                <a href="URL_YOUTUBE" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                <a href="URL_THREADS" target="_blank" title="Threads"><i class="fa-brands fa-threads"></i></a>
+                <a href="#link-facebook" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#link-instagram" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#link-tiktok" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#link-youtube" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#link-threads" target="_blank" title="Threads"><i class="fa-brands fa-threads"></i></a>
             </div>
         </section>
 
@@ -225,3 +213,5 @@
 
 </body>
 </html>
+
+

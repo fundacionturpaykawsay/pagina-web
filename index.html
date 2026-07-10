@@ -7,42 +7,30 @@
     <!-- Iconos para redes sociales -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Fondo general cambiado a Beige */
+        /* Fondo general Beige */
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; padding: 0; color: #3e322b; background-color: #f5f0e6; }
         
-        /* Encabezado con Imagen de Fondo Clara */
+        /* Encabezado al 100% de nitidez y sin textos superpuestos */
         header { 
-            position: relative;
             background-color: #f5f0e6; 
-            /* CORREGIDO: Ahora busca exactamente tu archivo banner.png */
             background-image: url("banner.png"); 
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover; 
-            padding: 6rem 2rem; 
-            text-align: center; 
-            overflow: hidden;
-        }
-
-        /* Filtro blanco semi-transparente para aclarar tu imagen y que el texto sea legible */
-        header::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-color: rgba(255, 255, 255, 0.75); /* Aclara tu foto un 75% */
-            z-index: 1;
-        }
-
-        /* Asegura que el texto quede flotando por encima de tu foto y del filtro */
-        .header-content {
+            height: 280px; /* Altura ideal para lucer tu banner en computadoras */
+            margin: 0;
+            padding: 0;
             position: relative;
-            z-index: 2;
+        }
+
+        /* Ajuste de altura para que no se corte en pantallas de celulares */
+        @media (max-width: 768px) { 
+            header {
+                height: 150px; 
+            }
         }
         
-        header h1 { margin: 0; font-size: 3rem; letter-spacing: 1px; color: #3e322b; text-shadow: 1px 1px 1px rgba(255,255,255,0.9); }
-        header p { margin: 0.8rem 0 0 0; font-size: 1.4rem; font-style: italic; color: #5c4033; text-shadow: 1px 1px 1px rgba(255,255,255,0.9); }
-        
-        /* Menú de navegación cambiado a Café Claro */
+        /* Menú de navegación en Café Claro */
         nav { background-color: #bc9b83; padding: 0.8rem; text-align: center; position: sticky; top: 0; z-index: 1000; }
         nav a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: 500; display: inline-block; padding: 5px 0; }
         nav a:hover { color: #5c4033; }
@@ -55,8 +43,6 @@
         .grid-mv { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         @media (max-width: 768px) { 
             .grid-mv { grid-template-columns: 1fr; } 
-            header h1 { font-size: 2.2rem; }
-            header p { font-size: 1.2rem; }
             section { padding: 1.5rem; }
         }
         .mv-box { background: #faf8f5; padding: 1.5rem; border-left: 4px solid #dfa842; border-radius: 0 4px 4px 0; }
@@ -91,12 +77,8 @@
 </head>
 <body>
 
-    <header>
-        <div class="header-content">
-            <h1>Fundación Turpay Kawsay</h1>
-            <p>Transformando vidas, fortaleciendo comunidades.</p>
-        </div>
-    </header>
+    <!-- Cabecera completamente vacía para que solo actúe tu imagen original de fondo -->
+    <header></header>
 
     <nav>
         <a href="#inicio">Inicio</a>
@@ -147,7 +129,7 @@
                     <img src="proyecto2.jpg" alt="Mujeres Rurales Vulnerables de Sandoná">
                     <div class="project-content">
                         <h3>Empoderamiento Socioeconómico de Mujeres Rurales Vulnerables de Sandoná (2024)</h3>
-                        <p>¡Transformamos ideas en empresas! Capacitamos a 40 mujeres rurales del corregimiento de San Miguel y de Santa Rosa para convertir el plátano y la leche en productos gastronomómicos innovadores. El proyecto enseñó a transformar la materia prima, dominar finanzas y estructurar sus propios negocios, entregándoles identidad visual y el logo de sus marcas. El broche de oro fue la primera Feria Gastronómica del municipio de Sandoná, demostrando que el campo tiene un potencial empresarial imparable.</p>
+                        <p>¡Transformamos ideas en empresas! Capacitamos a 40 mujeres rurales del corregimiento de San Miguel y de Santa Rosa para convertir el plátano y la leche en productos gastronómicos innovadores. El proyecto enseñó a transformar la materia prima, dominar finanzas y estructurar sus propios negocios, entregándoles identidad visual y el logo de sus marcas. El broche de oro fue la primera Feria Gastronómica del municipio de Sandoná, demostrando que el campo tiene un potencial empresarial imparable.</p>
                     </div>
                 </div>
 
@@ -156,7 +138,7 @@
                     <img src="proyecto3.jpg" alt="Puesto de mercado Punto Dulce">
                     <div class="project-content">
                         <h3>Puestos de Mercado para Mujeres Rurales en San Miguel (Punto Dulce)</h3>
-                        <p>Lo que comenzó como una obra de infraestructura, hoy es un motor de vida, tradición y progreso. Punto Dulce nació para transformarlo todo: un mercadillo que empodera a más de 20 mujeres cabezas de hogar y sus familias, brindándoles un espacio propio para generar ingresos dignos a través de sus productos locales. Este rincón se ha convertido en el epicentro donde se salvaguarda y exalta la riqueza gastronomómica de nuestra tierra.</p>
+                        <p>Lo que comenzó como una obra de infraestructura, hoy es un motor de vida, tradición y progreso. Punto Dulce nació para transformarlo todo: un mercadillo que empodera a más de 20 mujeres cabezas de hogar y sus familias, brindándoles un espacio propio para generar ingresos dignos a través de sus productos locales. Este rincón se ha convertido en el epicentro donde se salvaguarda y exalta la riqueza gastronómica de nuestra tierra.</p>
                     </div>
                 </div>
 

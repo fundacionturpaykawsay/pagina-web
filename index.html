@@ -27,24 +27,63 @@
             header { height: 150px; }
         }
         
-        /* --- MENÚ DE NAVEGACIÓN --- */
-        nav { background-color: #bc9b83; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        /* --- EFECTO DIFUMINADO (BLUR) PARA MENÚ Y FOOTER --- */
+        nav, footer { position: relative; }
         
-        .nav-mobile-header { display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 1rem; background-color: #843c22; }
+        .blur-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+        
+        /* Imagen difuminada de fondo */
+        .blur-bg::before {
+            content: '';
+            position: absolute;
+            top: -20px; left: -20px; right: -20px; bottom: -20px;
+            background-image: url("banner.png");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Le da un toque muy elegante al hacer scroll */
+            filter: blur(12px);
+            z-index: -2;
+        }
+        
+        /* Tinte café semitransparente para que las letras se puedan leer */
+        .blur-bg::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(92, 64, 51, 0.75); 
+            z-index: -1;
+        }
+
+        .nav-content, .footer-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* --- MENÚ DE NAVEGACIÓN --- */
+        nav { position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        
+        .nav-mobile-header { display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 1rem; background-color: transparent; }
         .nav-home { color: #fff; text-decoration: none; font-weight: bold; font-size: 1.1rem; }
         .menu-btn { background: none; border: none; color: #fff; font-size: 1.1rem; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 8px; }
         
-        .nav-container { display: none; flex-direction: column; background-color: #bc9b83; text-align: left; }
+        .nav-container { display: none; flex-direction: column; background-color: transparent; text-align: left; }
         .nav-container.active { display: flex; }
 
         nav a { color: #fff; text-decoration: none; font-weight: 500; display: block; padding: 1rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); transition: background 0.3s; }
-        nav a:hover { background-color: #843c22; }
+        nav a:hover { background-color: rgba(132, 60, 34, 0.6); }
 
         /* Estilos de los Submenús (Dropdown) */
         .dropdown { position: relative; }
-        .dropdown-btn { width: 100%; text-align: left; background: none; border: none; color: #fff; font-weight: 500; font-size: 1rem; padding: 1rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: inherit; }
-        .dropdown-btn:hover { background-color: #843c22; }
-        .dropdown-content { display: none; background-color: #a3816a; flex-direction: column; }
+        .dropdown-btn { width: 100%; text-align: left; background: none; border: none; color: #fff; font-weight: 500; font-size: 1rem; padding: 1rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: inherit; transition: background 0.3s; }
+        .dropdown-btn:hover { background-color: rgba(132, 60, 34, 0.6); }
+        
+        /* Fondo para submenús en móviles (levemente más oscuro) */
+        .dropdown-content { display: none; background-color: rgba(0,0,0,0.15); flex-direction: column; }
         .dropdown.active .dropdown-content { display: flex; }
         .dropdown-content a { padding-left: 2.5rem; font-size: 0.9rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
 
@@ -52,7 +91,13 @@
             .nav-mobile-header { display: none; }
             .nav-container { display: flex !important; flex-direction: row; justify-content: center; }
             nav a, .dropdown-btn { border-bottom: none; padding: 1rem 1.2rem; }
-            .dropdown-content { position: absolute; top: 100%; left: 0; min-width: 260px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border-radius: 0 0 8px 8px; overflow: hidden; }
+            
+            /* Efecto cristal para el menú desplegable en computadoras */
+            .dropdown-content { 
+                position: absolute; top: 100%; left: 0; min-width: 260px; 
+                background-color: rgba(92, 64, 51, 0.9); backdrop-filter: blur(10px); 
+                box-shadow: 0 4px 15px rgba(0,0,0,0.2); border-radius: 0 0 8px 8px; overflow: hidden; 
+            }
             .dropdown:hover .dropdown-content { display: flex; }
             .dropdown-content a { padding-left: 1.5rem; }
         }
@@ -107,12 +152,12 @@
         .valor-card p { margin: 0; font-size: 0.9rem; color: #60524a; text-align: center; }
 
         /* Estilos Galería */
-        .galeria-fotos { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; }
-        .galeria-fotos img { width: 100%; height: 180px; object-fit: cover; border-radius: 6px; box-shadow: 0 3px 6px rgba(0,0,0,0.1); transition: transform 0.3s; }
+        .galeria-fotos { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 15px; }
+        .galeria-fotos img { width: 100%; height: 160px; object-fit: cover; border-radius: 6px; box-shadow: 0 3px 6px rgba(0,0,0,0.1); transition: transform 0.3s; }
         .galeria-fotos img:hover { transform: scale(1.05); }
 
-        .galeria-videos { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .galeria-videos video { width: 100%; height: 200px; border-radius: 6px; box-shadow: 0 3px 6px rgba(0,0,0,0.1); background-color: #000; }
+        .galeria-videos { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        .galeria-videos video { width: 100%; height: 180px; border-radius: 6px; box-shadow: 0 3px 6px rgba(0,0,0,0.1); background-color: #000; }
 
         .btn-digital { display: inline-block; background-color: #dfa842; color: #fff; padding: 0.7rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: bold; margin-top: 1rem; transition: background 0.3s; box-shadow: 0 3px 6px rgba(0,0,0,0.1); text-align: center; }
         .btn-digital:hover { background-color: #843c22; }
@@ -149,7 +194,9 @@
         .btn-whatsapp { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: #fff; width: 60px; height: 60px; border-radius: 50%; text-align: center; font-size: 30px; box-shadow: 0px 4px 10px rgba(0,0,0,0.3); z-index: 1000; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: transform 0.3s; }
         .btn-whatsapp:hover { transform: scale(1.1); color: #fff; }
 
-        footer { text-align: center; padding: 1.5rem; background-color: #5c4033; color: #fff; margin-top: 3rem; }
+        /* Estilo general Footer */
+        footer { margin-top: 3rem; color: #fff; border-top: 3px solid #dfa842; }
+        .footer-content { padding: 2rem 1.5rem; text-align: center; }
     </style>
 </head>
 <body>
@@ -157,56 +204,55 @@
     <header></header>
 
     <nav>
-        <div class="nav-mobile-header">
-            <!-- Se reemplaza el botón de inicio por el nombre de la fundación para móviles -->
-            <span class="nav-home"><i class="fa-solid fa-leaf"></i> Turpay Kawsay</span>
-            <button class="menu-btn" onclick="toggleMainMenu()"><i class="fa-solid fa-bars"></i> Menú</button>
-        </div>
-
-        <div class="nav-container" id="nav-menu">
-            <!-- Se eliminó la pestaña Inicio -->
-            
-            <div class="dropdown" onclick="toggleDropdown(this)">
-                <button class="dropdown-btn">Quiénes Somos <i class="fa-solid fa-caret-down"></i></button>
-                <div class="dropdown-content">
-                    <a href="#nosotros" onclick="abrirAcordeon('acc-mision')">Misión</a>
-                    <a href="#nosotros" onclick="abrirAcordeon('acc-vision')">Visión</a>
-                    <a href="#nosotros" onclick="abrirAcordeon('acc-valores')">Valores</a>
-                </div>
+        <div class="blur-bg"></div>
+        <div class="nav-content">
+            <div class="nav-mobile-header">
+                <span class="nav-home"><i class="fa-solid fa-leaf"></i> Turpay Kawsay</span>
+                <button class="menu-btn" onclick="toggleMainMenu()"><i class="fa-solid fa-bars"></i> Menú</button>
             </div>
 
-            <div class="dropdown" onclick="toggleDropdown(this)">
-                <button class="dropdown-btn">Proyectos Ejecutados <i class="fa-solid fa-caret-down"></i></button>
-                <div class="dropdown-content">
-                    <a href="#proyectos" onclick="abrirAcordeon('acc-proy1')">Empoderamiento (2023)</a>
-                    <a href="#proyectos" onclick="abrirAcordeon('acc-proy2')">Mujeres Rurales (2024)</a>
-                    <a href="#proyectos" onclick="abrirAcordeon('acc-proy3')">Punto Dulce (2025)</a>
-                    <a href="#proyectos" onclick="abrirAcordeon('acc-proy4')">Entretejiendo Raíces (2025)</a>
-                    <a href="#proyectos" onclick="abrirAcordeon('acc-proy5')">Maestros del Sombrero (2025)</a>
+            <div class="nav-container" id="nav-menu">
+                <div class="dropdown" onclick="toggleDropdown(this)">
+                    <button class="dropdown-btn">Quiénes Somos <i class="fa-solid fa-caret-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="#nosotros" onclick="abrirAcordeon('acc-mision')">Misión</a>
+                        <a href="#nosotros" onclick="abrirAcordeon('acc-vision')">Visión</a>
+                        <a href="#nosotros" onclick="abrirAcordeon('acc-valores')">Valores</a>
+                    </div>
                 </div>
-            </div>
 
-            <div class="dropdown" onclick="toggleDropdown(this)">
-                <button class="dropdown-btn">Obras y Desarrollo <i class="fa-solid fa-caret-down"></i></button>
-                <div class="dropdown-content">
-                    <a href="#obras" onclick="abrirAcordeon('acc-obra1')">Revista Maestros</a>
-                    <a href="#obras" onclick="abrirAcordeon('acc-obra2')">Libro Entretejiendo</a>
-                    <a href="#desarrollo" onclick="abrirAcordeon('acc-desarrollo')">Entre Sombras (2026)</a>
+                <div class="dropdown" onclick="toggleDropdown(this)">
+                    <button class="dropdown-btn">Proyectos Ejecutados <i class="fa-solid fa-caret-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="#proyectos" onclick="abrirAcordeon('acc-proy1')">Empoderamiento (2023)</a>
+                        <a href="#proyectos" onclick="abrirAcordeon('acc-proy2')">Mujeres Rurales (2024)</a>
+                        <a href="#proyectos" onclick="abrirAcordeon('acc-proy3')">Punto Dulce (2025)</a>
+                        <a href="#proyectos" onclick="abrirAcordeon('acc-proy4')">Entretejiendo Raíces (2025)</a>
+                        <a href="#proyectos" onclick="abrirAcordeon('acc-proy5')">Maestros del Sombrero (2025)</a>
+                    </div>
                 </div>
-            </div>
 
-            <a href="#eventos" onclick="abrirAcordeon('acc-eventos')">Próximos Eventos</a>
-            
-            <!-- Nueva pestaña de Galería -->
-            <div class="dropdown" onclick="toggleDropdown(this)">
-                <button class="dropdown-btn">Galería <i class="fa-solid fa-caret-down"></i></button>
-                <div class="dropdown-content">
-                    <a href="#galeria" onclick="abrirAcordeon('acc-fotos')">Fotos</a>
-                    <a href="#galeria" onclick="abrirAcordeon('acc-videos')">Videos</a>
+                <div class="dropdown" onclick="toggleDropdown(this)">
+                    <button class="dropdown-btn">Obras y Desarrollo <i class="fa-solid fa-caret-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="#obras" onclick="abrirAcordeon('acc-obra1')">Revista Maestros</a>
+                        <a href="#obras" onclick="abrirAcordeon('acc-obra2')">Libro Entretejiendo</a>
+                        <a href="#desarrollo" onclick="abrirAcordeon('acc-desarrollo')">Entre Sombras (2026)</a>
+                    </div>
                 </div>
-            </div>
 
-            <a href="#contacto">Contáctanos</a>
+                <a href="#eventos" onclick="abrirAcordeon('acc-eventos')">Próximos Eventos</a>
+                
+                <div class="dropdown" onclick="toggleDropdown(this)">
+                    <button class="dropdown-btn">Galería <i class="fa-solid fa-caret-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="#galeria" onclick="abrirAcordeon('acc-fotos')">Fotos</a>
+                        <a href="#galeria" onclick="abrirAcordeon('acc-videos')">Videos</a>
+                    </div>
+                </div>
+
+                <a href="#contacto">Contáctanos</a>
+            </div>
         </div>
     </nav>
 
@@ -292,10 +338,7 @@
                 <div class="acordeon-content">
                     <img src="proyecto1.jpg" alt="Empoderamiento Socioeconómico de Mujeres" class="proyecto-img">
                     <p>Gracias a la alianza con la Fundación Sol de Invierno, logramos capacitar a 60 mujeres en amigurumi, huertas caseras y manicura. Este proyecto no solo fortaleció sus habilidades técnicas, sino que abrió nuevas puertas para su desarrollo económico y autonomía financiera. ¡Transformamos talento en productividad real!</p>
-                    
-                    <div class="financiacion">
-                        <i class="fa-solid fa-handshake-angle"></i> <strong>Financiado por:</strong> Diputación de Álava - España.
-                    </div>
+                    <div class="financiacion"><i class="fa-solid fa-handshake-angle"></i> <strong>Financiado por:</strong> Diputación de Álava - España.</div>
                 </div>
             </details>
 
@@ -304,10 +347,7 @@
                 <div class="acordeon-content">
                     <img src="proyecto2.jpg" alt="Mujeres Rurales Vulnerables de Sandoná" class="proyecto-img">
                     <p>¡Transformamos ideas en empresas! Capacitamos a 40 mujeres rurales del corregimiento de San Miguel y del de Santa Rosa del Municipio de Sandoná para convertir el plátano y la leche en productos gastronómicos innovadores. El proyecto no solo les enseñó a transformar la materia prima, sino también a dominar sus finanzas y a estructurar sus propios negocios, entregándoles incluso la identidad visual y el logo de sus marcas. El gran broche de oro fue la primera Feria Gastronómica del municipio de Sandoná, el escenario donde estas mujeres demostraron que el campo tiene un potencial empresarial imparable.</p>
-                    
-                    <div class="financiacion">
-                        <i class="fa-solid fa-handshake-angle"></i> <strong>Financiado por:</strong> Diputación de Álava - España y Alcaldía de Sandoná - Colombia.
-                    </div>
+                    <div class="financiacion"><i class="fa-solid fa-handshake-angle"></i> <strong>Financiado por:</strong> Diputación de Álava - España y Alcaldía de Sandoná - Colombia.</div>
                 </div>
             </details>
 
@@ -318,10 +358,7 @@
                     <p>Lo que comenzó como una obra de infraestructura en Sandoná, hoy es un motor de vida, tradición y progreso. Punto Dulce nació para transformarlo todo: un mercadillo que hoy empodera a más de 20 mujeres cabezas de hogar y sus familias, brindándoles un espacio propio para generar ingresos dignos a través de sus productos locales.</p>
                     <p>Este rincón no solo activa la economía de la región, sino que se ha convertido en el epicentro donde se salvaguarda y exalta la riqueza gastronómica de nuestra tierra. Cada visita es un encuentro con el sabor, el esfuerzo y el talento de mujeres que tejen el sustento de sus hogares.</p>
                     <p>¡Punto Dulce está más vivo que nunca! Es el reflejo de que cuando se apoya a nuestras mujeres, se transforma a toda una comunidad.</p>
-                    
-                    <div class="financiacion">
-                        <i class="fa-solid fa-handshake-angle"></i> <strong>Financiado por:</strong> Ayuntamiento de Vitoria-Gasteiz - España y Alcaldía de Sandoná - Colombia.
-                    </div>
+                    <div class="financiacion"><i class="fa-solid fa-handshake-angle"></i> <strong>Financiado por:</strong> Ayuntamiento de Vitoria-Gasteiz - España y Alcaldía de Sandoná - Colombia.</div>
                 </div>
             </details>
 
@@ -331,10 +368,7 @@
                     <img src="proyecto4.jpg" alt="Artesanías en paja de iraca" class="proyecto-img">
                     <p>En el corazón de Sandoná, 20 mujeres transformaron la tradicional paja de iraca en arte, sustento y orgullo. A través de este proyecto, sus manos no solo aprendieron las técnicas para dar forma a hermosas artesanías y al emblemático sombrero sandoneño, sino que también tejieron el futuro de sus familias.</p>
                     <p>Esta iniciativa logró reactivar la economía de sus hogares, generando ingresos adicionales que mejoraron su calidad de vida. Más allá del beneficio económico, el proyecto significó un reencuentro profundo con sus raíces culturales, asegurando que el legado de sus ancestros siga vivo. ¡Artesanas que trenzaron identidad, empoderamiento y progreso!</p>
-                    
-                    <div class="financiacion">
-                        <i class="fa-solid fa-handshake-angle"></i> <strong>Financiado por:</strong> Diputación de Álava - España y Alcaldía de Sandoná - Colombia.
-                    </div>
+                    <div class="financiacion"><i class="fa-solid fa-handshake-angle"></i> <strong>Financiado por:</strong> Diputación de Álava - España y Alcaldía de Sandoná - Colombia.</div>
                 </div>
             </details>
 
@@ -344,10 +378,7 @@
                     <img src="proyecto5.jpg" alt="Maestros del Sombrero de Sandoná" class="proyecto-img">
                     <p>Gracias al valioso apoyo de Superior Hats, se culminó con éxito un proyecto hermoso y profundo en el municipio de Sandoná. A través de enriquecedores encuentros de saberes y entrevistas con los artesanos locales e historiadores, se logró reconstruir la ruta histórica de este arte, rescatando el cuándo, el cómo y el dónde nació la gran tradición que hoy identifica a la región.</p>
                     <p>Toda esta riqueza cultural quedó plasmada en una hermosa revista impresa; un valioso documento histórico que hoy se entrega como regalo a Sandoná y a su memoria colectiva. Con esta iniciativa, no solo se salvaguardaron las raíces, sino que se dejó una huella imborrable para las futuras generaciones de tejedores. ¡Que el orgullo por la iraca siga recorriendo el mundo!</p>
-                    
-                    <div class="financiacion">
-                        <i class="fa-solid fa-handshake-angle"></i> <strong>Financiado por:</strong> Gobernación de Nariño / Secretaría de Cultura - Colombia y Alcaldía de Sandoná - Colombia.
-                    </div>
+                    <div class="financiacion"><i class="fa-solid fa-handshake-angle"></i> <strong>Financiado por:</strong> Gobernación de Nariño / Secretaría de Cultura - Colombia y Alcaldía de Sandoná - Colombia.</div>
                 </div>
             </details>
         </section>
@@ -390,10 +421,7 @@
                     <p>Durante el proceso formativo, los jóvenes desarrollarán habilidades comunicativas, artísticas y sociales, fomentando el trabajo en equipo, el liderazgo, la confianza y la expresión libre. Como resultado, se crearán montajes teatrales construidos de manera colectiva que reflejen la riqueza cultural del territorio y el talento de sus participantes.</p>
                     <p>Entre Sombras y Sombreros es una iniciativa de la Fundación Turpay Kawsay, con el apoyo de la Alcaldía Municipal de Sandoná y el Ministerio de las Culturas, las Artes y los Saberes, reafirmando el compromiso con la formación artística como herramienta de transformación social y preservación de la identidad cultural.</p>
                     
-                    <div class="financiacion">
-                        <i class="fa-solid fa-handshake-angle"></i> <strong>Financiado por:</strong> Ministerio de las Culturas, las Artes y los Saberes - Colombia.
-                    </div>
-
+                    <div class="financiacion"><i class="fa-solid fa-handshake-angle"></i> <strong>Financiado por:</strong> Ministerio de las Culturas, las Artes y los Saberes - Colombia.</div>
                     <p class="frase-destacada">"Nuestra cultura se vive, se crea y se comparte."</p>
                     
                     <div class="video-local-container">
@@ -420,10 +448,7 @@
                     <p>La culminación de este importante proceso se celebrará con la inauguración oficial el próximo 17 de julio, fecha que marcará el inicio de una nueva etapa para el corregimiento, reafirmando el compromiso con el fortalecimiento de los servicios de salud y la mejora de la calidad de vida de sus habitantes.</p>
                     <p>Con esta intervención, el Centro Médico de El Vergel se consolida como un símbolo de renovación, progreso y trabajo conjunto en beneficio de toda la comunidad.</p>
                     
-                    <div class="financiacion">
-                        <i class="fa-solid fa-handshake-angle"></i> <strong>Financiado por:</strong> Ayuntamiento de Vitoria-Gasteiz - España y Alcaldía de Sandoná - Colombia.
-                    </div>
-
+                    <div class="financiacion"><i class="fa-solid fa-handshake-angle"></i> <strong>Financiado por:</strong> Ayuntamiento de Vitoria-Gasteiz - España y Alcaldía de Sandoná - Colombia.</div>
                     <p class="frase-destacada">"Rehabilitar un centro de salud es fortalecer el corazón de una comunidad."</p>
                     
                     <div class="video-local-container">
@@ -436,7 +461,7 @@
             </details>
         </section>
 
-        <!-- NUEVA SECCIÓN GALERÍA -->
+        <!-- SECCIÓN GALERÍA -->
         <section id="galeria">
             <h2>Nuestra Galería</h2>
             <p>Explora y revive los mejores momentos, sonrisas y logros de nuestros proyectos y eventos:</p>
@@ -444,8 +469,8 @@
             <details id="acc-fotos">
                 <summary><i class="fa-solid fa-camera-retro"></i> Galería de Fotos</summary>
                 <div class="acordeon-content">
+                    <!-- Cuadrícula para las 20 FOTOS -->
                     <div class="galeria-fotos">
-                        <!-- Aquí pones los nombres de tus 10 fotos -->
                         <img src="galeria_foto1.jpg" alt="Momento Turpay Kawsay 1">
                         <img src="galeria_foto2.jpg" alt="Momento Turpay Kawsay 2">
                         <img src="galeria_foto3.jpg" alt="Momento Turpay Kawsay 3">
@@ -456,6 +481,16 @@
                         <img src="galeria_foto8.jpg" alt="Momento Turpay Kawsay 8">
                         <img src="galeria_foto9.jpg" alt="Momento Turpay Kawsay 9">
                         <img src="galeria_foto10.jpg" alt="Momento Turpay Kawsay 10">
+                        <img src="galeria_foto11.jpg" alt="Momento Turpay Kawsay 11">
+                        <img src="galeria_foto12.jpg" alt="Momento Turpay Kawsay 12">
+                        <img src="galeria_foto13.jpg" alt="Momento Turpay Kawsay 13">
+                        <img src="galeria_foto14.jpg" alt="Momento Turpay Kawsay 14">
+                        <img src="galeria_foto15.jpg" alt="Momento Turpay Kawsay 15">
+                        <img src="galeria_foto16.jpg" alt="Momento Turpay Kawsay 16">
+                        <img src="galeria_foto17.jpg" alt="Momento Turpay Kawsay 17">
+                        <img src="galeria_foto18.jpg" alt="Momento Turpay Kawsay 18">
+                        <img src="galeria_foto19.jpg" alt="Momento Turpay Kawsay 19">
+                        <img src="galeria_foto20.jpg" alt="Momento Turpay Kawsay 20">
                     </div>
                 </div>
             </details>
@@ -463,14 +498,20 @@
             <details id="acc-videos">
                 <summary><i class="fa-solid fa-video"></i> Galería de Videos</summary>
                 <div class="acordeon-content">
+                    <!-- Cuadrícula para los 12 VIDEOS -->
                     <div class="galeria-videos">
-                        <!-- Aquí pones los nombres de tus 6 videos -->
                         <video controls><source src="galeria_video1.mp4" type="video/mp4"></video>
                         <video controls><source src="galeria_video2.mp4" type="video/mp4"></video>
                         <video controls><source src="galeria_video3.mp4" type="video/mp4"></video>
                         <video controls><source src="galeria_video4.mp4" type="video/mp4"></video>
                         <video controls><source src="galeria_video5.mp4" type="video/mp4"></video>
                         <video controls><source src="galeria_video6.mp4" type="video/mp4"></video>
+                        <video controls><source src="galeria_video7.mp4" type="video/mp4"></video>
+                        <video controls><source src="galeria_video8.mp4" type="video/mp4"></video>
+                        <video controls><source src="galeria_video9.mp4" type="video/mp4"></video>
+                        <video controls><source src="galeria_video10.mp4" type="video/mp4"></video>
+                        <video controls><source src="galeria_video11.mp4" type="video/mp4"></video>
+                        <video controls><source src="galeria_video12.mp4" type="video/mp4"></video>
                     </div>
                 </div>
             </details>
@@ -543,8 +584,12 @@
 
     </div>
 
+    <!-- EL NUEVO PIE DE PÁGINA (FOOTER) DIFUMINADO -->
     <footer>
-        <p>&copy; 2026 Fundación Turpay Kawsay. Todos los derechos reservados.</p>
+        <div class="blur-bg"></div>
+        <div class="footer-content">
+            <p>&copy; 2026 Fundación Turpay Kawsay. Todos los derechos reservados.</p>
+        </div>
     </footer>
 
     <!-- SCRIPTS PARA INTERACTIVIDAD -->
@@ -577,4 +622,3 @@
     </script>
 </body>
 </html>
-

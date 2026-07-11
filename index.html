@@ -90,11 +90,22 @@
         .project-content p { font-size: 0.98rem; color: #4e4037; margin-bottom: 1rem; text-align: justify; line-height: 1.6; }
         .project-content p:last-child { margin-bottom: 0; }
 
-        /* --- CONTENEDOR DE VIDEO LOCAL ADAPTATIVO --- */
-        .video-local-container { width: 100%; margin-top: 1.5rem; }
-        .video-local-container video { width: 100%; border-radius: 8px; display: block; box-shadow: 0 4px 12px rgba(0,0,0,0.15); background-color: #000; }
+        /* --- CONTENEDOR DE VIDEO MEJORADO (MÁS COMPACTO Y CENTRADO) --- */
+        .video-local-container { 
+            width: 100%; 
+            max-width: 650px; 
+            margin: 2rem auto 1rem auto; 
+            box-sizing: border-box;
+        }
+        .video-local-container video { 
+            width: 100%; 
+            border-radius: 8px; 
+            display: block; 
+            box-shadow: 0 6px 16px rgba(0,0,0,0.12); 
+            background-color: #000; 
+        }
 
-        /* --- SECCIÓN NUESTRAS OBRAS (LIBROS DIGITALES CON LINKS) --- */
+        /* --- SECCIÓN NUESTRAS OBRAS --- */
         .obras-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 1.5rem; }
         @media (max-width: 768px) { .obras-grid { grid-template-columns: 1fr; } }
         .obra-card { background: #faf8f5; border: 1px solid #ebdcd0; border-radius: 8px; padding: 2rem; text-align: center; display: flex; flex-direction: column; align-items: center; transition: all 0.3s ease; }
@@ -103,7 +114,6 @@
         .btn-digital { display: inline-block; background-color: #dfa842; color: #fff; padding: 0.7rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: bold; margin-top: auto; transition: background 0.3s; box-shadow: 0 3px 6px rgba(0,0,0,0.1); }
         .btn-digital:hover { background-color: #843c22; }
 
-        /* Estilos de frases o eslóganes destacados */
         .frase-destacada { font-style: italic; font-weight: bold; color: #843c22; text-align: center; margin: 1.5rem 0; font-size: 1.1rem; }
 
         /* --- DISEÑO DEL FORMULARIO DE CONTACTO --- */
@@ -155,7 +165,6 @@
         </div>
     </nav>
 
-    <!-- Botón flotante directo a WhatsApp -->
     <a href="https://api.whatsapp.com/send?phone=573000000000&text=Hola,%20deseo%20obtener%20más%20información%20sobre%20la%20Fundación." class="btn-whatsapp" target="_blank" title="Escríbenos por WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
@@ -224,7 +233,6 @@
             <p>Conoce las acciones, talleres y procesos comunitarios que hemos liderado en el territorio:</p>
             
             <div class="projects-grid">
-                <!-- Proyecto 1 -->
                 <div class="project-card">
                     <img src="proyecto1.jpg" alt="Empoderamiento Socioeconómico de Mujeres">
                     <div class="project-content">
@@ -233,74 +241,63 @@
                     </div>
                 </div>
 
-                <!-- Proyecto 2 -->
                 <div class="project-card">
                     <img src="proyecto2.jpg" alt="Mujeres Rurales Vulnerables de Sandoná">
                     <div class="project-content">
                         <h3>Empoderamiento Socioeconómico de Mujeres Rurales Vulnerables del Municipio de Sandoná-Nariño (2024)</h3>
-                        <p>¡Transformamos ideas en empresas! Capacitamos a 40 mujeres rurales del corregimiento de San Miguel y del de Santa Rosa del Municipio de Sandoná para convertir el plátano y la leche en productos gastronómicos innovadores. El proyecto no solo les enseñó a transformar la materia prima, sino también a dominar sus finanzas y a estructurar sus propios negocios, entregándoles incluso la identidad visual y el logo de sus marcas. El gran broche de oro fue la primera Feria Gastronómica del municipio de Sandoná, el escenario donde estas mujeres demostraron que el campo tiene un potencial empresarial imparable.</p>
+                        <p>¡Transformamos ideas en empresas! Capacitamos a 40 mujeres rurales del corregimiento de San Miguel y del de Santa Rosa del Municipio de Sandoná para convertir el plátano y la leche en productos gastronómicos innovadores. El proyecto no solo les enseñó a transformar la materia prima, sino también a dominar sus finanzas y a ajustar sus propios negocios.</p>
                     </div>
                 </div>
 
-                <!-- Proyecto 3 -->
                 <div class="project-card">
                     <img src="proyecto3.jpg" alt="Puesto de mercado Punto Dulce">
                     <div class="project-content">
-                        <h3>Construcción de Puestos de Mercado para Mujeres Rurales Vulnerables en San Miguel - Municipio de Sandoná, Departamento de Nariño (Punto Dulce) (2025)</h3>
-                        <p>Lo que comenzó como una obra de infraestructura en Sandoná, hoy es un motor de vida, tradición y progreso. Punto Dulce nació para transformarlo todo: un mercadillo que hoy empodera a más de 20 mujeres cabezas de hogar y sus familias, brindándoles un espacio propio para generar ingresos dignos a través de sus productos locales.</p>
-                        <p>Este rincón no solo activa la economía de la región, sino que se ha convertido en el epicentro donde se salvaguarda y exalta la riqueza gastronómica de nuestra tierra.</p>
+                        <h3>Construcción de Puestos de Mercado para Mujeres Rurales Vulnerables en San Miguel (Punto Dulce) (2025)</h3>
+                        <p>Lo que comenzó como una obra de infraestructura en Sandoná, hoy es un motor de vida, tradición y progreso. Punto Dulce nació para transformarlo todo: un mercadillo que hoy empodera a más de 20 mujeres cabezas de hogar y sus familias.</p>
                     </div>
                 </div>
 
-                <!-- Proyecto 4 -->
                 <div class="project-card">
                     <img src="proyecto4.jpg" alt="Artesanías en paja de iraca">
                     <div class="project-content">
                         <h3>Entretejiendo Raíces y Saberes (2025)</h3>
-                        <p>En el corazón de Sandoná, 20 mujeres transformaron la tradicional paja de iraca en arte, sustento y orgullo. A través de este proyecto, sus manos no solo aprendieron las técnicas para dar forma a hermosas artesanías y al emblemático sombrero sandoneño, sino que también tejieron el futuro de sus familias.</p>
-                        <p>Esta iniciativa logró reactivar la economía de sus hogares, generando ingresos adicionales que mejoraron su calidad de vida. Más allá del beneficio económico, el proyecto significó un reencuentro profundo con sus raíces culturales, asegurando que el legado de sus ancestros siga vivo. ¡Artesanas que trenzaron identidad, empoderamiento y progreso!</p>
+                        <p>En el corazón de Sandoná, 20 mujeres transformaron la tradicional paja de iraca en arte, sustento y orgullo. A través de este proyecto, sus manos aprendieron las técnicas para dar forma a hermosas artesanías y al emblemático sombrero sandoneño.</p>
                     </div>
                 </div>
 
-                <!-- Proyecto 5 -->
                 <div class="project-card">
                     <img src="proyecto5.jpg" alt="Maestros del Sombrero de Sandoná">
                     <div class="project-content">
                         <h3>Maestros del Sombrero: Historia Viva del Patrimonio Artesanal de Sandoná (2025)</h3>
-                        <p>Gracias al valioso apoyo de Superior Hats, se culminó con éxito un proyecto hermoso y profundo en el municipio de Sandoná. A través de enriquecedores encuentros de saberes y entrevistas con los artesanos locales e historiadores, se logró reconstruir la ruta histórica de este arte, rescatando el cuándo, el cómo y el dónde nació la gran tradición que hoy identifica a la región.</p>
-                        <p>Toda esta riqueza cultural quedó plasmada en una hermosa revista impresa; un valioso documento histórico que hoy se entrega como regalo a Sandoná y a su memoria colectiva. Con esta iniciativa, no solo se salvaguardaron las raíces, sino que se dejó una huella imborrable para las futuras generaciones de tejedores. ¡Que el orgullo por la iraca siga recorriendo el mundo!</p>
+                        <p>Gracias al valioso apoyo de Superior Hats, se culminó con éxito un proyecto hermoso y profundo en el municipio de Sandoná. Toda esta riqueza cultural quedó plasmada en una hermosa revista impresa.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN: NUESTRAS OBRAS (CON LINKS DIGITALES) -->
+        <!-- SECCIÓN: NUESTRAS OBRAS -->
         <section id="obras">
             <h2>Nuestras Obras</h2>
             <p>Accede y descarga las publicaciones editoriales e investigaciones culturales financiadas y editadas por nuestra fundación:</p>
             
             <div class="obras-grid">
-                <!-- Libro 1 -->
                 <div class="obra-card">
                     <i class="fa-solid fa-book-open book-icon"></i>
                     <h3>Revista Maestros del Sombrero</h3>
-                    <p>Un compendio histórico y fotográfico que recopila el origen, las vivencias y los saberes ancestrales de los tejedores de paja de iraca en Sandoná. Salvaguardia de la memoria colectiva regional.</p>
-                    <!-- REEMPLAZA EL LINK DE ABAJO CON EL ENLACE REAL DE GOOGLE DRIVE O TU WEB -->
+                    <p>Un compendio histórico y fotográfico que recopila el origen, las vivencias y los saberes ancestrales de los tejedores de paja de iraca en Sandoná.</p>
                     <a href="https://tu-enlace-aqui.com/libro-maestros-sombrero.pdf" target="_blank" class="btn-digital">Leer Libro Digital <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
 
-                <!-- Libro 2 -->
                 <div class="obra-card">
                     <i class="fa-solid fa-book-open book-icon"></i>
                     <h3>Entretejiendo Raíces y Saberes</h3>
-                    <p>Memoria institucional y técnica de los talleres artesanales. Este documento detalla los procesos de empoderamiento, las metodologías de diseño y el impacto social en las familias beneficiarias.</p>
-                    <!-- REEMPLAZA EL LINK DE ABAJO CON EL ENLACE REAL DE GOOGLE DRIVE O TU WEB -->
+                    <p>Memoria institucional y técnica de los talleres artesanales. Este documento detalla los procesos de empoderamiento y las metodologías de diseño.</p>
                     <a href="https://tu-enlace-aqui.com/libro-entretejiendo-raices.pdf" target="_blank" class="btn-digital">Leer Libro Digital <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN: PROYECTOS EN DESARROLLO (ACTUALIZADA) -->
+        <!-- SECCIÓN: PROYECTOS EN DESARROLLO -->
         <section id="desarrollo">
             <h2>Proyectos que Estamos Desarrollando</h2>
             <p>Conoce las iniciativas actuales en las que estamos enfocando nuestros esfuerzos en este momento:</p>
@@ -314,7 +311,6 @@
             
             <p class="frase-destacada">"Nuestra cultura se vive, se crea y se comparte."</p>
             
-            <!-- Contenedor del Video Local -->
             <div class="video-local-container">
                 <video controls>
                     <source src="video-desarrollo.mp4" type="video/mp4">
@@ -323,7 +319,7 @@
             </div>
         </section>
 
-        <!-- SECCIÓN: PRÓXIMOS EVENTOS (ACTUALIZADA) -->
+        <!-- SECCIÓN: PRÓXIMOS EVENTOS -->
         <section id="eventos">
             <h2>Próximos Eventos</h2>
             <p>Agéndate y acompáñanos en nuestras futuras actividades, ferias, talleres abiertos y encuentros comunitarios:</p>
@@ -332,12 +328,11 @@
             <p>Es una iniciativa que nace con el propósito de recuperar y modernizar el Centro Médico del corregimiento El Vergel, convirtiéndolo en un espacio digno, seguro y funcional para la atención de la comunidad.</p>
             <p>Este proyecto contempla la remodelación integral de la infraestructura, mejorando sus condiciones físicas, estéticas y operativas para ofrecer un ambiente más cómodo, accesible y adecuado tanto para los usuarios como para el personal de salud. La intervención busca fortalecer la prestación de los servicios médicos, promoviendo una atención más humanizada y de mayor calidad.</p>
             <p>Más que una obra de infraestructura, Rehabilitando el Corazón del Vergel representa el compromiso con el bienestar, la salud y el desarrollo de la comunidad, devolviendo a este centro médico su papel como un lugar de cuidado, esperanza y encuentro para las familias del territorio.</p>
-            <p>La culminación de este importante proceso se celebrará con la inauguración oficial el próximo 17 de julio, fecha que marcará el inicio de una nueva etapa para el corregimiento, reafirmando el compromiso con el fortalecimiento de los servicios de salud y la mejora de la calidad de vida de sus habitantes.</p>
+            <p>La culminación de este importante proceso se celebrará con la infraestructura oficial el próximo 17 de julio, fecha que marcará el inicio de una nueva etapa para el corregimiento, reafirmando el compromiso con el fortalecimiento de los servicios de salud y la mejora de la calidad de vida de sus habitantes.</p>
             <p>Con esta intervención, el Centro Médico de El Vergel se consolida como un símbolo de renovación, progreso y trabajo conjunto en beneficio de toda la comunidad.</p>
             
             <p class="frase-destacada">"Rehabilitar un centro de salud es fortalecer el corazón de una comunidad."</p>
             
-            <!-- Contenedor del Video Local -->
             <div class="video-local-container">
                 <video controls>
                     <source src="video-eventos.mp4" type="video/mp4">
@@ -359,22 +354,22 @@
             </div>
         </section>
 
-        <!-- SECCIÓN DETALLADA: CONTÁCTANOS -->
+        <!-- SECCIÓN DETALLADA: CONTÁCTANOS (CONEXIÓN CON FORMSPREE) -->
         <section id="contacto">
             <h2>Contáctanos</h2>
             <p>¿Tienes dudas, deseas realizar una alianza estratégica o vincularte como voluntario? Déjanos un mensaje:</p>
             
             <div class="contact-wrapper">
-                <!-- Formulario de contacto visual -->
+                <!-- Formulario de contacto configurado para recibir correos -->
                 <div class="contact-form-container">
-                    <form action="#" method="POST">
+                    <form action="TU_ENLACE_DE_FORMSPREE_AQUÍ" method="POST">
                         <div class="form-group">
                             <label for="nombre">Nombre Completo</label>
                             <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
                         </div>
                         <div class="form-group">
                             <label for="correo">Correo Electrónico</label>
-                            <input type="email" id="correo" name="correo" placeholder="tu@correo.com" required>
+                            <input type="email" id="correo" name="_replyto" placeholder="tu@correo.com" required>
                         </div>
                         <div class="form-group">
                             <label for="telefono">Teléfono / WhatsApp</label>
@@ -382,7 +377,7 @@
                         </div>
                         <div class="form-group">
                             <label for="asunto">Asunto</label>
-                            <input type="text" id="asunto" name="asunto" placeholder="Motivo de tu mensaje" required>
+                            <input type="text" id="asunto" name="_subject" placeholder="Motivo de tu mensaje" required>
                         </div>
                         <div class="form-group">
                             <label for="mensaje">Mensaje o Consulta</label>
@@ -392,7 +387,6 @@
                     </form>
                 </div>
 
-                <!-- Información de canales institucionales -->
                 <div>
                     <h3>Canales de Atención</h3>
                     <ul class="contact-info">
@@ -420,4 +414,4 @@
     </footer>
 
 </body>
-</html
+</html>

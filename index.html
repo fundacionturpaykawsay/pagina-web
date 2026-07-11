@@ -28,9 +28,11 @@
         }
         
         /* --- MENÚ DE NAVEGACIÓN --- */
-        nav { background-color: #bc9b83; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        nav {
+background:linear-gradient(rgba(188,155,131,.82),rgba(188,155,131,.82)),url("banner.png");
+background-size:cover;background-position:center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
         
-        .nav-mobile-header { display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 1rem; background-color: #843c22; }
+        .nav-mobile-header { display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 1rem; background:linear-gradient(rgba(132,60,34,.85),rgba(132,60,34,.85)),url("banner.png");background-size:cover;background-position:center; }
         .nav-home { color: #fff; text-decoration: none; font-weight: bold; font-size: 1.1rem; }
         .menu-btn { background: none; border: none; color: #fff; font-size: 1.1rem; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 8px; }
         
@@ -38,12 +40,12 @@
         .nav-container.active { display: flex; }
 
         nav a { color: #fff; text-decoration: none; font-weight: 500; display: block; padding: 1rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); transition: background 0.3s; }
-        nav a:hover { background-color: #843c22; }
+        nav a:hover { background:linear-gradient(rgba(132,60,34,.85),rgba(132,60,34,.85)),url("banner.png");background-size:cover;background-position:center; }
 
         /* Estilos de los Submenús (Dropdown) */
         .dropdown { position: relative; }
         .dropdown-btn { width: 100%; text-align: left; background: none; border: none; color: #fff; font-weight: 500; font-size: 1rem; padding: 1rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: inherit; }
-        .dropdown-btn:hover { background-color: #843c22; }
+        .dropdown-btn:hover { background:linear-gradient(rgba(132,60,34,.85),rgba(132,60,34,.85)),url("banner.png");background-size:cover;background-position:center; }
         .dropdown-content { display: none; background-color: #a3816a; flex-direction: column; }
         .dropdown.active .dropdown-content { display: flex; }
         .dropdown-content a { padding-left: 2.5rem; font-size: 0.9rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
@@ -95,7 +97,7 @@
 
         /* Contadores de Impacto */
         .impacto-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center; margin-top: 1.5rem; }
-        .impacto-card { background: #843c22; color: #fff; padding: 2rem 1.5rem; border-radius: 8px; }
+        .impacto-card { background:linear-gradient(rgba(132,60,34,.85),rgba(132,60,34,.85)),url("banner.png");background-size:cover;background-position:center; color: #fff; padding: 2rem 1.5rem; border-radius: 8px; }
         .impacto-card .numero { font-size: 2.5rem; font-weight: bold; color: #dfa842; display: block; line-height: 1; margin-bottom: 0.5rem; }
         .impacto-card .descripcion { font-size: 0.95rem; font-weight: 500; }
 
@@ -107,7 +109,7 @@
         .valor-card p { margin: 0; font-size: 0.9rem; color: #60524a; text-align: center; }
 
         .btn-digital { display: inline-block; background-color: #dfa842; color: #fff; padding: 0.7rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: bold; margin-top: 1rem; transition: background 0.3s; box-shadow: 0 3px 6px rgba(0,0,0,0.1); text-align: center; }
-        .btn-digital:hover { background-color: #843c22; }
+        .btn-digital:hover { background:linear-gradient(rgba(132,60,34,.85),rgba(132,60,34,.85)),url("banner.png");background-size:cover;background-position:center; }
 
         /* Contenedor de video */
         .video-local-container { width: 100%; max-width: 480px; margin: 2rem auto 1rem auto; box-sizing: border-box; }
@@ -122,14 +124,14 @@
         .form-group label { display: block; margin-bottom: 0.4rem; color: #5c4033; font-weight: 600; font-size: 0.95rem; }
         .form-group input, .form-group textarea { width: 100%; padding: 0.75rem; border: 1px solid #ebdcd0; border-radius: 6px; box-sizing: border-box; font-family: inherit; font-size: 1rem; color: #3e322b; background-color: #fff; transition: border-color 0.3s; }
         .form-group input:focus, .form-group textarea:focus { outline: none; border-color: #843c22; }
-        .btn-enviar { background-color: #843c22; color: #fff; border: none; padding: 0.8rem 2rem; font-size: 1rem; font-weight: bold; border-radius: 6px; cursor: pointer; width: 100%; transition: background 0.3s; }
+        .btn-enviar { background:linear-gradient(rgba(132,60,34,.85),rgba(132,60,34,.85)),url("banner.png");background-size:cover;background-position:center; color: #fff; border: none; padding: 0.8rem 2rem; font-size: 1rem; font-weight: bold; border-radius: 6px; cursor: pointer; width: 100%; transition: background 0.3s; }
         .btn-enviar:hover { background-color: #5c4033; }
         
         .contact-info { list-style: none; padding: 0; }
         .contact-info li { margin-bottom: 1rem; font-size: 1.1rem; }
         .contact-info i { color: #843c22; margin-right: 10px; width: 20px; text-align: center; }
         .social-links { margin-top: 1.5rem; display: flex; gap: 10px; flex-wrap: wrap; }
-        .social-links a { display: inline-block; font-size: 1.5rem; color: #fff; background-color: #843c22; width: 50px; height: 50px; line-height: 50px; text-align: center; border-radius: 50%; transition: all 0.3s ease; }
+        .social-links a { display: inline-block; font-size: 1.5rem; color: #fff; background:linear-gradient(rgba(132,60,34,.85),rgba(132,60,34,.85)),url("banner.png");background-size:cover;background-position:center; width: 50px; height: 50px; line-height: 50px; text-align: center; border-radius: 50%; transition: all 0.3s ease; }
         .social-links a:hover { background-color: #dfa842; transform: translateY(-3px); }
 
         /* Aliados */
@@ -143,10 +145,9 @@
 
         footer { text-align: center; padding: 1.5rem; background-color: #5c4033; color: #fff; margin-top: 3rem; }
     
-.galeria-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-.galeria-grid img{width:100%;height:220px;object-fit:cover;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,.15);transition:.3s}
-.galeria-grid img:hover{transform:scale(1.04)}
-
+.galeria-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.galeria-grid img{width:100%;height:220px;object-fit:cover;border-radius:12px;cursor:pointer;transition:.3s;box-shadow:0 6px 18px rgba(0,0,0,.2)}
+.galeria-grid img:hover{transform:scale(1.03)}
 </style>
 </head>
 <body>
@@ -155,13 +156,12 @@
 
     <nav>
         <div class="nav-mobile-header">
-            <a href="#galeria" class="nav-home"><i class="fa-solid fa-image"></i> Galería</a>
+            <a href="#contacto" class="nav-home"><i class="fa-solid fa-envelope"></i> Contáctanos</a>
             <button class="menu-btn" onclick="toggleMainMenu()"><i class="fa-solid fa-bars"></i> Menú</button>
         </div>
 
         <div class="nav-container" id="nav-menu">
-            <a href="#galeria">Galería</a>
-            
+                        
             <div class="dropdown" onclick="toggleDropdown(this)">
                 <button class="dropdown-btn">Quiénes Somos <i class="fa-solid fa-caret-down"></i></button>
                 <div class="dropdown-content">
@@ -192,6 +192,7 @@
             </div>
 
             <a href="#eventos" onclick="abrirAcordeon('acc-eventos')">Próximos Eventos</a>
+            <a href="#galeria">Galería</a>
             <a href="#contacto">Contáctanos</a>
         </div>
     </nav>
@@ -422,9 +423,7 @@
             </details>
         </section>
 
-        <section id="galeria"><h2>Galería</h2><div class="galeria-grid"><img src="foto1.jpg" alt="Foto 1"><img src="foto2.jpg" alt="Foto 2"><img src="foto3.jpg" alt="Foto 3"><img src="foto4.jpg" alt="Foto 4"><img src="foto5.jpg" alt="Foto 5"><img src="foto6.jpg" alt="Foto 6"><img src="foto7.jpg" alt="Foto 7"><img src="foto8.jpg" alt="Foto 8"><img src="foto9.jpg" alt="Foto 9"><img src="foto10.jpg" alt="Foto 10"><img src="foto11.jpg" alt="Foto 11"><img src="foto12.jpg" alt="Foto 12"><img src="foto13.jpg" alt="Foto 13"><img src="foto14.jpg" alt="Foto 14"><img src="foto15.jpg" alt="Foto 15"></div></section>
-
-<!-- SECCIÓN ALIADOS ESTRATÉGICOS -->
+        <!-- SECCIÓN ALIADOS ESTRATÉGICOS -->
         <section id="aliados">
             <h2>Nuestros Aliados Estratégicos</h2>
             <div class="aliados-grid">
@@ -437,7 +436,9 @@
             </div>
         </section>
 
-        <!-- SECCIÓN CONTÁCTANOS -->
+        <section id="galeria"><h2>Galería Fotográfica</h2><div class="galeria-grid"><img src="foto1.jpg" alt="Foto 1"><img src="foto2.jpg" alt="Foto 2"><img src="foto3.jpg" alt="Foto 3"><img src="foto4.jpg" alt="Foto 4"><img src="foto5.jpg" alt="Foto 5"><img src="foto6.jpg" alt="Foto 6"><img src="foto7.jpg" alt="Foto 7"><img src="foto8.jpg" alt="Foto 8"><img src="foto9.jpg" alt="Foto 9"><img src="foto10.jpg" alt="Foto 10"><img src="foto11.jpg" alt="Foto 11"><img src="foto12.jpg" alt="Foto 12"><img src="foto13.jpg" alt="Foto 13"><img src="foto14.jpg" alt="Foto 14"><img src="foto15.jpg" alt="Foto 15"></div></section>
+
+<!-- SECCIÓN CONTÁCTANOS -->
         <section id="contacto">
             <h2>Contáctanos</h2>
             <p>¿Tienes dudas, deseas realizar una alianza estratégica o vincularte como voluntario? Déjanos un mensaje:</p>

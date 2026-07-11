@@ -90,11 +90,11 @@
         .project-content p { font-size: 0.98rem; color: #4e4037; margin-bottom: 1rem; text-align: justify; line-height: 1.6; }
         .project-content p:last-child { margin-bottom: 0; }
 
-        /* --- NUEVAS SECCIONES DINÁMICAS (CON VIDEOS ADAPTATIVOS) --- */
-        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px; margin-top: 1.5rem; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        /* --- CONTENEDOR DE VIDEO LOCAL ADAPTATIVO --- */
+        .video-local-container { width: 100%; margin-top: 1.5rem; }
+        .video-local-container video { width: 100%; border-radius: 8px; display: block; box-shadow: 0 4px 12px rgba(0,0,0,0.15); background-color: #000; }
 
-        /* --- SECCIÓN NUESTRAS OBRAS (LIBROS DIGITALES) --- */
+        /* --- SECCIÓN NUESTRAS OBRAS (LIBROS DIGITALES CON LINKS) --- */
         .obras-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 1.5rem; }
         @media (max-width: 768px) { .obras-grid { grid-template-columns: 1fr; } }
         .obra-card { background: #faf8f5; border: 1px solid #ebdcd0; border-radius: 8px; padding: 2rem; text-align: center; display: flex; flex-direction: column; align-items: center; transition: all 0.3s ease; }
@@ -102,6 +102,9 @@
         .obra-card i.book-icon { font-size: 3.5rem; color: #843c22; margin-bottom: 1rem; }
         .btn-digital { display: inline-block; background-color: #dfa842; color: #fff; padding: 0.7rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: bold; margin-top: auto; transition: background 0.3s; box-shadow: 0 3px 6px rgba(0,0,0,0.1); }
         .btn-digital:hover { background-color: #843c22; }
+
+        /* Estilos de frases o eslóganes destacados */
+        .frase-destacada { font-style: italic; font-weight: bold; color: #843c22; text-align: center; margin: 1.5rem 0; font-size: 1.1rem; }
 
         /* --- DISEÑO DEL FORMULARIO DE CONTACTO --- */
         .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 1.5rem; }
@@ -245,7 +248,7 @@
                     <div class="project-content">
                         <h3>Construcción de Puestos de Mercado para Mujeres Rurales Vulnerables en San Miguel - Municipio de Sandoná, Departamento de Nariño (Punto Dulce) (2025)</h3>
                         <p>Lo que comenzó como una obra de infraestructura en Sandoná, hoy es un motor de vida, tradición y progreso. Punto Dulce nació para transformarlo todo: un mercadillo que hoy empodera a más de 20 mujeres cabezas de hogar y sus familias, brindándoles un espacio propio para generar ingresos dignos a través de sus productos locales.</p>
-                        <p>Este rincón no solo activa la economía de la región, sino que se ha convertido en el epicentro donde se salvaguarda y exalta la riqueza gastronómica de nuestra tierra. Cada visita es un encuentro con el sabor, el esfuerzo y el talento de mujeres que tejen el sustento de sus hogares.</p>
+                        <p>Este rincón no solo activa la economía de la región, sino que se ha convertido en el epicentro donde se salvaguarda y exalta la riqueza gastronómica de nuestra tierra.</p>
                     </div>
                 </div>
 
@@ -265,13 +268,13 @@
                     <div class="project-content">
                         <h3>Maestros del Sombrero: Historia Viva del Patrimonio Artesanal de Sandoná (2025)</h3>
                         <p>Gracias al valioso apoyo de Superior Hats, se culminó con éxito un proyecto hermoso y profundo en el municipio de Sandoná. A través de enriquecedores encuentros de saberes y entrevistas con los artesanos locales e historiadores, se logró reconstruir la ruta histórica de este arte, rescatando el cuándo, el cómo y el dónde nació la gran tradición que hoy identifica a la región.</p>
-                        <p>Toda esta riqueza cultural quedó plasmada en una hermosa revista impresa; un valioso documento histórico que hoy se entrega como regalo a Sandoná y a su memoria colectiva. Con esta iniciativa, no solo se salvaguardaron las raíces, sino que se dejó una huella imborbarra para las futuras generaciones de tejedores. ¡Que el orgullo por la iraca siga recorriendo el mundo!</p>
+                        <p>Toda esta riqueza cultural quedó plasmada en una hermosa revista impresa; un valioso documento histórico que hoy se entrega como regalo a Sandoná y a su memoria colectiva. Con esta iniciativa, no solo se salvaguardaron las raíces, sino que se dejó una huella imborrable para las futuras generaciones de tejedores. ¡Que el orgullo por la iraca siga recorriendo el mundo!</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- NUEVA SECCIÓN: NUESTRAS OBRAS (CON LINKS PARA 2 LIBROS DIGITALES) -->
+        <!-- SECCIÓN: NUESTRAS OBRAS (CON LINKS DIGITALES) -->
         <section id="obras">
             <h2>Nuestras Obras</h2>
             <p>Accede y descarga las publicaciones editoriales e investigaciones culturales financiadas y editadas por nuestra fundación:</p>
@@ -282,7 +285,8 @@
                     <i class="fa-solid fa-book-open book-icon"></i>
                     <h3>Revista Maestros del Sombrero</h3>
                     <p>Un compendio histórico y fotográfico que recopila el origen, las vivencias y los saberes ancestrales de los tejedores de paja de iraca en Sandoná. Salvaguardia de la memoria colectiva regional.</p>
-                    <a href="https://ejemplo.com/libro-maestros-sombrero.pdf" target="_blank" class="btn-digital">Leer Libro Digital <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <!-- REEMPLAZA EL LINK DE ABAJO CON EL ENLACE REAL DE GOOGLE DRIVE O TU WEB -->
+                    <a href="https://tu-enlace-aqui.com/libro-maestros-sombrero.pdf" target="_blank" class="btn-digital">Leer Libro Digital <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
 
                 <!-- Libro 2 -->
@@ -290,36 +294,55 @@
                     <i class="fa-solid fa-book-open book-icon"></i>
                     <h3>Entretejiendo Raíces y Saberes</h3>
                     <p>Memoria institucional y técnica de los talleres artesanales. Este documento detalla los procesos de empoderamiento, las metodologías de diseño y el impacto social en las familias beneficiarias.</p>
-                    <a href="https://ejemplo.com/libro-entretejiendo-raices.pdf" target="_blank" class="btn-digital">Leer Libro Digital <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <!-- REEMPLAZA EL LINK DE ABAJO CON EL ENLACE REAL DE GOOGLE DRIVE O TU WEB -->
+                    <a href="https://tu-enlace-aqui.com/libro-entretejiendo-raices.pdf" target="_blank" class="btn-digital">Leer Libro Digital <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
             </div>
         </section>
 
-        <!-- NUEVA SECCIÓN: PROYECTOS EN DESARROLLO -->
+        <!-- SECCIÓN: PROYECTOS EN DESARROLLO (ACTUALIZADA) -->
         <section id="desarrollo">
             <h2>Proyectos que Estamos Desarrollando</h2>
             <p>Conoce las iniciativas actuales en las que estamos enfocando nuestros esfuerzos en este momento:</p>
             
-            <h3>Nombre del Proyecto en Desarrollo</h3>
-            <p>Aquí se redacta el texto descriptivo del proyecto actual. Puedes explicar los objetivos vigentes, el grupo de mujeres rurales o artesanas que están participando en esta fase, las locaciones del territorio y el impacto que se busca generar a corto plazo con la ejecución continua.</p>
+            <h3>Entre Sombras y Sombreros 2026</h3>
+            <p>Este es un proyecto formativo gratuito de teatro dirigido a jóvenes entre los 13 y 28 años del municipio de Sandoná, Nariño, que busca fortalecer la identidad cultural, el desarrollo artístico y la participación comunitaria a través de las artes escénicas.</p>
+            <p>Este espacio de formación ofrece herramientas en expresión corporal, actuación e improvisación, oralidad y voz, y creación colectiva, promoviendo el teatro como un medio para el crecimiento personal, la creatividad y la construcción de tejido social.</p>
+            <p>Inspirado en las tradiciones, la memoria y el patrimonio cultural de Sandoná, el proyecto invita a las y los participantes a explorar sus raíces, narrar sus historias y convertirlas en experiencias escénicas que fortalezcan el sentido de pertenencia y la valoración de la cultura local.</p>
+            <p>Durante el proceso formativo, los jóvenes desarrollarán habilidades comunicativas, artísticas y sociales, fomentando el trabajo en equipo, el liderazgo, la confianza y la expresión libre. Como resultado, se crearán montajes teatrales construidos de manera colectiva que reflejen la riqueza cultural del territorio y el talento de sus participantes.</p>
+            <p>Entre Sombras y Sombreros es una iniciativa de la Fundación Turpay Kawsay, con el apoyo de la Alcaldía Municipal de Sandoná y el Ministerio de las Culturas, las Artes y los Saberes, reafirmando el compromiso con la formación artística como herramienta de transformación social y preservación de la identidad cultural.</p>
             
-            <!-- Contenedor adaptativo de Video (Reemplaza la URL src de YouTube por el tuyo) -->
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video de Proyecto en Desarrollo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <p class="frase-destacada">"Nuestra cultura se vive, se crea y se comparte."</p>
+            
+            <!-- Contenedor del Video Local -->
+            <div class="video-local-container">
+                <video controls>
+                    <source src="video-desarrollo.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de este video.
+                </video>
             </div>
         </section>
 
-        <!-- NUEVA SECCIÓN: PRÓXIMOS EVENTOS -->
+        <!-- SECCIÓN: PRÓXIMOS EVENTOS (ACTUALIZADA) -->
         <section id="eventos">
             <h2>Próximos Eventos</h2>
             <p>Agéndate y acompáñanos en nuestras futuras actividades, ferias, talleres abiertos y encuentros comunitarios:</p>
             
-            <h3>Nombre del Próximo Evento o Proyecto</h3>
-            <p>Aquí se agrega el texto del evento futuro. Puedes especificar la fecha planeada, la hora, el lugar del encuentro, los propósitos de la convocatoria y cómo la comunidad o los aliados estratégicos pueden vincularse e intervenir de forma activa en la jornada.</p>
+            <h3>Rehabilitando el Corazón del Vergel 2026</h3>
+            <p>Es una iniciativa que nace con el propósito de recuperar y modernizar el Centro Médico del corregimiento El Vergel, convirtiéndolo en un espacio digno, seguro y funcional para la atención de la comunidad.</p>
+            <p>Este proyecto contempla la remodelación integral de la infraestructura, mejorando sus condiciones físicas, estéticas y operativas para ofrecer un ambiente más cómodo, accesible y adecuado tanto para los usuarios como para el personal de salud. La intervención busca fortalecer la prestación de los servicios médicos, promoviendo una atención más humanizada y de mayor calidad.</p>
+            <p>Más que una obra de infraestructura, Rehabilitando el Corazón del Vergel representa el compromiso con el bienestar, la salud y el desarrollo de la comunidad, devolviendo a este centro médico su papel como un lugar de cuidado, esperanza y encuentro para las familias del territorio.</p>
+            <p>La culminación de este importante proceso se celebrará con la inauguración oficial el próximo 17 de julio, fecha que marcará el inicio de una nueva etapa para el corregimiento, reafirmando el compromiso con el fortalecimiento de los servicios de salud y la mejora de la calidad de vida de sus habitantes.</p>
+            <p>Con esta intervención, el Centro Médico de El Vergel se consolida como un símbolo de renovación, progreso y trabajo conjunto en beneficio de toda la comunidad.</p>
             
-            <!-- Contenedor adaptativo de Video (Reemplaza la URL src de YouTube por el tuyo) -->
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video de Próximos Eventos" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <p class="frase-destacada">"Rehabilitar un centro de salud es fortalecer el corazón de una comunidad."</p>
+            
+            <!-- Contenedor del Video Local -->
+            <div class="video-local-container">
+                <video controls>
+                    <source src="video-eventos.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de este video.
+                </video>
             </div>
         </section>
 
@@ -336,7 +359,7 @@
             </div>
         </section>
 
-        <!-- NUEVA SECCIÓN DETALLADA: CONTÁCTANOS -->
+        <!-- SECCIÓN DETALLADA: CONTÁCTANOS -->
         <section id="contacto">
             <h2>Contáctanos</h2>
             <p>¿Tienes dudas, deseas realizar una alianza estratégica o vincularte como voluntario? Déjanos un mensaje:</p>
@@ -397,4 +420,4 @@
     </footer>
 
 </body>
-</html>
+</html

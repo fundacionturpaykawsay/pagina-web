@@ -4,522 +4,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fundación Turpay Kawsay</title>
-    <!-- Iconos para redes sociales y elementos visuales -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Fondo general Beige */
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; padding: 0; color: #3e322b; background-color: #f5f0e6; }
         
-        /* Encabezado */
-        header { 
-            background-color: #f5f0e6; 
-            background-image: url("banner.png"); 
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover; 
-            height: 280px; 
-            margin: 0;
-            padding: 0;
-            position: relative;
-        }
+        /* Menú superior fijo */
+        nav { background-color: #bc9b83; padding: 1rem; text-align: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        nav a { color: #fff; text-decoration: none; font-weight: bold; padding: 10px 20px; border-radius: 5px; transition: background 0.3s; }
+        nav a:hover { background-color: #843c22; }
 
-        @media (max-width: 768px) { 
-            header { height: 150px; }
-        }
+        .container { max-width: 900px; margin: 2rem auto; padding: 1.5rem; }
         
-        /* Menú de navegación */
-        nav { background-color: #bc9b83; padding: 0rem; text-align: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        nav .nav-container { display: inline-flex; justify-content: center; flex-wrap: wrap; }
-        nav a { color: #fff; margin: 0 12px; text-decoration: none; font-weight: 500; display: inline-block; padding: 1rem 0; position: relative; transition: color 0.3s; font-size: 0.95rem; }
-        nav a:hover { color: #5c4033; }
-        nav a::after { content: ''; display: block; width: 0; height: 3px; background: #843c22; transition: width .3s; position: absolute; bottom: 0; left: 0; }
-        nav a:hover::after { width: 100%; }
-        
-        .container { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; box-sizing: border-box; }
-        section { background: #fff; padding: 2.5rem; margin-bottom: 2rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(62,50,43,0.05); }
-        
-        h2 { color: #843c22; border-bottom: 2px solid #ebdcd0; padding-bottom: 0.5rem; margin-top: 0; font-size: 1.75rem; }
-        h3 { color: #843c22; margin-top: 0; }
-        
-        /* Grid de Misión y Visión */
-        .grid-mv { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 2rem; }
-        @media (max-width: 768px) { 
-            .grid-mv { grid-template-columns: 1fr; } 
-            section { padding: 1.5rem; }
-        }
-        .mv-box { background: #faf8f5; padding: 1.5rem; border-left: 4px solid #dfa842; border-radius: 0 4px 4px 0; }
-        .mv-box h3 { margin-top: 0; color: #843c22; display: flex; align-items: center; }
-        .mv-box h3 i { margin-right: 10px; }
+        /* Estilos de Acordeón (Pestañas) */
+        details { background: #fff; margin-bottom: 1rem; border-radius: 8px; border: 1px solid #ebdcd0; overflow: hidden; }
+        summary { padding: 1.5rem; font-weight: bold; color: #843c22; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+        summary::after { content: '\f107'; font-family: 'Font Awesome 5 Free'; font-weight: 900; }
+        details[open] summary::after { transform: rotate(180deg); }
+        .content { padding: 1.5rem; border-top: 1px solid #ebdcd0; }
 
-        /* Sección de Valores */
-        .valores-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 1.5rem; }
-        .valor-card { text-align: center; padding: 1.5rem; background: #fff; border: 1px solid #ebdcd0; border-radius: 6px; }
-        .valor-card i { font-size: 2rem; color: #dfa842; margin-bottom: 0.5rem; }
-        .valor-card h4 { margin: 0.5rem 0; color: #843c22; text-transform: uppercase; font-size: 1rem; }
-        .valor-card p { margin: 0; font-size: 0.9rem; color: #60524a; }
-
-        /* Contadores de Impacto */
-        .impacto-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center; margin-top: 1.5rem; }
-        .impacto-card { background: #843c22; color: #fff; padding: 2rem 1.5rem; border-radius: 8px; }
-        .impacto-card .numero { font-size: 2.5rem; font-weight: bold; color: #dfa842; display: block; line-height: 1; margin-bottom: 0.5rem; }
-        .impacto-card .descripcion { font-size: 0.95rem; font-weight: 500; }
-
-        /* --- ESTILOS DE LOS MENÚS DESPLEGABLES (ACORDEÓN) --- */
-        details {
-            background: #faf8f5;
-            border: 1px solid #ebdcd0;
-            border-radius: 8px;
-            margin-bottom: 1.5rem;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-        details[open] {
-            border-color: #dfa842;
-            box-shadow: 0 4px 12px rgba(132, 60, 34, 0.08);
-        }
-        summary {
-            padding: 1.2rem;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #843c22;
-            cursor: pointer;
-            outline: none;
-            user-select: none;
-            transition: background 0.2s;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        summary:hover {
-            background: #ebdcd0;
-        }
-        /* Flecha indicadora personalizada */
-        summary::after {
-            content: '\f107';
-            font-family: 'Font Awesome 5 Free';
-            font-weight: 900;
-            transition: transform 0.3s;
-        }
-        details[open] summary::after {
-            transform: rotate(180deg);
-        }
-        .desplegable-content {
-            padding: 1.8rem;
-            background: #fff;
-            border-top: 1px solid #ebdcd0;
-        }
-        .desplegable-content img {
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-            border-radius: 6px;
-            margin-bottom: 1.2rem;
-            display: block;
-            object-fit: cover;
-        }
-        .desplegable-content p {
-            font-size: 0.98rem;
-            color: #4e4037;
-            text-align: justify;
-            line-height: 1.6;
-            margin-top: 0;
-        }
-
-        /* Etiqueta de Financiación */
-        .financiacion-box {
-            margin-top: 1.5rem;
-            padding: 1rem 1.2rem;
-            background-color: #fdfbf7;
-            border-left: 4px solid #843c22;
-            border-radius: 0 6px 6px 0;
-        }
-        .financiacion-box h4 {
-            margin: 0 0 0.4rem 0;
-            color: #5c4033;
-            font-size: 0.9rem;
-            letter-spacing: 0.05em;
-            font-weight: bold;
-        }
-        .financiacion-box p {
-            margin: 0;
-            font-weight: bold;
-            color: #843c22;
-            font-size: 0.9rem;
-            line-height: 1.4;
-        }
-
-        /* --- CONTENEDOR DE VIDEO COMPACTO --- */
-        .video-local-container { 
-            width: 100%; 
-            max-width: 440px; 
-            margin: 1.5rem auto 0 auto; 
-            box-sizing: border-box;
-        }
-        .video-local-container video { 
-            width: 100%; 
-            border-radius: 8px; 
-            display: block; 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
-            background-color: #000; 
-        }
-
-        /* --- SECCIÓN NUESTRAS OBRAS --- */
-        .obras-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 1.5rem; }
-        @media (max-width: 768px) { .obras-grid { grid-template-columns: 1fr; } }
-        .obra-card { background: #faf8f5; border: 1px solid #ebdcd0; border-radius: 8px; padding: 2rem; text-align: center; display: flex; flex-direction: column; align-items: center; transition: all 0.3s ease; }
-        .obra-card:hover { border-color: #843c22; background: #fff; transform: translateY(-3px); }
-        .obra-card i.book-icon { font-size: 3.5rem; color: #843c22; margin-bottom: 1rem; }
-        .btn-digital { display: inline-block; background-color: #dfa842; color: #fff; padding: 0.7rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: bold; margin-top: auto; transition: background 0.3s; box-shadow: 0 3px 6px rgba(0,0,0,0.1); }
-        .btn-digital:hover { background-color: #843c22; }
-
-        .frase-destacada { font-style: italic; font-weight: bold; color: #843c22; text-align: center; margin: 1rem 0; font-size: 1.1rem; }
-
-        /* --- DISEÑO DEL FORMULARIO DE CONTACTO --- */
-        .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 1.5rem; }
-        @media (max-width: 768px) { .contact-wrapper { grid-template-columns: 1fr; } }
-        
-        .contact-form-container { background: #faf8f5; padding: 2rem; border-radius: 8px; border: 1px solid #ebdcd0; }
-        .form-group { margin-bottom: 1.2rem; }
-        .form-group label { display: block; margin-bottom: 0.4rem; color: #5c4033; font-weight: 600; font-size: 0.95rem; }
-        .form-group input, .form-group textarea { width: 100%; padding: 0.75rem; border: 1px solid #ebdcd0; border-radius: 6px; box-sizing: border-box; font-family: inherit; font-size: 1rem; color: #3e322b; background-color: #fff; transition: border-color 0.3s; }
-        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: #843c22; }
-        .btn-enviar { background-color: #843c22; color: #fff; border: none; padding: 0.8rem 2rem; font-size: 1rem; font-weight: bold; border-radius: 6px; cursor: pointer; width: 100%; transition: background 0.3s; }
-        .btn-enviar:hover { background-color: #5c4033; }
-
-        /* --- SECCIÓN ALIADOS --- */
-        .aliados-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 20px; margin-top: 1.5rem; align-items: center; justify-items: center; }
-        .aliado-card { background: #fff; border: 1px solid #ebdcd0; border-radius: 6px; padding: 10px; width: 130px; height: 130px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
-        .aliado-card img { max-width: 100%; max-height: 100%; object-fit: contain; }
-
-        /* Estilos de Redes e Info */
-        .contact-info { list-style: none; padding: 0; }
-        .contact-info li { margin-bottom: 1rem; font-size: 1.1rem; }
-        .contact-info i { color: #843c22; margin-right: 10px; width: 20px; text-align: center; }
-        .social-links { margin-top: 1.5rem; display: flex; gap: 10px; flex-wrap: wrap; }
-        .social-links a { display: inline-block; font-size: 1.5rem; color: #fff; background-color: #843c22; width: 50px; height: 50px; line-height: 50px; text-align: center; border-radius: 50%; transition: all 0.3s ease; }
-        .social-links a:hover { background-color: #dfa842; transform: translateY(-3px); }
-        
-        /* Botón flotante de WhatsApp */
-        .btn-whatsapp { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: #fff; width: 60px; height: 60px; border-radius: 50%; text-align: center; font-size: 30px; box-shadow: 0px 4px 10px rgba(0,0,0,0.3); z-index: 1000; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: transform 0.3s; }
-        .btn-whatsapp:hover { transform: scale(1.1); color: #fff; }
-
-        /* Footer */
-        footer { text-align: center; padding: 1.5rem; background-color: #5c4033; color: #fff; margin-top: 3rem; }
+        .financiacion-box { margin-top: 1rem; padding: 1rem; background: #fdfbf7; border-left: 4px solid #843c22; }
     </style>
 </head>
 <body>
 
-    <header></header>
-
     <nav>
-        <div class="nav-container">
-            <a href="#inicio">Inicio</a>
-            <a href="#nosotros">Quiénes Somos</a>
-            <a href="#proyectos">Proyectos Ejecutados</a>
-            <a href="#obras">Nuestras Obras</a>
-            <a href="#desarrollo">En Desarrollo</a>
-            <a href="#eventos">Próximos Eventos</a>
-            <a href="#contacto">Contáctanos</a>
-        </div>
+        <a href="#menu-principal">INICIO / MENÚ PRINCIPAL</a>
     </nav>
 
-    <!-- WhatsApp Flotante -->
-    <a href="https://api.whatsapp.com/send?phone=573000000000&text=Hola,%20deseo%20obtener%20más%20información%20sobre%20la%20Fundación." class="btn-whatsapp" target="_blank" title="Escríbenos por WhatsApp">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
-    <div class="container">
-        
-        <!-- SECCIÓN INICIO -->
-        <section id="inicio">
-            <h2>Bienvenidos</h2>
-            <p>En <strong>TURPAY KAWSAY</strong> somos una fundación sin ánimo de lucro comprometida con transformar vidas y fortalecer comunidades. Trabajamos por el empoderamiento de las mujeres en situación de vulnerabilidad, promoviendo su autonomía, liderazgo y desarrollo integral a través de programas de formación, emprendimiento y acción social.</p>
-            <p>Creemos que cada mujer tiene el potencial de convertirse en agente de cambio. Por eso, impulsamos iniciativas que generan oportunidades, fomentan la inclusión y contribuyen a la construcción de una sociedad más justa, solidaria y sostenible.</p>
-            
-            <div class="impacto-grid">
-                <div class="impacto-card">
-                    <span class="numero">+140</span>
-                    <span class="descripcion">Mujeres Capacitadas</span>
-                </div>
-                <div class="impacto-card">
-                    <span class="numero">5</span>
-                    <span class="descripcion">Grandes Proyectos Ejecutados</span>
-                </div>
-                <div class="impacto-card">
-                    <span class="numero">100%</span>
-                    <span class="descripcion">Compromiso Comunitario</span>
-                </div>
-            </div>
-        </section>
+    <div class="container" id="menu-principal">
+        <h2>Bienvenido a Turpay Kawsay</h2>
+        <p>Selecciona una categoría para ver nuestra información:</p>
 
         <!-- SECCIÓN QUIÉNES SOMOS -->
-        <section id="nosotros">
-            <h2>Nuestra Identidad Institucional</h2>
-            <div class="grid-mv">
-                <div class="mv-box">
-                    <h3><i class="fa-solid fa-bullseye"></i> Misión</h3>
-                    <p>Ser una fundación referente en el desarrollo de proyectos sociales que promuevan el empoderamiento de las mujeres, la construcción de paz, la inclusión, el cuidado del medio ambiente y el fortalecimiento de las comunidades. Aspiramos a generar un impacto positivo y sostenible mediante alianzas estratégicas con entidades públicas, privadas y organizaciones comprometidas con el desarrollo social.</p>
-                </div>
-                <div class="mv-box">
-                    <h3><i class="fa-solid fa-eye"></i> Visión</h3>
-                    <p>En los próximos diez años, TURPAY KAWSAY será una fundación reconocida a nivel local, nacional e internacional por liderar proyectos de transformación social que promuevan el empoderamiento de las mujeres, la construcción de paz y el desarrollo sostenible. A través de alianzas estratégicas y el trabajo conjunto con comunidades e instituciones, contribuiremos a construir una sociedad más equitativa, solidaria y con mayores oportunidades para todos.</p>
-                </div>
+        <details>
+            <summary>Quiénes Somos</summary>
+            <div class="content">
+                <details>
+                    <summary>Misión</summary>
+                    <div class="content"><p>Ser una fundación referente en el desarrollo de proyectos sociales...</p></div>
+                </details>
+                <details>
+                    <summary>Visión</summary>
+                    <div class="content"><p>En los próximos diez años, seremos reconocidos...</p></div>
+                </details>
             </div>
+        </details>
 
-            <h3>Nuestros Valores</h3>
-            <div class="valores-grid">
-                <div class="valor-card">
-                    <i class="fa-solid fa-hands-holding-circle"></i>
-                    <h4>Solidaridad</h4>
-                    <p>Apoyo mutuo y empatía incondicional hacia las comunidades que acompañamos.</p>
-                </div>
-                <div class="valor-card">
-                    <i class="fa-solid fa-scale-balanced"></i>
-                    <h4>Equidad</h4>
-                    <p>Defensa del acceso justo a oportunidades y el empoderamiento sin distinciones.</p>
-                </div>
-                <div class="valor-card">
-                    <i class="fa-regular fa-handshake"></i>
-                    <h4>Transparencia</h4>
-                    <p>Claridad y rectitud absoluta en cada una de nuestras gestiones y alianzas.</p>
-                </div>
+        <!-- SECCIÓN PROYECTOS EJECUTADOS -->
+        <details>
+            <summary>Proyectos Ejecutados</summary>
+            <div class="content">
+                <details>
+                    <summary>Proyecto 1</summary>
+                    <div class="content">
+                        <p>Texto completo del proyecto 1...</p>
+                        <div class="financiacion-box"><strong>FINANCIADO POR:</strong><br>LA DIPUTACIÓN FORAL DE ALAVA - ESPAÑA</div>
+                    </div>
+                </details>
+                <details>
+                    <summary>Proyecto 2</summary>
+                    <div class="content">
+                        <p>Texto completo del proyecto 2...</p>
+                        <div class="financiacion-box"><strong>FINANCIADO POR:</strong><br>LA DIPUTACIÓN FORAL DE ALAVA - ESPAÑA<br>ALCALDIA DE SANDONÁ - COLOMBIA</div>
+                    </div>
+                </details>
+                <!-- Repetir estructura para Proyecto 3, 4 y 5 -->
             </div>
-        </section>
+        </details>
 
-        <!-- SECCIÓN PROYECTOS EJECUTADOS (MENÚ DESPLEGABLE) -->
-        <section id="proyectos">
-            <h2>Nuestros Proyectos e Iniciativas</h2>
-            <p>Selecciona un proyecto del menú para desplegar su información completa y entidades financiadoras:</p>
-            
-            <!-- Desplegable Proyecto 1 -->
-            <details>
-                <summary>Proyecto 1: Empoderamiento Socioeconómico (2023)</summary>
-                <div class="desplegable-content">
-                    <img src="proyecto1.jpg" alt="Empoderamiento Socioeconómico de Mujeres">
-                    <p>Gracias a la alianza con la Fundación Sol de Invierno, logramos capacitar a 60 mujeres en amigurumi, huertas caseras y manicura. Este proyecto no solo fortaleció sus habilidades técnicas, sino que abrió nuevas puertas para su desarrollo económico y autonomía financiera. ¡Transformamos talento en productividad real!</p>
-                    
-                    <div class="financiacion-box">
-                        <h4>FINANCIADO POR:</h4>
-                        <p>LA DIPUTACIÓN FORAL DE ÁLAVA - ESPAÑA</p>
-                    </div>
-                </div>
-            </details>
-
-            <!-- Desplegable Proyecto 2 -->
-            <details>
-                <summary>Proyecto 2: Empoderamiento Socioeconómico de Mujeres Rurales Vulnerables (2024)</summary>
-                <div class="desplegable-content">
-                    <img src="proyecto2.jpg" alt="Mujeres Rurales Vulnerables de Sandoná">
-                    <p>¡Transformamos ideas en empresas! Capacitamos a 40 mujeres rurales del corregimiento de San Miguel y del de Santa Rosa del Municipio de Sandoná para convertir el plátano y la leche en productos gastronómicos innovadores. El proyecto no solo les enseñó a transformar la materia prima, sino también a dominar sus finanzas y a estructurar sus propios negocios, entregándoles incluso la identidad visual y el logo de sus marcas. El gran broche de oro fue la primera Feria Gastronómica del municipio de Sandoná, el escenario donde estas mujeres demostraron que el campo tiene un potencial empresarial imparable.</p>
-                    
-                    <div class="financiacion-box">
-                        <h4>FINANCIADO POR:</h4>
-                        <p>LA DIPUTACIÓN FORAL DE ÁLAVA - ESPAÑA<br>ALCALDÍA DE SANDONÁ - COLOMBIA</p>
-                    </div>
-                </div>
-            </details>
-
-            <!-- Desplegable Proyecto 3 -->
-            <details>
-                <summary>Proyecto 3: Construcción de Puestos de Mercado en San Miguel (Punto Dulce) (2025)</summary>
-                <div class="desplegable-content">
-                    <img src="proyecto3.jpg" alt="Puesto de mercado Punto Dulce">
-                    <p>Lo que comenzó como una obra de infraestructura en Sandoná, hoy es un motor de vida, tradición y progreso. Punto Dulce nació para transformarlo todo: un mercadillo que hoy empodera a más de 20 mujeres cabezas de hogar y sus familias, brindándoles un espacio propio para generar ingresos dignos a través de sus productos locales.</p>
-                    <p>Este rincón no solo activa la economía de la región, sino que se ha convertido en el epicentro donde se salvaguarda y exalta la riqueza gastronómica de nuestra tierra. Cada visita es un encuentro con el sabor, el esfuerzo y el talento de mujeres que tejen el sustento de sus hogares.</p>
-                    <p>¡Punto Dulce está más vivo que nunca! Es el reflejo de que cuando se apoya a nuestras mujeres, se transforma a toda una comunidad.</p>
-                    
-                    <div class="financiacion-box">
-                        <h4>FINANCIADO POR:</h4>
-                        <p>AYUNTAMIENTO DE VITORIA-GASTEIZ - ESPAÑA<br>ALCALDÍA DE SANDONÁ - COLOMBIA</p>
-                    </div>
-                </div>
-            </details>
-
-            <!-- Desplegable Proyecto 4 -->
-            <details>
-                <summary>Proyecto 4: Entretejiendo Raíces y Saberes (2025)</summary>
-                <div class="desplegable-content">
-                    <img src="proyecto4.jpg" alt="Artesanías en paja de iraca">
-                    <p>En el corazón de Sandoná, 20 mujeres transformaron la tradicional paja de iraca en arte, sustento y orgullo. A través de este proyecto, sus manos no solo aprendieron las técnicas para dar forma a hermosas artesanías y al emblemático sombrero sandoneño, sino que también tejieron el futuro de sus familias.</p>
-                    <p>Esta iniciativa logró reactivar la economía de sus hogares, generando ingresos adicionales que mejoraron su calidad de vida. Más allá del beneficio económico, el proyecto significó un reencuentro profundo con sus raíces culturales, asegurando que el legado de sus ancestros siga vivo. ¡Artesanas que trenzaron identidad, empoderamiento y progreso!</p>
-                    
-                    <div class="financiacion-box">
-                        <h4>FINANCIADO POR:</h4>
-                        <p>DIPUTACIÓN FORAL DE ÁLAVA - ESPAÑA<br>ALCALDÍA DE SANDONÁ - COLOMBIA</p>
-                    </div>
-                </div>
-            </details>
-
-            <!-- Desplegable Proyecto 5 -->
-            <details>
-                <summary>Proyecto 5: Maestros del Sombrero: Patrimonio Artesanal (2025)</summary>
-                <div class="desplegable-content">
-                    <img src="proyecto5.jpg" alt="Maestros del Sombrero de Sandoná">
-                    <p>Gracias al valioso apoyo de Superior Hats, se culminó con éxito un proyecto hermoso y profundo en el municipio de Sandoná. A través de enriquecedores encuentros de saberes y entrevistas con los artesanos locales e historiadores, se logró reconstruir la ruta histórica de este arte, rescatando el cuándo, el cómo y el dónde nació la gran tradición que hoy identifica a la región.</p>
-                    <p>Toda esta riqueza cultural quedó plasmada en una hermosa revista impresa; un valioso documento histórico que hoy se entrega como regalo a Sandoná y a su memoria colectiva. Con esta iniciativa, no solo se salvaguardaron las raíces, sino que se dejó una huella imborrable para las futuras generaciones de tejedores. ¡Que el orgullo por la iraca siga recorriendo el mundo!</p>
-                    
-                    <div class="financiacion-box">
-                        <h4>FINANCIADO POR:</h4>
-                        <p>GOBERNACIÓN DE NARIÑO / SECRETARÍA DE CULTURA - COLOMBIA</p>
-                    </div>
-                </div>
-            </details>
-        </section>
-
-        <!-- SECCIÓN: NUESTRAS OBRAS -->
-        <section id="obras">
-            <h2>Nuestras Obras</h2>
-            <p>Accede y descarga las publicaciones editoriales e investigaciones culturales financiadas y editadas por nuestra fundación:</p>
-            
-            <div class="obras-grid">
-                <div class="obra-card">
-                    <i class="fa-solid fa-book-open book-icon"></i>
-                    <h3>Revista Maestros del Sombrero</h3>
-                    <p>Un compendio histórico y fotográfico que recopila el origen, las vivencias y los saberes ancestrales de los tejedores de paja de iraca en Sandoná.</p>
-                    <a href="https://tu-enlace-aqui.com/libro-maestros-sombrero.pdf" target="_blank" class="btn-digital">Leer Libro Digital <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
-
-                <div class="obra-card">
-                    <i class="fa-solid fa-book-open book-icon"></i>
-                    <h3>Entretejiendo Raíces y Saberes</h3>
-                    <p>Memoria institucional y técnica de los talleres artesanales. Este documento detalla los procesos de empoderamiento y las metodologías de diseño.</p>
-                    <a href="https://tu-enlace-aqui.com/libro-entretejiendo-raices.pdf" target="_blank" class="btn-digital">Leer Libro Digital <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
+        <!-- SECCIÓN EN DESARROLLO -->
+        <details>
+            <summary>En Desarrollo</summary>
+            <div class="content">
+                <p>Texto completo de proyectos en curso...</p>
+                <div class="financiacion-box"><strong>FINANCIADO POR:</strong><br>MINISTERIO DE CULTURAS - COLOMBIA<br>ALCALDIA DE SANDONÁ - COLOMBIA</div>
             </div>
-        </section>
+        </details>
 
-        <!-- SECCIÓN: PROYECTOS EN DESARROLLO (MENÚ DESPLEGABLE) -->
-        <section id="desarrollo">
-            <h2>Proyectos que Estamos Desarrollando</h2>
-            <p>Selecciona una iniciativa en curso para ver sus detalles:</p>
-            
-            <details>
-                <summary>Iniciativa Activa: Entre Sombras y Sombreros 2026</summary>
-                <div class="desplegable-content">
-                    <p>Este es un proyecto formativo gratuito de teatro dirigido a jóvenes entre los 13 y 28 años del municipio de Sandoná, Nariño, que busca fortalecer la identidad cultural, el desarrollo artístico y la participación comunitaria a través de las artes escénicas.</p>
-                    <p>Este espacio de formación ofrece herramientas en expresión corporal, actuación e improvisación, oralidad y voz, y creación colectiva, promoviendo el teatro como un medio para el crecimiento personal, la creatividad y la construcción de tejido social.</p>
-                    <p>Inspirado en las tradiciones, la memoria y el patrimonio cultural de Sandoná, el proyecto invita a las y los participantes a explorar sus raíces, narrar sus historias y convertirlas en experiencias escénicas que fortalezcan el sentido de pertenencia y la valoración de la cultura local.</p>
-                    <p>Durante el proceso formativo, los jóvenes desarrollarán habilidades comunicativas, artísticas y sociales, fomentando el trabajo en equipo, el liderazgo, la confianza y la expresión libre. Como resultado, se crearán montajes teatrales construidos de manera colectiva que reflejen la riqueza cultural del territorio y el talento de sus participantes.</p>
-                    <p>Entre Sombras y Sombreros es una iniciativa de la Fundación Turpay Kawsay, con el apoyo de la Alcaldía Municipal de Sandoná y el Ministerio de las Culturas, las Artes y los Saberes, reafirmando el compromiso con la formación artística como herramienta de transformación social y preservación de la identidad cultural.</p>
-                    
-                    <p class="frase-destacada">"Nuestra cultura se vive, se crea y se comparte."</p>
-                    
-                    <div class="video-local-container">
-                        <video controls>
-                            <source src="video-desarrollo.mp4" type="video/mp4">
-                            Tu navegador no soporta la reproducción de este video.
-                        </video>
-                    </div>
-
-                    <div class="financiacion-box">
-                        <h4>FINANCIADO POR:</h4>
-                        <p>MINISTERIO DE LAS CULTURAS, LAS ARTES Y LOS SABERES - COLOMBIA<br>ALCALDÍA DE SANDONÁ - COLOMBIA</p>
-                    </div>
-                </div>
-            </details>
-        </section>
-
-        <!-- SECCIÓN: PRÓXIMOS EVENTOS (MENÚ DESPLEGABLE) -->
-        <section id="eventos">
-            <h2>Próximos Eventos</h2>
-            <p>Selecciona un evento de nuestra agenda comunitaria para desplegar la información:</p>
-            
-            <details>
-                <summary>Evento Programado: Rehabilitando el Corazón del Vergel 2026</summary>
-                <div class="desplegable-content">
-                    <p>Es una iniciativa que nace con el propósito de recuperar y modernizar el Centro Médico del corregimiento El Vergel, convirtiéndolo en un espacio digno, seguro y funcional para la atención de la comunidad.</p>
-                    <p>Este proyecto contempla la remodelación integral de la infraestructura, mejorando sus condiciones físicas, estéticas y operativas para ofrecer un ambiente más cómodo, accesible y adecuado tanto para los usuarios como para el personal de salud. La intervención busca fortalecer la prestación de los servicios médicos, promoviendo una atención más humanizada y de mayor calidad.</p>
-                    <p>Más que una obra de infraestructura, Rehabilitando el Corazón del Vergel representa el compromiso con el bienestar, la salud y el desarrollo de la comunidad, devolviendo a este centro médico su papel como un lugar de cuidado, esperanza y encuentro para las familias del territorio.</p>
-                    <p>La culminación de este importante proceso se celebrará con la inauguración oficial el próximo 17 de julio, fecha que marcará el inicio de una nueva etapa para el corregimiento, reafirmando el compromiso con el fortalecimiento de los servicios de salud y la mejora de la calidad de vida de sus habitantes.</p>
-                    <p>Con esta intervención, el Centro Médico de El Vergel se consolida como un símbolo de renovación, progreso y trabajo conjunto en beneficio de toda la comunidad.</p>
-                    
-                    <p class="frase-destacada">"Rehabilitar un centro de salud es fortalecer el corazón de una comunidad."</p>
-                    
-                    <div class="video-local-container">
-                        <video controls>
-                            <source src="video-eventos.mp4" type="video/mp4">
-                            Tu navegador no soporta la reproducción de este video.
-                        </video>
-                    </div>
-
-                    <div class="financiacion-box">
-                        <h4>FINANCIADO POR:</h4>
-                        <p>EL AYUNTAMIENTO DE VITORIA-GASTEIZ - ESPAÑA<br>ALCALDÍA DE SANDONÁ - COLOMBIA</p>
-                    </div>
-                </div>
-            </details>
-        </section>
-
-        <!-- SECCIÓN: NUESTROS ALIADOS ESTRATÉGICOS -->
-        <section id="aliados">
-            <h2>Nuestros Aliados Estratégicos</h2>
-            <div class="aliados-grid">
-                <div class="aliado-card"><img src="aliado1.png" alt="Fundación Sol de Invierno"></div>
-                <div class="aliado-card"><img src="aliado2.png" alt="Superior Hats"></div>
-                <div class="aliado-card"><img src="aliado3.png" alt="Aliado 3"></div>
-                <div class="aliado-card"><img src="aliado4.png" alt="Aliado 4"></div>
-                <div class="aliado-card"><img src="aliado5.png" alt="Aliado 5"></div>
-                <div class="aliado-card"><img src="aliado6.png" alt="Aliado 6"></div>
+        <!-- SECCIÓN PRÓXIMOS EVENTOS -->
+        <details>
+            <summary>Próximos Eventos</summary>
+            <div class="content">
+                <p>Información detallada del próximo evento...</p>
+                <div class="financiacion-box"><strong>FINANCIADO POR:</strong><br>AYUNTAMIENTO DE VITORIA GASTEIZ - ESPAÑA<br>ALCALDIA DE SANDONÁ - COLOMBIA</div>
             </div>
-        </section>
+        </details>
 
-        <!-- SECCIÓN: CONTÁCTANOS -->
-        <section id="contacto">
-            <h2>Contáctanos</h2>
-            <p>¿Tienes dudas, deseas realizar una alianza estratégica o vincularte como voluntario? Déjanos un mensaje:</p>
-            
-            <div class="contact-wrapper">
-                <div class="contact-form-container">
-                    <form action="TU_ENLACE_DE_FORMSPREE_AQUÍ" method="POST">
-                        <div class="form-group">
-                            <label for="nombre">Nombre Completo</label>
-                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="correo">Correo Electrónico</label>
-                            <input type="email" id="correo" name="_replyto" placeholder="tu@correo.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="telefono">Teléfono / WhatsApp</label>
-                            <input type="tel" id="telefono" name="telefono" placeholder="Ej: +57 300 123 4567">
-                        </div>
-                        <div class="form-group">
-                            <label for="asunto">Asunto</label>
-                            <input type="text" id="asunto" name="_subject" placeholder="Motivo de tu mensaje" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="mensaje">Mensaje o Consulta</label>
-                            <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn-enviar">Enviar Mensaje</button>
-                    </form>
-                </div>
-
-                <div>
-                    <h3>Canales de Atención</h3>
-                    <ul class="contact-info">
-                        <li><i class="fa-solid fa-phone"></i> <strong>Teléfono:</strong> +57 3XX XXX XXXX</li>
-                        <li><i class="fa-solid fa-envelope"></i> <strong>Correo Institucional:</strong> contacto@turpaykawsay.org</li>
-                        <li><i class="fa-solid fa-location-dot"></i> <strong>Ubicación:</strong> Sandoná, Nariño, Colombia</li>
-                    </ul>
-
-                    <h3>Síguenos en Redes</h3>
-                    <div class="social-links">
-                        <a href="#link-facebook" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#link-instagram" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#link-tiktok" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-                        <a href="#link-youtube" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                        <a href="#link-threads" target="_blank" title="Threads"><i class="fa-brands fa-threads"></i></a>
-                    </div>
-                </div>
+        <!-- SECCIÓN OBRAS -->
+        <details>
+            <summary>Nuestras Obras</summary>
+            <div class="content">
+                <p>Acceso a nuestras publicaciones digitales...</p>
             </div>
-        </section>
+        </details>
 
     </div>
 
-    <footer>
-        <p>&copy; 2026 Fundación Turpay Kawsay. Todos los derechos reservados.</p>
-    </footer>
-
+    <script>
+        // Script opcional: Al hacer clic en un enlace de menú, abre el acordeón correspondiente
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
 </body>
-</html
+</html>

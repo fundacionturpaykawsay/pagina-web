@@ -10,7 +10,7 @@
         /* Fondo general Beige */
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; padding: 0; color: #3e322b; background-color: #f5f0e6; }
         
-        /* Encabezado al 100% de nitidez y sin textos superpuestos */
+        /* Encabezado */
         header { 
             background-color: #f5f0e6; 
             background-image: url("banner.png"); 
@@ -27,7 +27,7 @@
             header { height: 150px; }
         }
         
-        /* Menú de navegación en Café Claro con transiciones elegantes */
+        /* Menú de navegación */
         nav { background-color: #bc9b83; padding: 0rem; text-align: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
         nav .nav-container { display: inline-flex; justify-content: center; flex-wrap: wrap; }
         nav a { color: #fff; margin: 0 12px; text-decoration: none; font-weight: 500; display: inline-block; padding: 1rem 0; position: relative; transition: color 0.3s; font-size: 0.95rem; }
@@ -86,22 +86,23 @@
         
         .project-card img { width: 100%; height: 220px; object-fit: cover; }
         .project-content { padding: 1.8rem; flex-grow: 1; display: flex; flex-direction: column; }
-        .project-content h3 { margin-top: 0; color: #843c22; font-size: 1.2rem; text-transform: uppercase; margin-bottom: 1rem; line-height: 1.4; border-bottom: 1px dashed #ebdcd0; padding-bottom: 0.5rem; }
+        .project-content h3 { margin-top: 0; color: #843c22; font-size: 1.15rem; text-transform: uppercase; margin-bottom: 1rem; line-height: 1.4; border-bottom: 1px dashed #ebdcd0; padding-bottom: 0.5rem; }
         .project-content p { font-size: 0.98rem; color: #4e4037; margin-bottom: 1rem; text-align: justify; line-height: 1.6; }
         .project-content p:last-child { margin-bottom: 0; }
 
-        /* --- CONTENEDOR DE VIDEO MEJORADO (MÁS COMPACTO Y CENTRADO) --- */
+        /* --- NUEVO CONTENEDOR DE VIDEO: MÁS PEQUEÑO Y CONTROLADO --- */
         .video-local-container { 
             width: 100%; 
-            max-width: 650px; 
+            max-width: 480px; /* Reducido sustancialmente para que no se vea gigante */
             margin: 2rem auto 1rem auto; 
             box-sizing: border-box;
         }
         .video-local-container video { 
             width: 100%; 
+            max-height: 400px;
             border-radius: 8px; 
             display: block; 
-            box-shadow: 0 6px 16px rgba(0,0,0,0.12); 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
             background-color: #000; 
         }
 
@@ -133,7 +134,7 @@
         .aliado-card { background: #fff; border: 1px solid #ebdcd0; border-radius: 6px; padding: 10px; width: 130px; height: 130px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
         .aliado-card img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
-        /* Estilos de Contacto e Info */
+        /* Estilos de Redes e Info */
         .contact-info { list-style: none; padding: 0; }
         .contact-info li { margin-bottom: 1rem; font-size: 1.1rem; }
         .contact-info i { color: #843c22; margin-right: 10px; width: 20px; text-align: center; }
@@ -165,6 +166,7 @@
         </div>
     </nav>
 
+    <!-- WhatsApp Flotante -->
     <a href="https://api.whatsapp.com/send?phone=573000000000&text=Hola,%20deseo%20obtener%20más%20información%20sobre%20la%20Fundación." class="btn-whatsapp" target="_blank" title="Escríbenos por WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
@@ -227,12 +229,13 @@
             </div>
         </section>
 
-        <!-- SECCIÓN PROYECTOS EJECUTADOS -->
+        <!-- SECCIÓN PROYECTOS EJECUTADOS (COMPLETOS) -->
         <section id="proyectos">
             <h2>Nuestros Proyectos e Iniciativas</h2>
             <p>Conoce las acciones, talleres y procesos comunitarios que hemos liderado en el territorio:</p>
             
             <div class="projects-grid">
+                <!-- Proyecto 1 -->
                 <div class="project-card">
                     <img src="proyecto1.jpg" alt="Empoderamiento Socioeconómico de Mujeres">
                     <div class="project-content">
@@ -241,35 +244,43 @@
                     </div>
                 </div>
 
+                <!-- Proyecto 2 -->
                 <div class="project-card">
                     <img src="proyecto2.jpg" alt="Mujeres Rurales Vulnerables de Sandoná">
                     <div class="project-content">
                         <h3>Empoderamiento Socioeconómico de Mujeres Rurales Vulnerables del Municipio de Sandoná-Nariño (2024)</h3>
-                        <p>¡Transformamos ideas en empresas! Capacitamos a 40 mujeres rurales del corregimiento de San Miguel y del de Santa Rosa del Municipio de Sandoná para convertir el plátano y la leche en productos gastronómicos innovadores. El proyecto no solo les enseñó a transformar la materia prima, sino también a dominar sus finanzas y a ajustar sus propios negocios.</p>
+                        <p>¡Transformamos ideas en empresas! Capacitamos a 40 mujeres rurales del corregimiento de San Miguel y del de Santa Rosa del Municipio de Sandoná para convertir el plátano y la leche en productos gastronómicos innovadores. El proyecto no solo les enseñó a transformar la materia prima, sino también a dominar sus finanzas y a estructurar sus propios negocios, entregándoles incluso la identidad visual y el logo de sus marcas. El gran broche de oro fue la primera Feria Gastronómica del municipio de Sandoná, el escenario donde estas mujeres demostraron que el campo tiene un potencial empresarial imparable.</p>
                     </div>
                 </div>
 
+                <!-- Proyecto 3 -->
                 <div class="project-card">
                     <img src="proyecto3.jpg" alt="Puesto de mercado Punto Dulce">
                     <div class="project-content">
-                        <h3>Construcción de Puestos de Mercado para Mujeres Rurales Vulnerables en San Miguel (Punto Dulce) (2025)</h3>
-                        <p>Lo que comenzó como una obra de infraestructura en Sandoná, hoy es un motor de vida, tradición y progreso. Punto Dulce nació para transformarlo todo: un mercadillo que hoy empodera a más de 20 mujeres cabezas de hogar y sus familias.</p>
+                        <h3>Construcción de Puestos de Mercado para Mujeres Rurales Vulnerables en San Miguel - Municipio de Sandoná, Departamento de Nariño (Punto Dulce) (2025)</h3>
+                        <p>Lo que comenzó como una obra de infraestructura en Sandoná, hoy es un motor de vida, tradición y progreso. Punto Dulce nació para transformarlo todo: un mercadillo que hoy empodera a más de 20 mujeres cabezas de hogar y sus familias, brindándoles un espacio propio para generar ingresos dignos a través de sus productos locales.</p>
+                        <p>Este rincón no solo activa la economía de la región, sino que se ha convertido en el epicentro donde se salvaguarda y exalta la riqueza gastronómica de nuestra tierra. Cada visita es un encuentro con el sabor, el esfuerzo y el talento de mujeres que tejen el sustento de sus hogares.</p>
+                        <p>¡Punto Dulce está más vivo que nunca! Es el reflejo de que cuando se apoya a nuestras mujeres, se transforma a toda una comunidad.</p>
                     </div>
                 </div>
 
+                <!-- Proyecto 4 -->
                 <div class="project-card">
                     <img src="proyecto4.jpg" alt="Artesanías en paja de iraca">
                     <div class="project-content">
                         <h3>Entretejiendo Raíces y Saberes (2025)</h3>
-                        <p>En el corazón de Sandoná, 20 mujeres transformaron la tradicional paja de iraca en arte, sustento y orgullo. A través de este proyecto, sus manos aprendieron las técnicas para dar forma a hermosas artesanías y al emblemático sombrero sandoneño.</p>
+                        <p>En el corazón de Sandoná, 20 mujeres transformaron la tradicional paja de iraca en arte, sustento y orgullo. A través de este proyecto, sus manos no solo aprendieron las técnicas para dar forma a hermosas artesanías y al emblemático sombrero sandoneño, sino que también tejieron el futuro de sus familias.</p>
+                        <p>Esta iniciativa logró reactivar la economía de sus hogares, generando ingresos adicionales que mejoraron su calidad de vida. Más allá del beneficio económico, el proyecto significó un reencuentro profundo con sus raíces culturales, asegurando que el legado de sus ancestros siga vivo. ¡Artesanas que trenzaron identidad, empoderamiento y progreso!</p>
                     </div>
                 </div>
 
+                <!-- Proyecto 5 -->
                 <div class="project-card">
                     <img src="proyecto5.jpg" alt="Maestros del Sombrero de Sandoná">
                     <div class="project-content">
                         <h3>Maestros del Sombrero: Historia Viva del Patrimonio Artesanal de Sandoná (2025)</h3>
-                        <p>Gracias al valioso apoyo de Superior Hats, se culminó con éxito un proyecto hermoso y profundo en el municipio de Sandoná. Toda esta riqueza cultural quedó plasmada en una hermosa revista impresa.</p>
+                        <p>Gracias al valioso apoyo de Superior Hats, se culminó con éxito un proyecto hermoso y profundo en el municipio de Sandoná. A través de enriquecedores encuentros de saberes y entrevistas con los artesanos locales e historiadores, se logró reconstruir la ruta histórica de este arte, rescatando el cuándo, el cómo y el dónde nació la gran tradición que hoy identifica a la región.</p>
+                        <p>Toda esta riqueza cultural quedó plasmada en una hermosa revista impresa; un valioso documento histórico que hoy se entrega como regalo a Sandoná y a su memoria colectiva. Con esta iniciativa, no solo se salvaguardaron las raíces, sino que se dejó una huella imborrable para las futuras generaciones de tejedores. ¡Que el orgullo por la iraca siga recorriendo el mundo!</p>
                     </div>
                 </div>
             </div>
@@ -328,7 +339,7 @@
             <p>Es una iniciativa que nace con el propósito de recuperar y modernizar el Centro Médico del corregimiento El Vergel, convirtiéndolo en un espacio digno, seguro y funcional para la atención de la comunidad.</p>
             <p>Este proyecto contempla la remodelación integral de la infraestructura, mejorando sus condiciones físicas, estéticas y operativas para ofrecer un ambiente más cómodo, accesible y adecuado tanto para los usuarios como para el personal de salud. La intervención busca fortalecer la prestación de los servicios médicos, promoviendo una atención más humanizada y de mayor calidad.</p>
             <p>Más que una obra de infraestructura, Rehabilitando el Corazón del Vergel representa el compromiso con el bienestar, la salud y el desarrollo de la comunidad, devolviendo a este centro médico su papel como un lugar de cuidado, esperanza y encuentro para las familias del territorio.</p>
-            <p>La culminación de este importante proceso se celebrará con la infraestructura oficial el próximo 17 de julio, fecha que marcará el inicio de una nueva etapa para el corregimiento, reafirmando el compromiso con el fortalecimiento de los servicios de salud y la mejora de la calidad de vida de sus habitantes.</p>
+            <p>La culminación de este importante proceso se celebrará con la inauguración oficial el próximo 17 de julio, fecha que marcará el inicio de una nueva etapa para el corregimiento, reafirmando el compromiso con el fortalecimiento de los servicios de salud y la mejora de la calidad de vida de sus habitantes.</p>
             <p>Con esta intervención, el Centro Médico de El Vergel se consolida como un símbolo de renovación, progreso y trabajo conjunto en beneficio de toda la comunidad.</p>
             
             <p class="frase-destacada">"Rehabilitar un centro de salud es fortalecer el corazón de una comunidad."</p>
@@ -354,15 +365,15 @@
             </div>
         </section>
 
-        <!-- SECCIÓN DETALLADA: CONTÁCTANOS (CONEXIÓN CON FORMSPREE) -->
+        <!-- SECCIÓN: CONTÁCTANOS -->
         <section id="contacto">
             <h2>Contáctanos</h2>
-            <p>¿Tienes dudas? Déjanos un mensaje:</p>
+            <p>¿Tienes dudas, deseas realizar una alianza estratégica o vincularte como voluntario? Déjanos un mensaje:</p>
             
             <div class="contact-wrapper">
-                <!-- Formulario de contacto configurado para recibir correos -->
                 <div class="contact-form-container">
-                    <form action="https://formspree.io/f/mlgyqkoq" method="POST">
+                    <!-- REEMPLAZA "TU_ENLACE_DE_FORMSPREE_AQUÍ" CON EL LINK DE TU CUENTA -->
+                    <form action="TU_ENLACE_DE_FORMSPREE_AQUÍ" method="POST">
                         <div class="form-group">
                             <label for="nombre">Nombre Completo</label>
                             <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>

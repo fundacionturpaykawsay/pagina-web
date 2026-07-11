@@ -145,11 +145,11 @@ background-size:cover;background-position:center; position: sticky; top: 0; z-in
 
         footer { text-align: center; padding: 1.5rem; background-color: #5c4033; color: #fff; margin-top: 3rem; }
     
-.galeria-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-.galeria-grid img{width:100%;height:220px;object-fit:cover;border-radius:12px;cursor:pointer;transition:.3s;box-shadow:0 6px 18px rgba(0,0,0,.2)}
-.galeria-grid img:hover{transform:scale(1.03)}
-.logo-proyecto { width: 80px; height: 80px; object-fit: contain; margin-bottom: 10px; display: block; }
-</style>
+        .galeria-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+        .galeria-grid img{width:100%;height:220px;object-fit:cover;border-radius:12px;cursor:pointer;transition:.3s;box-shadow:0 6px 18px rgba(0,0,0,.2)}
+        .galeria-grid img:hover{transform:scale(1.03)}
+        .logo-proyecto { width: 50px; height: 50px; object-fit: contain; vertical-align: middle; margin-right: 15px; }
+    </style>
 </head>
 <body>
 
@@ -162,7 +162,6 @@ background-size:cover;background-position:center; position: sticky; top: 0; z-in
         </div>
 
         <div class="nav-container" id="nav-menu">
-                        
             <div class="dropdown" onclick="toggleDropdown(this)">
                 <button class="dropdown-btn">Quiénes Somos <i class="fa-solid fa-caret-down"></i></button>
                 <div class="dropdown-content">
@@ -204,17 +203,16 @@ background-size:cover;background-position:center; position: sticky; top: 0; z-in
         </div>
     </nav>
 
-    <!-- WhatsApp Flotante -->
     <a href="https://api.whatsapp.com/send?phone=573000000000&text=Hola,%20deseo%20obtener%20más%20información%20sobre%20la%20Fundación." class="btn-whatsapp" target="_blank" title="Escríbenos por WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
     <div class="container">
         
-        <!-- SECCIÓN INICIO -->
         <section id="inicio">
             <h2>Bienvenidos</h2>
-            <p>En <strong>TURPAY KAWSAY</strong> somos una fundación sin ánimo de lucro comprometida con transformar vidas y fortalecer comunidades.</p>
+            <p>En <strong>TURPAY KAWSAY</strong> somos una fundación sin ánimo de lucro comprometida con transformar vidas y fortalecer comunidades. Trabajamos por el empoderamiento de las mujeres en situación de vulnerabilidad, promoviendo su autonomía, liderazgo y desarrollo integral a través de programas de formación, emprendimiento y acción social.</p>
+            <p>Creemos que cada mujer tiene el potencial de convertirse en agente de cambio. Por eso, impulsamos iniciativas que generan oportunidades, fomentan la inclusión y contribuyen a la construcción de una sociedad más justa, solidaria y sostenible.</p>
             
             <div class="impacto-grid">
                 <div class="impacto-card">
@@ -232,123 +230,137 @@ background-size:cover;background-position:center; position: sticky; top: 0; z-in
             </div>
         </section>
 
-        <!-- SECCIÓN QUIÉNES SOMOS -->
         <section id="nosotros">
             <h2>Nuestra Identidad Institucional</h2>
             <details id="acc-mision">
                 <summary><i class="fa-solid fa-bullseye"></i> Misión</summary>
                 <div class="acordeon-content">
-                    <p>Ser una fundación referente en el desarrollo de proyectos sociales...</p>
+                    <p>Ser una fundación referente en el desarrollo de proyectos sociales que promuevan el empoderamiento de las mujeres, la construcción de paz, la inclusión, el cuidado del medio ambiente y el fortalecimiento de las comunidades. Aspiramos a generar un impacto positivo y sostenible mediante alianzas estratégicas con entidades públicas, privadas y organizaciones comprometidas con el desarrollo social.</p>
                 </div>
             </details>
             <details id="acc-vision">
                 <summary><i class="fa-solid fa-eye"></i> Visión</summary>
                 <div class="acordeon-content">
-                    <p>En los próximos diez años, TURPAY KAWSAY será una fundación reconocida...</p>
+                    <p>En los próximos diez años, TURPAY KAWSAY será una fundación reconocida a nivel local, nacional e internacional por liderar proyectos de transformación social que promuevan el empoderamiento de las mujeres, la construcción de paz y el desarrollo sostenible. A través de alianzas estratégicas y el trabajo conjunto con comunidades e instituciones, contribuiremos a construir una sociedad más equitativa, solidaria y con mayores oportunidades para todos.</p>
                 </div>
             </details>
             <details id="acc-valores">
                 <summary><i class="fa-solid fa-heart"></i> Nuestros Valores</summary>
                 <div class="acordeon-content">
                     <div class="valores-grid">
-                        <div class="valor-card"><i class="fa-solid fa-hands-holding-circle"></i><h4>Solidaridad</h4></div>
-                        <div class="valor-card"><i class="fa-solid fa-scale-balanced"></i><h4>Equidad</h4></div>
-                        <div class="valor-card"><i class="fa-regular fa-handshake"></i><h4>Transparencia</h4></div>
+                        <div class="valor-card"><i class="fa-solid fa-hands-holding-circle"></i><h4>Solidaridad</h4><p>Apoyo mutuo y empatía incondicional hacia las comunidades que acompañamos.</p></div>
+                        <div class="valor-card"><i class="fa-solid fa-scale-balanced"></i><h4>Equidad</h4><p>Defensa del acceso justo a oportunidades y el empoderamiento sin distinciones.</p></div>
+                        <div class="valor-card"><i class="fa-regular fa-handshake"></i><h4>Transparencia</h4><p>Claridad y rectitud absoluta en cada una de nuestras gestiones y alianzas.</p></div>
                     </div>
                 </div>
             </details>
         </section>
 
-        <!-- SECCIÓN PROYECTOS -->
         <section id="proyectos">
             <h2>Proyectos Ejecutados</h2>
             <details id="acc-proy1">
-                <summary><img src="logo_proy1.png" class="logo-proyecto" alt="Logo"> Empoderamiento Socioeconómico (2023)</summary>
+                <summary><img src="logo1.png" class="logo-proyecto" alt="Logo"> Empoderamiento Socioeconómico (2023)</summary>
                 <div class="acordeon-content">
                     <img src="proyecto1.jpg" alt="Proyecto">
-                    <p>Descripción del proyecto...</p>
+                    <p>Gracias a la alianza con la Fundación Sol de Invierno, logramos capacitar a 60 mujeres en amigurumi, huertas caseras y manicura. Este proyecto no solo fortaleció sus habilidades técnicas, sino que abrió nuevas puertas para su desarrollo económico y autonomía financiera.</p>
                     <div class="financiacion"><i class="fa-solid fa-handshake-angle"></i> <strong>Financiado por:</strong> Diputación de Álava - España.</div>
                 </div>
             </details>
             <details id="acc-proy2">
-                <summary><img src="logo_proy2.png" class="logo-proyecto" alt="Logo"> Mujeres Rurales Vulnerables (2024)</summary>
+                <summary><img src="logo2.png" class="logo-proyecto" alt="Logo"> Mujeres Rurales (2024)</summary>
                 <div class="acordeon-content">
                     <img src="proyecto2.jpg" alt="Proyecto">
-                    <p>Descripción del proyecto...</p>
-                    <div class="financiacion"><i class="fa-solid fa-handshake-angle"></i> <strong>Financiado por:</strong> Diputación de Álava y Alcaldía de Sandoná.</div>
+                    <p>Capacitamos a 40 mujeres rurales del corregimiento de San Miguel y Santa Rosa del Municipio de Sandoná para convertir el plátano y la leche en productos gastronómicos innovadores.</p>
+                    <div class="financiacion"><i class="fa-solid fa-handshake-angle"></i> <strong>Financiado por:</strong> Diputación de Álava - España y Alcaldía de Sandoná - Colombia.</div>
                 </div>
             </details>
             <details id="acc-proy3">
-                <summary><img src="logo_proy3.png" class="logo-proyecto" alt="Logo"> Punto Dulce (2025)</summary>
+                <summary><img src="logo3.png" class="logo-proyecto" alt="Logo"> Punto Dulce (2025)</summary>
                 <div class="acordeon-content">
                     <img src="proyecto3.jpg" alt="Proyecto">
-                    <p>Descripción del proyecto...</p>
-                    <div class="financiacion"><i class="fa-solid fa-handshake-angle"></i> <strong>Financiado por:</strong> Ayuntamiento de Vitoria-Gasteiz y Alcaldía de Sandoná.</div>
+                    <p>Un mercadillo que hoy empodera a más de 20 mujeres cabezas de hogar y sus familias, brindándoles un espacio propio para generar ingresos dignos a través de sus productos locales.</p>
+                    <div class="financiacion"><i class="fa-solid fa-handshake-angle"></i> <strong>Financiado por:</strong> Ayuntamiento de Vitoria-Gasteiz - España y Alcaldía de Sandoná - Colombia.</div>
                 </div>
             </details>
             <details id="acc-proy4">
-                <summary><img src="logo_proy4.png" class="logo-proyecto" alt="Logo"> Entretejiendo Raíces (2025)</summary>
+                <summary><img src="logo4.png" class="logo-proyecto" alt="Logo"> Entretejiendo Raíces (2025)</summary>
                 <div class="acordeon-content">
                     <img src="proyecto4.jpg" alt="Proyecto">
-                    <p>Descripción del proyecto...</p>
-                    <div class="financiacion"><i class="fa-solid fa-handshake-angle"></i> <strong>Financiado por:</strong> Diputación de Álava y Alcaldía de Sandoná.</div>
+                    <p>20 mujeres transformaron la tradicional paja de iraca en arte, sustento y orgullo, asegurando que el legado de sus ancestros siga vivo.</p>
+                    <div class="financiacion"><i class="fa-solid fa-handshake-angle"></i> <strong>Financiado por:</strong> Diputación de Álava - España y Alcaldía de Sandoná - Colombia.</div>
                 </div>
             </details>
             <details id="acc-proy5">
-                <summary><img src="logo_proy5.png" class="logo-proyecto" alt="Logo"> Maestros del Sombrero (2025)</summary>
+                <summary><img src="logo5.png" class="logo-proyecto" alt="Logo"> Maestros del Sombrero (2025)</summary>
                 <div class="acordeon-content">
                     <img src="proyecto5.jpg" alt="Proyecto">
-                    <p>Descripción del proyecto...</p>
-                    <div class="financiacion"><i class="fa-solid fa-handshake-angle"></i> <strong>Financiado por:</strong> Gobernación de Nariño y Alcaldía de Sandoná.</div>
+                    <p>Proyecto que rescató el origen y la memoria histórica del arte del sombrero sandoneño, documentado en una revista impresa para las futuras generaciones.</p>
+                    <div class="financiacion"><i class="fa-solid fa-handshake-angle"></i> <strong>Financiado por:</strong> Gobernación de Nariño / Secretaría de Cultura - Colombia y Alcaldía de Sandoná - Colombia.</div>
                 </div>
             </details>
         </section>
 
-        <!-- SECCIÓN OBRAS -->
         <section id="obras">
             <h2>Nuestras Obras</h2>
             <details id="acc-obra1">
                 <summary><i class="fa-solid fa-book"></i> Revista Maestros del Sombrero</summary>
-                <div class="acordeon-content" style="text-align: center;"><a href="#" class="btn-digital">Leer Libro Digital</a></div>
+                <div class="acordeon-content" style="text-align: center;">
+                    <i class="fa-solid fa-book-open book-icon"></i>
+                    <p>Compendio histórico y fotográfico del tejido en iraca.</p>
+                    <a href="#" class="btn-digital">Leer Libro Digital</a>
+                </div>
             </details>
             <details id="acc-obra2">
-                <summary><i class="fa-solid fa-book"></i> Entretejiendo Raíces y Saberes</summary>
-                <div class="acordeon-content" style="text-align: center;"><a href="#" class="btn-digital">Leer Libro Digital</a></div>
+                <summary><i class="fa-solid fa-book"></i> Libro Entretejiendo</summary>
+                <div class="acordeon-content" style="text-align: center;">
+                    <i class="fa-solid fa-book-open book-icon"></i>
+                    <p>Memoria institucional de los procesos de empoderamiento.</p>
+                    <a href="#" class="btn-digital">Leer Libro Digital</a>
+                </div>
             </details>
         </section>
 
-        <!-- SECCIÓN DESARROLLO -->
         <section id="desarrollo">
             <h2>Proyectos en Desarrollo</h2>
             <details id="acc-desarrollo">
-                <summary><img src="logo_desarrollo.png" class="logo-proyecto" alt="Logo"> Entre Sombras y Sombreros 2026</summary>
+                <summary><img src="logo_des.png" class="logo-proyecto" alt="Logo"> Entre Sombras (2026)</summary>
                 <div class="acordeon-content">
-                    <p>Descripción del proyecto...</p>
-                    <div class="financiacion"><i class="fa-solid fa-handshake-angle"></i> <strong>Financiado por:</strong> Ministerio de las Culturas.</div>
+                    <p>Proyecto de teatro para jóvenes entre 13 y 28 años, fortaleciendo la identidad cultural de Sandoná a través de las artes escénicas.</p>
+                    <div class="financiacion"><i class="fa-solid fa-handshake-angle"></i> <strong>Financiado por:</strong> Ministerio de las Culturas - Colombia.</div>
                 </div>
             </details>
         </section>
 
-        <!-- SECCIÓN EVENTOS -->
         <section id="eventos">
             <h2>Próximos Eventos</h2>
             <details id="acc-eventos">
-                <summary><img src="logo_evento.png" class="logo-proyecto" alt="Logo"> Rehabilitando el Corazón del Vergel 2026</summary>
+                <summary><img src="logo_eve.png" class="logo-proyecto" alt="Logo"> Rehabilitando el Corazón del Vergel</summary>
                 <div class="acordeon-content">
-                    <p>Descripción del evento...</p>
-                    <div class="financiacion"><i class="fa-solid fa-handshake-angle"></i> <strong>Financiado por:</strong> Ayuntamiento de Vitoria-Gasteiz y Alcaldía de Sandoná.</div>
+                    <p>Proyecto de infraestructura para la remodelación integral del Centro Médico del corregimiento El Vergel.</p>
+                    <div class="financiacion"><i class="fa-solid fa-handshake-angle"></i> <strong>Financiado por:</strong> Ayuntamiento de Vitoria-Gasteiz - España y Alcaldía de Sandoná - Colombia.</div>
                 </div>
             </details>
+        </section>
+
+        <section id="aliados">
+            <h2>Nuestros Aliados Estratégicos</h2>
+            <div class="aliados-grid">
+                <div class="aliado-card"><img src="aliado1.png" alt="Aliado"></div>
+                <div class="aliado-card"><img src="aliado2.png" alt="Aliado"></div>
+                <div class="aliado-card"><img src="aliado3.png" alt="Aliado"></div>
+                <div class="aliado-card"><img src="aliado4.png" alt="Aliado"></div>
+                <div class="aliado-card"><img src="aliado5.png" alt="Aliado"></div>
+            </div>
         </section>
 
         <section id="galeria">
             <h2>Galería Fotográfica</h2>
             <div class="galeria-grid">
-                <img src="foto1.jpg" alt="Foto"><img src="foto2.jpg" alt="Foto"><img src="foto3.jpg" alt="Foto"><img src="foto4.jpg" alt="Foto">
-                <img src="foto5.jpg" alt="Foto"><img src="foto6.jpg" alt="Foto"><img src="foto7.jpg" alt="Foto"><img src="foto8.jpg" alt="Foto">
-                <img src="foto9.jpg" alt="Foto"><img src="foto10.jpg" alt="Foto"><img src="foto11.jpg" alt="Foto"><img src="foto12.jpg" alt="Foto">
-                <img src="foto13.jpg" alt="Foto"><img src="foto14.jpg" alt="Foto"><img src="foto15.jpg" alt="Foto"><img src="foto16.jpg" alt="Foto">
-                <img src="foto17.jpg" alt="Foto"><img src="foto18.jpg" alt="Foto"><img src="foto19.jpg" alt="Foto"><img src="foto20.jpg" alt="Foto">
+                <img src="foto1.jpg" alt="1"><img src="foto2.jpg" alt="2"><img src="foto3.jpg" alt="3"><img src="foto4.jpg" alt="4">
+                <img src="foto5.jpg" alt="5"><img src="foto6.jpg" alt="6"><img src="foto7.jpg" alt="7"><img src="foto8.jpg" alt="8">
+                <img src="foto9.jpg" alt="9"><img src="foto10.jpg" alt="10"><img src="foto11.jpg" alt="11"><img src="foto12.jpg" alt="12">
+                <img src="foto13.jpg" alt="13"><img src="foto14.jpg" alt="14"><img src="foto15.jpg" alt="15"><img src="foto16.jpg" alt="16">
+                <img src="foto17.jpg" alt="17"><img src="foto18.jpg" alt="18"><img src="foto19.jpg" alt="19"><img src="foto20.jpg" alt="20">
             </div>
         </section>
 
@@ -358,21 +370,29 @@ background-size:cover;background-position:center; position: sticky; top: 0; z-in
                 <div class="contact-form-container">
                     <form action="#" method="POST">
                         <div class="form-group"><label>Nombre</label><input type="text" required></div>
-                        <div class="form-group"><label>Mensaje</label><textarea required></textarea></div>
-                        <button type="submit" class="btn-enviar">Enviar</button>
+                        <div class="form-group"><label>Correo</label><input type="email" required></div>
+                        <div class="form-group"><label>Mensaje</label><textarea rows="5" required></textarea></div>
+                        <button type="submit" class="btn-enviar">Enviar Mensaje</button>
                     </form>
                 </div>
                 <div>
-                    <h3>Información</h3>
+                    <h3>Canales de Atención</h3>
                     <ul class="contact-info">
                         <li><i class="fa-solid fa-phone"></i> +57 3XX XXX XXXX</li>
+                        <li><i class="fa-solid fa-envelope"></i> contacto@turpaykawsay.org</li>
+                        <li><i class="fa-solid fa-location-dot"></i> Sandoná, Nariño, Colombia</li>
                     </ul>
+                    <h3>Síguenos</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
         </section>
     </div>
 
-    <footer><p>&copy; 2026 Fundación Turpay Kawsay.</p></footer>
+    <footer><p>&copy; 2026 Fundación Turpay Kawsay. Todos los derechos reservados.</p></footer>
 
     <script>
         function toggleMainMenu() { document.getElementById("nav-menu").classList.toggle("active"); }
@@ -383,4 +403,4 @@ background-size:cover;background-position:center; position: sticky; top: 0; z-in
         }
     </script>
 </body>
-</html
+</html>

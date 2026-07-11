@@ -142,7 +142,12 @@
         .btn-whatsapp:hover { transform: scale(1.1); color: #fff; }
 
         footer { text-align: center; padding: 1.5rem; background-color: #5c4033; color: #fff; margin-top: 3rem; }
-    </style>
+    
+.galeria-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.galeria-grid img{width:100%;height:220px;object-fit:cover;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,.15);transition:.3s}
+.galeria-grid img:hover{transform:scale(1.04)}
+
+</style>
 </head>
 <body>
 
@@ -150,12 +155,12 @@
 
     <nav>
         <div class="nav-mobile-header">
-            <a href="#inicio" class="nav-home"><i class="fa-solid fa-house"></i> Inicio</a>
+            <a href="#galeria" class="nav-home"><i class="fa-solid fa-image"></i> Galería</a>
             <button class="menu-btn" onclick="toggleMainMenu()"><i class="fa-solid fa-bars"></i> Menú</button>
         </div>
 
         <div class="nav-container" id="nav-menu">
-            <a href="#inicio" class="desktop-only">Inicio</a>
+            <a href="#galeria">Galería</a>
             
             <div class="dropdown" onclick="toggleDropdown(this)">
                 <button class="dropdown-btn">Quiénes Somos <i class="fa-solid fa-caret-down"></i></button>
@@ -417,7 +422,9 @@
             </details>
         </section>
 
-        <!-- SECCIÓN ALIADOS ESTRATÉGICOS -->
+        <section id="galeria"><h2>Galería</h2><div class="galeria-grid"><img src="foto1.jpg" alt="Foto 1"><img src="foto2.jpg" alt="Foto 2"><img src="foto3.jpg" alt="Foto 3"><img src="foto4.jpg" alt="Foto 4"><img src="foto5.jpg" alt="Foto 5"><img src="foto6.jpg" alt="Foto 6"><img src="foto7.jpg" alt="Foto 7"><img src="foto8.jpg" alt="Foto 8"><img src="foto9.jpg" alt="Foto 9"><img src="foto10.jpg" alt="Foto 10"><img src="foto11.jpg" alt="Foto 11"><img src="foto12.jpg" alt="Foto 12"><img src="foto13.jpg" alt="Foto 13"><img src="foto14.jpg" alt="Foto 14"><img src="foto15.jpg" alt="Foto 15"></div></section>
+
+<!-- SECCIÓN ALIADOS ESTRATÉGICOS -->
         <section id="aliados">
             <h2>Nuestros Aliados Estratégicos</h2>
             <div class="aliados-grid">

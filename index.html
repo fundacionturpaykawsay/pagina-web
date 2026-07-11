@@ -75,7 +75,7 @@
         
         .acordeon-content { padding: 1.5rem; border-top: 1px solid #ebdcd0; background: #fff; }
         .acordeon-content p { margin-top: 0; text-align: justify; line-height: 1.6; color: #4e4037; }
-        .acordeon-content img { width: 100%; max-height: 400px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem; }
+        .acordeon-content img.proyecto-img { width: 100%; max-height: 400px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem; }
         
         /* Obras Icons */
         .acordeon-content i.book-icon { font-size: 3.5rem; color: #843c22; margin-bottom: 1rem; display: block; text-align: center; }
@@ -106,10 +106,18 @@
         .valor-card h4 { margin: 0.5rem 0; color: #843c22; text-transform: uppercase; font-size: 1rem; }
         .valor-card p { margin: 0; font-size: 0.9rem; color: #60524a; text-align: center; }
 
+        /* Estilos Galería */
+        .galeria-fotos { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; }
+        .galeria-fotos img { width: 100%; height: 180px; object-fit: cover; border-radius: 6px; box-shadow: 0 3px 6px rgba(0,0,0,0.1); transition: transform 0.3s; }
+        .galeria-fotos img:hover { transform: scale(1.05); }
+
+        .galeria-videos { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .galeria-videos video { width: 100%; height: 200px; border-radius: 6px; box-shadow: 0 3px 6px rgba(0,0,0,0.1); background-color: #000; }
+
         .btn-digital { display: inline-block; background-color: #dfa842; color: #fff; padding: 0.7rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: bold; margin-top: 1rem; transition: background 0.3s; box-shadow: 0 3px 6px rgba(0,0,0,0.1); text-align: center; }
         .btn-digital:hover { background-color: #843c22; }
 
-        /* Contenedor de video */
+        /* Contenedor de video individual */
         .video-local-container { width: 100%; max-width: 480px; margin: 2rem auto 1rem auto; box-sizing: border-box; }
         .video-local-container video { width: 100%; max-height: 400px; border-radius: 8px; display: block; box-shadow: 0 4px 12px rgba(0,0,0,0.15); background-color: #000; }
         .frase-destacada { font-style: italic; font-weight: bold; color: #843c22; text-align: center; margin: 1.5rem 0; font-size: 1.1rem; }
@@ -150,12 +158,13 @@
 
     <nav>
         <div class="nav-mobile-header">
-            <a href="#inicio" class="nav-home"><i class="fa-solid fa-house"></i> Inicio</a>
+            <!-- Se reemplaza el botón de inicio por el nombre de la fundación para móviles -->
+            <span class="nav-home"><i class="fa-solid fa-leaf"></i> Turpay Kawsay</span>
             <button class="menu-btn" onclick="toggleMainMenu()"><i class="fa-solid fa-bars"></i> Menú</button>
         </div>
 
         <div class="nav-container" id="nav-menu">
-            <a href="#inicio" class="desktop-only">Inicio</a>
+            <!-- Se eliminó la pestaña Inicio -->
             
             <div class="dropdown" onclick="toggleDropdown(this)">
                 <button class="dropdown-btn">Quiénes Somos <i class="fa-solid fa-caret-down"></i></button>
@@ -187,6 +196,16 @@
             </div>
 
             <a href="#eventos" onclick="abrirAcordeon('acc-eventos')">Próximos Eventos</a>
+            
+            <!-- Nueva pestaña de Galería -->
+            <div class="dropdown" onclick="toggleDropdown(this)">
+                <button class="dropdown-btn">Galería <i class="fa-solid fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="#galeria" onclick="abrirAcordeon('acc-fotos')">Fotos</a>
+                    <a href="#galeria" onclick="abrirAcordeon('acc-videos')">Videos</a>
+                </div>
+            </div>
+
             <a href="#contacto">Contáctanos</a>
         </div>
     </nav>
@@ -198,7 +217,7 @@
 
     <div class="container">
         
-        <!-- SECCIÓN INICIO -->
+        <!-- SECCIÓN INICIO (CONTENIDO) -->
         <section id="inicio">
             <h2>Bienvenidos</h2>
             <p>En <strong>TURPAY KAWSAY</strong> somos una fundación sin ánimo de lucro comprometida con transformar vidas y fortalecer comunidades. Trabajamos por el empoderamiento de las mujeres en situación de vulnerabilidad, promoviendo su autonomía, liderazgo y desarrollo integral a través de programas de formación, emprendimiento y acción social.</p>
@@ -271,7 +290,7 @@
             <details id="acc-proy1">
                 <summary>Empoderamiento Socioeconómico (2023)</summary>
                 <div class="acordeon-content">
-                    <img src="proyecto1.jpg" alt="Empoderamiento Socioeconómico de Mujeres">
+                    <img src="proyecto1.jpg" alt="Empoderamiento Socioeconómico de Mujeres" class="proyecto-img">
                     <p>Gracias a la alianza con la Fundación Sol de Invierno, logramos capacitar a 60 mujeres en amigurumi, huertas caseras y manicura. Este proyecto no solo fortaleció sus habilidades técnicas, sino que abrió nuevas puertas para su desarrollo económico y autonomía financiera. ¡Transformamos talento en productividad real!</p>
                     
                     <div class="financiacion">
@@ -283,7 +302,7 @@
             <details id="acc-proy2">
                 <summary>Mujeres Rurales Vulnerables de Sandoná (2024)</summary>
                 <div class="acordeon-content">
-                    <img src="proyecto2.jpg" alt="Mujeres Rurales Vulnerables de Sandoná">
+                    <img src="proyecto2.jpg" alt="Mujeres Rurales Vulnerables de Sandoná" class="proyecto-img">
                     <p>¡Transformamos ideas en empresas! Capacitamos a 40 mujeres rurales del corregimiento de San Miguel y del de Santa Rosa del Municipio de Sandoná para convertir el plátano y la leche en productos gastronómicos innovadores. El proyecto no solo les enseñó a transformar la materia prima, sino también a dominar sus finanzas y a estructurar sus propios negocios, entregándoles incluso la identidad visual y el logo de sus marcas. El gran broche de oro fue la primera Feria Gastronómica del municipio de Sandoná, el escenario donde estas mujeres demostraron que el campo tiene un potencial empresarial imparable.</p>
                     
                     <div class="financiacion">
@@ -295,7 +314,7 @@
             <details id="acc-proy3">
                 <summary>Puestos de Mercado: Punto Dulce (2025)</summary>
                 <div class="acordeon-content">
-                    <img src="proyecto3.jpg" alt="Puesto de mercado Punto Dulce">
+                    <img src="proyecto3.jpg" alt="Puesto de mercado Punto Dulce" class="proyecto-img">
                     <p>Lo que comenzó como una obra de infraestructura en Sandoná, hoy es un motor de vida, tradición y progreso. Punto Dulce nació para transformarlo todo: un mercadillo que hoy empodera a más de 20 mujeres cabezas de hogar y sus familias, brindándoles un espacio propio para generar ingresos dignos a través de sus productos locales.</p>
                     <p>Este rincón no solo activa la economía de la región, sino que se ha convertido en el epicentro donde se salvaguarda y exalta la riqueza gastronómica de nuestra tierra. Cada visita es un encuentro con el sabor, el esfuerzo y el talento de mujeres que tejen el sustento de sus hogares.</p>
                     <p>¡Punto Dulce está más vivo que nunca! Es el reflejo de que cuando se apoya a nuestras mujeres, se transforma a toda una comunidad.</p>
@@ -309,7 +328,7 @@
             <details id="acc-proy4">
                 <summary>Entretejiendo Raíces y Saberes (2025)</summary>
                 <div class="acordeon-content">
-                    <img src="proyecto4.jpg" alt="Artesanías en paja de iraca">
+                    <img src="proyecto4.jpg" alt="Artesanías en paja de iraca" class="proyecto-img">
                     <p>En el corazón de Sandoná, 20 mujeres transformaron la tradicional paja de iraca en arte, sustento y orgullo. A través de este proyecto, sus manos no solo aprendieron las técnicas para dar forma a hermosas artesanías y al emblemático sombrero sandoneño, sino que también tejieron el futuro de sus familias.</p>
                     <p>Esta iniciativa logró reactivar la economía de sus hogares, generando ingresos adicionales que mejoraron su calidad de vida. Más allá del beneficio económico, el proyecto significó un reencuentro profundo con sus raíces culturales, asegurando que el legado de sus ancestros siga vivo. ¡Artesanas que trenzaron identidad, empoderamiento y progreso!</p>
                     
@@ -322,7 +341,7 @@
             <details id="acc-proy5">
                 <summary>Maestros del Sombrero (2025)</summary>
                 <div class="acordeon-content">
-                    <img src="proyecto5.jpg" alt="Maestros del Sombrero de Sandoná">
+                    <img src="proyecto5.jpg" alt="Maestros del Sombrero de Sandoná" class="proyecto-img">
                     <p>Gracias al valioso apoyo de Superior Hats, se culminó con éxito un proyecto hermoso y profundo en el municipio de Sandoná. A través de enriquecedores encuentros de saberes y entrevistas con los artesanos locales e historiadores, se logró reconstruir la ruta histórica de este arte, rescatando el cuándo, el cómo y el dónde nació la gran tradición que hoy identifica a la región.</p>
                     <p>Toda esta riqueza cultural quedó plasmada en una hermosa revista impresa; un valioso documento histórico que hoy se entrega como regalo a Sandoná y a su memoria colectiva. Con esta iniciativa, no solo se salvaguardaron las raíces, sino que se dejó una huella imborrable para las futuras generaciones de tejedores. ¡Que el orgullo por la iraca siga recorriendo el mundo!</p>
                     
@@ -412,6 +431,46 @@
                             <source src="video-eventos.mp4" type="video/mp4">
                             Tu navegador no soporta la reproducción de este video.
                         </video>
+                    </div>
+                </div>
+            </details>
+        </section>
+
+        <!-- NUEVA SECCIÓN GALERÍA -->
+        <section id="galeria">
+            <h2>Nuestra Galería</h2>
+            <p>Explora y revive los mejores momentos, sonrisas y logros de nuestros proyectos y eventos:</p>
+            
+            <details id="acc-fotos">
+                <summary><i class="fa-solid fa-camera-retro"></i> Galería de Fotos</summary>
+                <div class="acordeon-content">
+                    <div class="galeria-fotos">
+                        <!-- Aquí pones los nombres de tus 10 fotos -->
+                        <img src="galeria_foto1.jpg" alt="Momento Turpay Kawsay 1">
+                        <img src="galeria_foto2.jpg" alt="Momento Turpay Kawsay 2">
+                        <img src="galeria_foto3.jpg" alt="Momento Turpay Kawsay 3">
+                        <img src="galeria_foto4.jpg" alt="Momento Turpay Kawsay 4">
+                        <img src="galeria_foto5.jpg" alt="Momento Turpay Kawsay 5">
+                        <img src="galeria_foto6.jpg" alt="Momento Turpay Kawsay 6">
+                        <img src="galeria_foto7.jpg" alt="Momento Turpay Kawsay 7">
+                        <img src="galeria_foto8.jpg" alt="Momento Turpay Kawsay 8">
+                        <img src="galeria_foto9.jpg" alt="Momento Turpay Kawsay 9">
+                        <img src="galeria_foto10.jpg" alt="Momento Turpay Kawsay 10">
+                    </div>
+                </div>
+            </details>
+
+            <details id="acc-videos">
+                <summary><i class="fa-solid fa-video"></i> Galería de Videos</summary>
+                <div class="acordeon-content">
+                    <div class="galeria-videos">
+                        <!-- Aquí pones los nombres de tus 6 videos -->
+                        <video controls><source src="galeria_video1.mp4" type="video/mp4"></video>
+                        <video controls><source src="galeria_video2.mp4" type="video/mp4"></video>
+                        <video controls><source src="galeria_video3.mp4" type="video/mp4"></video>
+                        <video controls><source src="galeria_video4.mp4" type="video/mp4"></video>
+                        <video controls><source src="galeria_video5.mp4" type="video/mp4"></video>
+                        <video controls><source src="galeria_video6.mp4" type="video/mp4"></video>
                     </div>
                 </div>
             </details>
@@ -518,3 +577,4 @@
     </script>
 </body>
 </html>
+

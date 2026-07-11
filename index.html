@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fundación Turpay Kawsay</title>
+    <!-- Iconos para redes sociales y elementos visuales -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Fondo general Beige */
@@ -78,6 +79,19 @@
         
         /* Obras Icons */
         .acordeon-content i.book-icon { font-size: 3.5rem; color: #843c22; margin-bottom: 1rem; display: block; text-align: center; }
+
+        /* Estilo para la caja de Financiación */
+        .financiacion {
+            background-color: #faf8f5;
+            border-left: 4px solid #dfa842;
+            padding: 1rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 0 4px 4px 0;
+            font-size: 0.95rem;
+            color: #5c4033;
+        }
+        .financiacion i { color: #dfa842; margin-right: 8px; }
 
         /* Contadores de Impacto */
         .impacto-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center; margin-top: 1.5rem; }
@@ -177,12 +191,14 @@
         </div>
     </nav>
 
+    <!-- WhatsApp Flotante -->
     <a href="https://api.whatsapp.com/send?phone=573000000000&text=Hola,%20deseo%20obtener%20más%20información%20sobre%20la%20Fundación." class="btn-whatsapp" target="_blank" title="Escríbenos por WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
     <div class="container">
         
+        <!-- SECCIÓN INICIO -->
         <section id="inicio">
             <h2>Bienvenidos</h2>
             <p>En <strong>TURPAY KAWSAY</strong> somos una fundación sin ánimo de lucro comprometida con transformar vidas y fortalecer comunidades. Trabajamos por el empoderamiento de las mujeres en situación de vulnerabilidad, promoviendo su autonomía, liderazgo y desarrollo integral a través de programas de formación, emprendimiento y acción social.</p>
@@ -204,6 +220,7 @@
             </div>
         </section>
 
+        <!-- SECCIÓN QUIÉNES SOMOS -->
         <section id="nosotros">
             <h2>Nuestra Identidad Institucional</h2>
             <p>Selecciona una opción para conocer más sobre nuestra fundación:</p>
@@ -246,6 +263,7 @@
             </details>
         </section>
 
+        <!-- SECCIÓN PROYECTOS -->
         <section id="proyectos">
             <h2>Proyectos Ejecutados</h2>
             <p>Conoce las acciones, talleres y procesos comunitarios que hemos liderado en el territorio. Haz clic en el nombre de cada proyecto para expandir su información:</p>
@@ -255,6 +273,10 @@
                 <div class="acordeon-content">
                     <img src="proyecto1.jpg" alt="Empoderamiento Socioeconómico de Mujeres">
                     <p>Gracias a la alianza con la Fundación Sol de Invierno, logramos capacitar a 60 mujeres en amigurumi, huertas caseras y manicura. Este proyecto no solo fortaleció sus habilidades técnicas, sino que abrió nuevas puertas para su desarrollo económico y autonomía financiera. ¡Transformamos talento en productividad real!</p>
+                    
+                    <div class="financiacion">
+                        <i class="fa-solid fa-handshake-angle"></i> <strong>Financiado por:</strong> Diputación de Álava - España.
+                    </div>
                 </div>
             </details>
 
@@ -263,6 +285,10 @@
                 <div class="acordeon-content">
                     <img src="proyecto2.jpg" alt="Mujeres Rurales Vulnerables de Sandoná">
                     <p>¡Transformamos ideas en empresas! Capacitamos a 40 mujeres rurales del corregimiento de San Miguel y del de Santa Rosa del Municipio de Sandoná para convertir el plátano y la leche en productos gastronómicos innovadores. El proyecto no solo les enseñó a transformar la materia prima, sino también a dominar sus finanzas y a estructurar sus propios negocios, entregándoles incluso la identidad visual y el logo de sus marcas. El gran broche de oro fue la primera Feria Gastronómica del municipio de Sandoná, el escenario donde estas mujeres demostraron que el campo tiene un potencial empresarial imparable.</p>
+                    
+                    <div class="financiacion">
+                        <i class="fa-solid fa-handshake-angle"></i> <strong>Financiado por:</strong> Diputación de Álava - España y Alcaldía de Sandoná - Colombia.
+                    </div>
                 </div>
             </details>
 
@@ -273,6 +299,10 @@
                     <p>Lo que comenzó como una obra de infraestructura en Sandoná, hoy es un motor de vida, tradición y progreso. Punto Dulce nació para transformarlo todo: un mercadillo que hoy empodera a más de 20 mujeres cabezas de hogar y sus familias, brindándoles un espacio propio para generar ingresos dignos a través de sus productos locales.</p>
                     <p>Este rincón no solo activa la economía de la región, sino que se ha convertido en el epicentro donde se salvaguarda y exalta la riqueza gastronómica de nuestra tierra. Cada visita es un encuentro con el sabor, el esfuerzo y el talento de mujeres que tejen el sustento de sus hogares.</p>
                     <p>¡Punto Dulce está más vivo que nunca! Es el reflejo de que cuando se apoya a nuestras mujeres, se transforma a toda una comunidad.</p>
+                    
+                    <div class="financiacion">
+                        <i class="fa-solid fa-handshake-angle"></i> <strong>Financiado por:</strong> Ayuntamiento de Vitoria-Gasteiz - España y Alcaldía de Sandoná - Colombia.
+                    </div>
                 </div>
             </details>
 
@@ -282,6 +312,10 @@
                     <img src="proyecto4.jpg" alt="Artesanías en paja de iraca">
                     <p>En el corazón de Sandoná, 20 mujeres transformaron la tradicional paja de iraca en arte, sustento y orgullo. A través de este proyecto, sus manos no solo aprendieron las técnicas para dar forma a hermosas artesanías y al emblemático sombrero sandoneño, sino que también tejieron el futuro de sus familias.</p>
                     <p>Esta iniciativa logró reactivar la economía de sus hogares, generando ingresos adicionales que mejoraron su calidad de vida. Más allá del beneficio económico, el proyecto significó un reencuentro profundo con sus raíces culturales, asegurando que el legado de sus ancestros siga vivo. ¡Artesanas que trenzaron identidad, empoderamiento y progreso!</p>
+                    
+                    <div class="financiacion">
+                        <i class="fa-solid fa-handshake-angle"></i> <strong>Financiado por:</strong> Diputación de Álava - España y Alcaldía de Sandoná - Colombia.
+                    </div>
                 </div>
             </details>
 
@@ -291,10 +325,15 @@
                     <img src="proyecto5.jpg" alt="Maestros del Sombrero de Sandoná">
                     <p>Gracias al valioso apoyo de Superior Hats, se culminó con éxito un proyecto hermoso y profundo en el municipio de Sandoná. A través de enriquecedores encuentros de saberes y entrevistas con los artesanos locales e historiadores, se logró reconstruir la ruta histórica de este arte, rescatando el cuándo, el cómo y el dónde nació la gran tradición que hoy identifica a la región.</p>
                     <p>Toda esta riqueza cultural quedó plasmada en una hermosa revista impresa; un valioso documento histórico que hoy se entrega como regalo a Sandoná y a su memoria colectiva. Con esta iniciativa, no solo se salvaguardaron las raíces, sino que se dejó una huella imborrable para las futuras generaciones de tejedores. ¡Que el orgullo por la iraca siga recorriendo el mundo!</p>
+                    
+                    <div class="financiacion">
+                        <i class="fa-solid fa-handshake-angle"></i> <strong>Financiado por:</strong> Gobernación de Nariño / Secretaría de Cultura - Colombia y Alcaldía de Sandoná - Colombia.
+                    </div>
                 </div>
             </details>
         </section>
 
+        <!-- SECCIÓN OBRAS -->
         <section id="obras">
             <h2>Nuestras Obras</h2>
             <p>Accede y descarga las publicaciones editoriales e investigaciones culturales financiadas y editadas por nuestra fundación:</p>
@@ -318,6 +357,7 @@
             </details>
         </section>
 
+        <!-- SECCIÓN DESARROLLO -->
         <section id="desarrollo">
             <h2>Proyectos que Estamos Desarrollando</h2>
             <p>Conoce las iniciativas actuales en las que estamos enfocando nuestros esfuerzos en este momento:</p>
@@ -331,6 +371,10 @@
                     <p>Durante el proceso formativo, los jóvenes desarrollarán habilidades comunicativas, artísticas y sociales, fomentando el trabajo en equipo, el liderazgo, la confianza y la expresión libre. Como resultado, se crearán montajes teatrales construidos de manera colectiva que reflejen la riqueza cultural del territorio y el talento de sus participantes.</p>
                     <p>Entre Sombras y Sombreros es una iniciativa de la Fundación Turpay Kawsay, con el apoyo de la Alcaldía Municipal de Sandoná y el Ministerio de las Culturas, las Artes y los Saberes, reafirmando el compromiso con la formación artística como herramienta de transformación social y preservación de la identidad cultural.</p>
                     
+                    <div class="financiacion">
+                        <i class="fa-solid fa-handshake-angle"></i> <strong>Financiado por:</strong> Ministerio de las Culturas, las Artes y los Saberes - Colombia.
+                    </div>
+
                     <p class="frase-destacada">"Nuestra cultura se vive, se crea y se comparte."</p>
                     
                     <div class="video-local-container">
@@ -343,6 +387,7 @@
             </details>
         </section>
 
+        <!-- SECCIÓN EVENTOS -->
         <section id="eventos">
             <h2>Próximos Eventos</h2>
             <p>Agéndate y acompáñanos en nuestras futuras actividades, ferias, talleres abiertos y encuentros comunitarios:</p>
@@ -356,6 +401,10 @@
                     <p>La culminación de este importante proceso se celebrará con la inauguración oficial el próximo 17 de julio, fecha que marcará el inicio de una nueva etapa para el corregimiento, reafirmando el compromiso con el fortalecimiento de los servicios de salud y la mejora de la calidad de vida de sus habitantes.</p>
                     <p>Con esta intervención, el Centro Médico de El Vergel se consolida como un símbolo de renovación, progreso y trabajo conjunto en beneficio de toda la comunidad.</p>
                     
+                    <div class="financiacion">
+                        <i class="fa-solid fa-handshake-angle"></i> <strong>Financiado por:</strong> Ayuntamiento de Vitoria-Gasteiz - España y Alcaldía de Sandoná - Colombia.
+                    </div>
+
                     <p class="frase-destacada">"Rehabilitar un centro de salud es fortalecer el corazón de una comunidad."</p>
                     
                     <div class="video-local-container">
@@ -368,6 +417,7 @@
             </details>
         </section>
 
+        <!-- SECCIÓN ALIADOS ESTRATÉGICOS -->
         <section id="aliados">
             <h2>Nuestros Aliados Estratégicos</h2>
             <div class="aliados-grid">
@@ -380,6 +430,7 @@
             </div>
         </section>
 
+        <!-- SECCIÓN CONTÁCTANOS -->
         <section id="contacto">
             <h2>Contáctanos</h2>
             <p>¿Tienes dudas, deseas realizar una alianza estratégica o vincularte como voluntario? Déjanos un mensaje:</p>
@@ -437,6 +488,7 @@
         <p>&copy; 2026 Fundación Turpay Kawsay. Todos los derechos reservados.</p>
     </footer>
 
+    <!-- SCRIPTS PARA INTERACTIVIDAD -->
     <script>
         // Función para abrir y cerrar el Menú Principal en móviles
         function toggleMainMenu() {
